@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/buttonList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ListOnClick"
+        android:text="List Reader" />
+    <TextView
+        android:id="@+id/textReader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Reader:" />
+
+    <Spinner
+        android:id="@+id/spinnerDevice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    
+      
+        <Button
+            android:id="@+id/buttonConnect"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ConnectOnClick"
+            android:text="Connect" />
+        
+         <TextView
+            android:id="@+id/textConnectResult"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <Button
+            android:id="@+id/buttonATR"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="getATROnClick"
+            android:text="get ATR" />
+
+    	<TextView
+        android:id="@+id/textATR"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="ATR" />
+
+    	<Button
+    	    android:id="@+id/buttonAPDU"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:onClick="sendAPDUkOnClick"
+    	    android:text="Send APDU" />
+
+    	<EditText 
+    	    android:id="@+id/textAPDU"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:inputType="textMultiLine"/>
+    	
+    	<TextView
+    	    android:id="@+id/textGetAPDU"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:text="GetApdu" />
+
+
+    	<RelativeLayout
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content" >
+
+    		<Button
+    		    android:id="@+id/buttonSwitch"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:layout_alignParentLeft="true"
+    		    android:layout_alignParentTop="true"
+    		    android:onClick="switchModeOnClick"
+    		    android:text="Switch Card Mode"      
+    		    android:visibility="invisible" />
+
+    		<Spinner
+    		    android:id="@+id/modeSpinner"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:layout_alignBottom="@+id/buttonSwitch"
+    		    android:layout_toRightOf="@+id/buttonSwitch"
+    		    android:visibility="invisible"/>
+
+    	</RelativeLayout>
+    	<Button
+    	    android:id="@+id/buttonProtocol"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:onClick="getProtocolOnClick"
+    	    android:text="get protocol" />
+    	<TextView
+    	    android:id="@+id/textProtocol"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:text="" />
+    	
+    	<TextView
+    	    android:id="@+id/textSwitchMode"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:visibility="invisible"
+    	    android:text="" />
+    
+
+    	<Button
+    	    android:id="@+id/buttonOff"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:onClick="PowerOffOnClick"
+    	    android:text="PowerOff" />
+    	
+
+</LinearLayout>

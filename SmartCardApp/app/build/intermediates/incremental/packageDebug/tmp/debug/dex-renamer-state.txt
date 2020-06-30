@@ -1,0 +1,4 @@
+#Mon Jun 29 17:14:40 CST 2020
+base.0=C\:\\Users\\Administrator\\AndroidStudioProjects\\SmartCardApp\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
