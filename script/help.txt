@@ -1,0 +1,30 @@
+指令模板： ./mk mode 项目名 action path
+
+mode: -u     user软件
+      -ud    userdebug软件
+      其它    eng软件
+
+action: new            编译新项目
+        r              用于remake已编译过的项目(不会执行拷贝脚本)
+        R              同r，但会执行拷贝脚本
+        snod           重新生成sysem.img
+        update-api     更新公开的Api     
+        lk             编译bootloader
+        bootimage      编译bootimage
+        recoveryimage  编译recoveryimage
+        systemimage    编译systemimage
+        userdataimage  编译userdataimage
+        cacheimage     编译cacheimage
+        clean          删除当前配置的所有输出和中间文件，等同于rm -rf out/<configuration>/
+        clobber        比clean更严格，等同于rm -rf out/.
+        clean-lk       
+        clean-kernel   
+        mm             编译指定路径(path)下的模块，但不编译其依赖项
+        mma            编译指定路径(path)下的模块，编译其依赖项
+        ota            编译ota软件
+        clone          执行拷贝脚本
+        copybin        打包刷机包
+
+path: 模块路径，与mm和mma搭配使用
+
+编译drive only软件的指令为: ./mk mode 项目名 new drive_only

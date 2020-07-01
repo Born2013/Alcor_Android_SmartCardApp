@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+#clone服务器上的脚本
+use File::Basename;
+my $script_dir = dirname(readlink "./mk");
+
+my $clone_dir = "$script_dir/script";
+
+#平台包名称
+$ENV{"BIRD_PLATFORM_NAME"} = "BIRD_P0MP1_K39TV1_BSP";
+#Android 版本(如:O、P)
+$ENV{"BIRD_ANDROID_SDK_VERSION"} = "P";
+
+#调用clone下来的脚本
+system("perl $clone_dir/main @ARGV");

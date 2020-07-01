@@ -1,0 +1,199 @@
+#!/usr/bin/perl
+use File::Spec; 
+use Cwd;
+#获取编译根目录
+my $BIRD_BUILD_ROOT_DIR = getcwd;
+#获取脚本文件自身所在的绝对路径 $SCRIPT_LOCAL_DIR_PATH
+my ($vol, $SCRIPT_LOCAL_DIR_PATH, $file) = File::Spec->splitpath(File::Spec->rel2abs(__FILE__));
+#获取bird文件夹的绝对路径
+my $BIRD_DIR_PATH = substr($SCRIPT_LOCAL_DIR_PATH, 0, rindex($SCRIPT_LOCAL_DIR_PATH,"/bird/"))."/bird";
+
+#解析输入的参数
+if ($ARGV[0] eq "--help" || $ARGV[0] eq "-help") { #显示帮助说明
+  open (FILE_HANDLE, "<$SCRIPT_LOCAL_DIR_PATH/help.txt") or die "cannot open help.txt\n";
+  print "\033[32m";
+  while (<FILE_HANDLE>)
+  {
+    print;
+  }
+  print "\033[0m\n";
+  exit;
+}
+{
+  my $i = 0;
+  if ($ARGV[0] eq "-u") {
+    $BIRD_BUILD_MODE = "user";
+    $i++;
+  } elsif ($ARGV[0] eq "-ud") {
+    $BIRD_BUILD_MODE = "userdebug";
+    $i++;
+  } else {
+    $BIRD_BUILD_MODE = "eng";
+  }
+  $BIRD_BUILD_PROJECT_MK_NAME = $ARGV[$i++];
+  $action = $ARGV[$i++];
+  $path = $ARGV[$i++];
+}
+
+#检查项目mk
+if (!$BIRD_BUILD_PROJECT_MK_NAME)
+{
+  print "\033[31m Please specify the project name! \033[0m\n";
+  exit;
+}
+if (!-e "$BIRD_DIR_PATH/mk/${BIRD_BUILD_PROJECT_MK_NAME}.mk")
+{
+  print "\033[31m ${BIRD_BUILD_PROJECT_MK_NAME}.mk not exst, pls check! \033[0m\n";
+  exit;
+}
+
+#添加公共的环境变量(以BIRD开头以免影响到Android编译)，供其它脚本使用
+$ENV{"BIRD_BUILD_ROOT_DIR"} = $BIRD_BUILD_ROOT_DIR;
+$ENV{"BIRD_DIR_PATH"} = $BIRD_DIR_PATH;
+$ENV{"BIRD_BUILD_PROJECT_MK_NAME"} = $BIRD_BUILD_PROJECT_MK_NAME;
+$ENV{"BIRD_BUILD_MODE"} = $BIRD_BUILD_MODE;
+
+# 临时将mk中的配置自动加入环境变量以供使用,执行编译操作之前会删除这里加入的环境变量
+@prjmks;
+push(@prjmks, "$BIRD_DIR_PATH/mk/${BIRD_BUILD_PROJECT_MK_NAME}.mk");
+foreach my $prjmk (@prjmks) {
+    open (FILE_HANDLE, "<$prjmk") or die "cannot open $prjmk\n";
+    while (<FILE_HANDLE>)
+    {
+      if (/^(\S+)\s*=\s*([^\f\n\r\t\v]+)/)
+      {
+        ($ENV{$1} = $2)=~ s/^\s+|\s+$//g;
+      }
+    }
+}
+close FILE_HANDLE;
+
+#部分不需要编译的指令
+if ($action eq "clone")
+{
+  do_clone();
+  exit;
+}
+elsif ($action eq "copybin")
+{
+  system("bash $SCRIPT_LOCAL_DIR_PATH/copy_and_pac.sh");
+  exit;
+}
+
+print "-----------------------------------------------------\n";
+print "------- BIRD Build Infomation BEGIN -----------------\n";
+print "-----------------------------------------------------\n";
+print "project to build: $BIRD_BUILD_PROJECT_MK_NAME\n";
+print "============================================================\n";
+print "==== Driver MK:           $ENV{bird_mk_config} \n";
+print "==== ROM+RAM:             $ENV{bird_memory_flash} \n";
+print "==== Batter CAP:          $ENV{bird_battery_para} \n";
+print "==== Camera Para:         $ENV{bird_camera_effect_para} \n";
+print "==== Audio Para:          $ENV{bird_audio_effect_para} \n";
+print "============================================================\n";
+print "***************************************************\n";
+print "**************  build \033[32m$BIRD_BUILD_MODE\033[0m software  ***************\n";
+print "***************************************************\n";
+print "-----------------------------------------------------\n";
+print "------- BIRD Build Infomation END -------------------\n";
+print "-----------------------------------------------------\n";
+
+#第一步:执行拷贝
+if (($action eq "new") || ($action eq "R") || ($action eq "ota"))
+{
+  do_clone();
+}
+
+#第二步:获取lunch, 各平台存在差异
+$lunch_name = generate_lunch_name();
+
+#第三步:保留部分配置信息到log
+if (($action eq "new") || ($action eq "R") || ($action eq "r") || ($action eq "ota"))
+{
+  system("bash $SCRIPT_LOCAL_DIR_PATH/generate_build_info_log.sh $lunch_name");
+}
+
+#第四步:配置编译环境
+#执行编译之前删除由mk文件自动设置的环境变量(但保留其中以BIRD开头的),以免影响系统编译.曾经出现过不删除导致下载后不开机
+foreach my $prjmk (@prjmks) {
+    open (FILE_HANDLE, "<$prjmk") or die "cannot open $prjmk\n";
+    while (<FILE_HANDLE>)
+    {
+      if (/^(\S+)\s*=\s*([^\f\n\r\t\v]+)/)
+      {
+        if (!begin_with_bird($1)) {
+          delete $ENV{$1};
+        }
+      }
+    }
+}
+close FILE_HANDLE;
+
+#第五步:执行编译
+$result = system("bash $SCRIPT_LOCAL_DIR_PATH/build_action.sh $lunch_name $action $path");
+print "#### compile exit at: " . &CurrTimeStr . " ####\n";
+
+#第六步:打包刷机包
+if ($result == 0) 
+{
+  if (($action eq "new") || ($action eq "R") || ($action eq "r") || ($action eq "ota"))
+  {
+    system("bash $SCRIPT_LOCAL_DIR_PATH/copy_and_pac.sh");
+  }
+}
+#脚本执行结束
+
+sub setBuildEnvVars
+{
+  my $bldProfile = shift;
+  die "\"$bldProfile\" does NOT exist!\n" if (!-e $bldProfile);
+  # Todo: error handling for '. $bldProfile' command
+  my $envVarList = `. $bldProfile && env | grep ".*=.*"`;
+  map
+    {
+      chomp;
+      $ENV{$1}=$2 if (/(.*)=(.*)/);
+    } split(/\n/, $envVarList);
+    print "[START LOGGING]: Current build environment variables setting...\n";
+    print "PATH=$ENV{PATH}\n";
+    print "ANDROID_JAVA_HOME=$ENV{ANDROID_JAVA_HOME}\n";
+    print "JAVA_HOME=$ENV{JAVA_HOME}\n";
+    print "PYTHONPATH=$ENV{PYTHONPATH}\n";
+    print "[END LOGGING]\n";
+}
+
+sub CurrTimeStr
+{
+  my($sec, $min, $hour, $mday, $mon, $year) = localtime(time);
+  return (sprintf "%4.4d/%2.2d/%2.2d %2.2d:%2.2d:%2.2d", $year+1900, $mon+1, $mday, $hour, $min, $sec);
+}
+
+sub do_clone
+{
+  my $drive_only = "no";
+  if ($path eq "drive_only")
+  {
+    $drive_only = "yes";
+  }
+  if (system("bash $SCRIPT_LOCAL_DIR_PATH/clone.sh ${BIRD_BUILD_PROJECT_MK_NAME} $drive_only") != 0)
+  {
+    print "\033[31m-------------Copy bird files error----------------\033[0m\n";
+    exit;
+  }
+}
+
+#判断字符串是否以"bird"开头(不区分大小写)
+sub begin_with_bird
+{
+  return lc(substr($_[0], 0, 4)) eq "bird";
+}
+
+#生成对应的lunch. 各平台之前格式会存在差异
+sub generate_lunch_name
+{
+  my $lunch_name = "";
+  if (-d "$BIRD_BUILD_ROOT_DIR/vendor/mediatek") { #MTK平台
+    $lunch_name = "full_".$ENV{"bird_source_project"}."-".$ENV{"BIRD_BUILD_MODE"};
+  }
+  return $lunch_name;
+}
