@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="volume_dialog_enable_toast">Please turn off the peace lock function</string>
+
+    <array name="clock_widget_drawables">
+        <item>@drawable/time_0</item>
+        <item>@drawable/time_1</item>
+        <item>@drawable/time_2</item>
+        <item>@drawable/time_3</item>
+        <item>@drawable/time_4</item>
+        <item>@drawable/time_5</item>
+        <item>@drawable/time_6</item>
+        <item>@drawable/time_7</item>
+        <item>@drawable/time_8</item>
+        <item>@drawable/time_9</item>
+        <item>@drawable/time_divider</item>
+    </array>
+
+</resources>

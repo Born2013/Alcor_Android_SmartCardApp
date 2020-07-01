@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[BIRD_WEIMI_MUSIC]wangyueyue 20150314 modify-->
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false" 
+    android:background="@drawable/bird_main_bg"
+    >  <!--[BIRD_WEIMI_MUSIC]wangyueyue add background -->
+
+    <LinearLayout
+        android:id="@+id/sd_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:splitMotionEvents="false"
+        android:visibility="gone" >
+
+        <include layout="@layout/sd_error" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/normal_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:splitMotionEvents="false" >
+        <!--[BIRD_WEIMI_MUSIC]wangyueyue 20150314 begin-->
+        <RelativeLayout
+            android:id="@+id/normal_view_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bird_main_tab_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/bird_main_tab_left"
+            android:layout_marginRight="@dimen/bird_main_tab_right"
+            >
+            <ImageView
+                android:id="@+id/now_type_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bird_artist_tab" />
+
+            <TextView
+                android:id="@+id/now_type_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/now_type_icon"
+                android:layout_marginLeft="@dimen/bird_main_tab_left"
+                android:text="@string/artists_title"
+                android:textSize="@dimen/bird_main_tab_textsize"
+                android:textColor="@color/bird_main_tab_color" />
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:divider="@null"
+                android:splitMotionEvents="false" >
+            </TabWidget>
+
+           <ImageView
+                android:id="@+id/search_menu_nowplaying"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bird_tap_search"/>
+
+        </RelativeLayout>
+
+        <!--<TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:splitMotionEvents="false" >
+        </TabWidget> -->
+
+        <!--[BIRD_WEIMI_MUSIC]wangyueyue 20150314 end-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:splitMotionEvents="false" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/nowplaying"
+                android:splitMotionEvents="false" />
+
+            <!-- android:layout_height="380dip" -->
+
+            <include layout="@layout/nowplaying" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

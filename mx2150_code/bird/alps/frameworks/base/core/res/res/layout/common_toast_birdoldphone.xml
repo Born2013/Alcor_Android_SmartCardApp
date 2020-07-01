@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--[BIRD][BIRD_OLD_PHONE][老人模式短信][gaowei][20170406] begin-->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text_toast_content_oldphone"
+    android:layout_width="wrap_content"
+    android:layout_height="64dp"
+    android:background="@drawable/oldphone_toast_frame"
+    android:padding="16dp"
+    android:textSize="24dp"
+    android:textStyle="bold"
+    android:textColor="#FFFFFF"/>
+<!--[BIRD][BIRD_OLD_PHONE][老人模式短信][gaowei][20170406] end-->

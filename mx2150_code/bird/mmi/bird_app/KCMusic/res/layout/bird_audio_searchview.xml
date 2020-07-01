@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[bug109209][BIRD_WEIMI_MUSIC]chengshujiang 20160325 modify -->
+<!--[BIRD_WEIMI_MUSIC]wangyueyue 20150314 add -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/search_bg"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
+    
+        <com.bird.WeimiSearchView
+            android:id="@+id/bbk_search_view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bird_searchwindow_height"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"/>
+      
+        <TextView  
+            android:id="@+id/cancel"           
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/bird_main_search_color"
+            android:textSize="@dimen/bird_search_textsize"  
+            />
+</LinearLayout>

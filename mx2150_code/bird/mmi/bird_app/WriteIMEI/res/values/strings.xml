@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, WriteIMEI!</string>
+    <string name="app_name">writeIMEI</string>
+    <string name="ok">OK</string>
+    <string name="write_success">Success</string>
+    <string name="write_fail">Fail</string>
+    <string name="success_content_sim1">IMEI write success</string>
+    <string name="success_content_sim2">Sim2 IMEI write success</string>
+    <string name="fail_content_sim1">IMEI write fail</string>
+    <string name="fail_content_sim2">Sim2 IMEI write fail</string>
+</resources>

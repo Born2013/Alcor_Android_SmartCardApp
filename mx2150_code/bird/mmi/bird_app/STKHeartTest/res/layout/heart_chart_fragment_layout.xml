@@ -1,0 +1,65 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/chart_tab_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textSize="15sp"
+            android:textColor="#ff000000"
+            android:text="@string/last_ten_data"/>
+
+           <TextView
+            android:id="@+id/average_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="15sp"
+            android:textColor="#99000000"/>
+
+           <TextView
+               android:id="@+id/textView2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentRight="true"
+               android:layout_marginRight="40dp"
+               android:textSize="15sp"
+               android:textColor="#99000000"
+               android:text="@string/average_value" />
+
+    </RelativeLayout>
+    
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+        <com.sensortek.stkhealthcare2.HistogramView
+            android:id="@+id/histogram"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>    
+            
+        <TextView
+            android:id="@+id/heart_chart_empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="@string/no_history_values"
+            android:textColor="#ff000000"
+            android:paddingBottom="100dp"/>
+    </FrameLayout>
+</LinearLayout>

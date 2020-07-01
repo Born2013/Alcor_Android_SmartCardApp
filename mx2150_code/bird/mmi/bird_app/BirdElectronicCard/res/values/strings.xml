@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">电子保卡</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="clear">清除电子保卡信息</string>
+	<string name="show_userid">注册时间:</string>
+	<string name="new_machine">新机待售</string>
+    <!--[增加手动激活指令]xujing 20180104 begin-->
+	<string name="active_phone">设备已激活，注册时间:</string>
+    <!--[增加手动激活指令]xujing 20180104 end-->
+</resources>

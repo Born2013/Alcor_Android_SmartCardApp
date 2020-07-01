@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" >
+    <style name="ReviewThumbnailGroup">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <!--<item name="android:layout_margin">0dp</item>-->
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+    <style name="ShutterGroup" parent="ScreenMargin">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">bottom|center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <!--[BIRD][BIRD_KUSAI_CAMERA][chengshujiang]20170623 begin-->
+        <!--<item name="android:background">@drawable/bg_shutter_background</item>-->
+        <!--[BIRD][BIRD_KUSAI_CAMERA][chengshujiang]20170623 end-->
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="SettingIndicator">
+        <!--<item name="android:padding">0dip</item>-->
+        <item name="android:paddingBottom">0dip</item>
+        <item name="android:paddingTop">0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+</resources>

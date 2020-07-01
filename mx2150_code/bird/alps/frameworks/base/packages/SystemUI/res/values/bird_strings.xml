@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2014, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="boost">Clear</string>
+    <!--[BIRD][BIRD_POWER_MANAGER_V2][省电管理V2.0][qianliliang][20160527] BEGIN-->
+    <string name="bird_low_battery">Low Battery</string>
+    <string name="bird_low_battery_remaining"><xliff:g id="NUMBER">%s</xliff:g>%% battery remaining.</string>
+    <string name="bird_low_battery_remaining_with_timer_count">Power lower than <xliff:g id="NUMBER">%s</xliff:g>%% automatic entry Super Saver, <xliff:g id="NUMBER">%s</xliff:g>%% battery remaining now. \n(Enter after <xliff:g id="NUMBER">%s</xliff:g>s)</string>
+    <string name="bird_cancel">CANCEL</string>
+    <string name="bird_enter_super_saver">SUPER SAVER</string>
+    <!--[BIRD][BIRD_POWER_MANAGER_V2][省电管理V2.0][qianliliang][20160527] END-->
+
+    <!--[BIRD][BIRD_LONG_CLICK_BACK_UNLOCK_MODE][长按back键解除屏幕固定][hongzhihao][20160727]begin-->
+    <string name="bird_screen_pinning_description" msgid="1346522416878235405">This keeps it in view until you unpin. Touch and longclick Back at the same time to unpin.</string>
+    <!--[BIRD][BIRD_LONG_CLICK_BACK_UNLOCK_MODE][长按back键解除屏幕固定][hongzhihao][20160727]end-->
+
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] BEGIN-->
+    <string name="bird_screenshot_name">Super screenshot</string>
+    <string name="bird_screenshot_full">Full</string>
+    <string name="bird_screenshot_regional">Regional</string>
+    <string name="bird_screenshot_long">Long</string>
+    <string name="bird_screenshot_help">Help</string>
+    <string name="bird_guide_full_str">Full screenshot guide</string>
+    <string name="bird_guide_regional_str">Regional screenshot guide</string>
+    <string name="bird_guide_long_str">Long screenshot guide</string>
+
+    <string name="bird_guide_full_tip0">1.Select quick switch \"Super screenshot\".</string>
+    <string name="bird_guide_full_tip1">2.Select \"Full screenshot\".</string>
+    <string name="bird_guide_full_tip2">3.Automatically generates pictures and save it to the gallery.</string>
+    <string name="bird_guide_full_tip3">4.Quick way: Press \"Power\" and \" Vol-\" together.</string>
+
+    <string name="bird_guide_regional_tip0">1.Select quick switch \"Super screenshot\".</string>
+    <string name="bird_guide_regional_tip1">2.Select \"Regional screenshot\".</string>
+    <string name="bird_guide_regional_tip2">3.Edit select box to crop picture.</string>
+    <string name="bird_guide_regional_tip3">4.Save to the gallery.</string>
+
+    <string name="bird_guide_long_tip0">1.Select quick switch \"Super screenshot\".</string>
+    <string name="bird_guide_long_tip1">2.Select \"Long screenshot\".</string>
+    <string name="bird_guide_long_tip2">3.Edit select box to change the beginning and end on Current page .</string>
+    <string name="bird_guide_long_tip3">4.Select option to continue.</string>
+    <string name="bird_guide_long_tip4">5.Choose \"Save\".</string>
+    <string name="bird_guide_long_tip5">6.Save to the gallery.</string>
+
+    <string name="bird_donot_support_long_screenshot">Don\'t Support Take Long Screenshot.</string>
+    <string name="bird_no_picture_saved">No pictures saved.</string>
+    <string name="bird_user_option_cancel">Cancel</string>
+    <string name="bird_user_option_next">Next</string>
+    <string name="bird_user_option_choose">Choosed</string>
+    <string name="bird_user_option_save">Save</string>
+    <string name="screenshot_failed_text">Can\'t take screenshot due to limited storage space, or it isn\'t allowed by the app or your organization.</string>
+    <string name="bird_screenshot_merge_or_scroll_fail">"This page can not be spliced or not support rolling, no long screenshots"</string>
+    <string name="bird_screenshot_maxmum_count">"Maximum screenshot 10"</string>
+    <string name="bird_screenshot_done">"Screenshot done"</string>
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] END-->
+    <!--[BIRD][BIRD_FINGER_PRINT_HINT][录入指纹后，锁屏界面提示"按下主屏幕以解锁"][zhangaman][20170310]begin-->
+    <string name="bird_fingerprint_hint">"Press the home button to unlock"</string> 
+    <!--[BIRD][BIRD_FINGER_PRINT_HINT][录入指纹后，锁屏界面提示"按下主屏幕以解锁"][zhangaman][20170310]end-->
+    
+    <!--[BIRD][BIRD_QS_POWER_SAVE_SUPPORT][下拉菜单界面添加“超级省电”快捷图标][yangheng][201603017]BEGIN-->
+    <string name="bird_powermanager_name">Super Powermanager</string>
+    <!--[BIRD][BIRD_QS_POWER_SAVE_SUPPORT][下拉菜单界面添加“超级省电”快捷图标][yangheng][201603017]END-->
+    
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170629]BEGIN -->
+    <string name="bird_encrypt_tip_01">郑重声明</string>
+    <string name="bird_encrypt_tip_02">国家信息安全督导（调查员）：</string>
+    <string name="bird_encrypt_tip_03">\n        中华人民共和国宪法规定：中华人民共和国公民有维护祖国的安全、荣誉和利益的义务，不得有危害祖国的安全、荣誉和利益的行为。严格保守国家秘密。\n
+        使用安全手机与加密信道设备必须持有效证件；必须已获得专业培训机构资格认证的、已签署保密协议的备案使用者。使用时须严格遵守《中华人民共和国安全法》。
+</string>
+    <string name="bird_encrypt_tip_04">注：本设备序列码经审核进入国家防伪系统，并由“安信中保”唯一授权使用、发放。</string>
+    
+    <string name="switch_to_security_container_title">Tips</string>
+    <string name="switch_to_security_container_message">This is a notification message from \"Secure Space\", switching to?</string>
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170629]END -->
+    
+    <!--[BIRD][BIRD_SHOTDOWN_CHARGE_SUGGESTION][由于电池容量较大，建议在关机状态下充电，保证充电过程稳定][客户需求][yangbo][20170726]BEGIN -->
+    <string name="bird_shotdown_charge_suggestion_title">"Charging tips"</string>
+    <string name="bird_shotdown_charge_suggestion">"Due to the large battery capacity, it is recommended to charge in the off state"</string>
+    <!--[BIRD][BIRD_SHOTDOWN_CHARGE_SUGGESTION][由于电池容量较大，建议在关机状态下充电，保证充电过程稳定][客户需求][yangbo][20170726]BEGIN -->
+    
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170817]BEGIN -->
+    <string name="bird_encrypt_space_quick_settings_tiles_default" translatable="false">
+        wifi,cell,battery,dnd,flashlight,rotation,airplane,screenshot,powermanager
+    </string>
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170817]END -->
+    <!--[BIRD][BIRD_TOAST_CHARGE_READ_SIM][充电时无法读写SIM卡提示][pangmeizhou][20180509]begin -->
+	<string name="bird_toast_charge_sim">"Can't read or write SIM card while charging"</string>
+	<!--[BIRD][BIRD_TOAST_CHARGE_READ_SIM][充电时无法读写SIM卡提示][pangmeizhou][20180509]end -->
+</resources>
+

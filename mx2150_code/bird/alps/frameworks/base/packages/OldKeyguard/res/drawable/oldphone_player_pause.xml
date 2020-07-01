@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/oldphone_player_btn_pause_nor" android:state_pressed="false"  android:state_enabled="true">
+
+    </item>
+
+    <item android:drawable="@drawable/oldphone_player_btn_pause_pre" android:state_pressed="true"  android:state_enabled="true">
+
+    </item>
+
+
+    <item android:drawable="@drawable/oldphone_player_btn_pause_dis" android:state_enabled="false"></item>
+
+</selector>

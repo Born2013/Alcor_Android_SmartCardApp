@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:isScrollContainer="true"
+  >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_test_count"
+            android:layout_width="wrap_content"
+            style="@style/test_text_style"
+            android:text="@string/test_total_count"/>
+
+        <TextView
+            android:id="@+id/tv_used_count"
+            android:layout_width="wrap_content"
+            style="@style/test_text_style"
+            android:text="@string/test_used_count"/>
+
+        <TextView
+            android:id="@+id/tv_unused_count"
+            android:layout_width="wrap_content"
+            style="@style/test_text_style"
+            android:text="@string/test_unused_count"/>
+
+        <TextView
+            android:id="@+id/tv_last_reboot_time"
+            android:layout_width="wrap_content"
+            style="@style/test_text_style"
+            android:text="@string/test_last_reboot_time"/>
+
+        <TextView
+            android:id="@+id/tv_current_reboot_time"
+            android:layout_width="wrap_content"
+            style="@style/test_text_style"
+            android:text="@string/test_recent_reboot_time"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/show_result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_result"
+            android:textSize="28dp"/>
+        <TextView
+            android:id="@+id/tv_success_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_result_tip"
+            android:paddingTop="16dp"
+            android:textSize="18dp"/>
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text = "@string/btn_stop_test_txt"/>
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text = "@string/clear_test"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+</LinearLayout>

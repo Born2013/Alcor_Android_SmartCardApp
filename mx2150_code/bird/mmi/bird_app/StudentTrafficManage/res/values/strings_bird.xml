@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">studentsos</string>
+    <string name="bird_here_no_num">Please add your family number first!</string>
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[BIRD][BIRD_SMALL_VIEW_WINDOW_STYLE][皮套风格1][zhangaman][20170524]begin-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidprv="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/leather_cover_host_view_width_style1"
+    android:layout_height="@dimen/leather_cover_host_view_height_style1">
+    
+    <RelativeLayout
+        android:id="@+id/bird_music_view"
+        android:layout_width="@dimen/leather_cover_host_view_width_style1"
+        android:layout_height="@dimen/leather_cover_host_view_height_style1"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/leather_cover_host_view_margin_right_style1"
+        android:layout_centerHorizontal="true">
+
+        <com.android.keyguard.BirdMarqureeTextView
+            android:id="@+id/music_song"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="@dimen/leather_cover_music_margin_top_stylel" 
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:ellipsize="marquee" 
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="19sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/leather_cover_music_bottom_style1"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/music_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zzzzz_leather_music_drawable_prev_style1" 
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/music_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zzzzz_leather_music_drawable_play_style1" 
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/music_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zzzzz_leather_music_drawable_next_style1"
+                android:background="@null" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
+<!--[BIRD][BIRD_SMALL_VIEW_WINDOW_STYLE][皮套风格1][zhangaman][20170524]end-->

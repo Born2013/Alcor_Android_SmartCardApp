@@ -1,0 +1,8 @@
+模组厂	中光电
+IC型号	ST7701S-G5
+玻璃	3.97；CTC
+分辨率	WVGA480*800
+丝印	FPC丝印：T397F626FPC VER01;
+ID脚	ID(ID1：VDD，ID2：VDD)
+command或vedio	viedio
+

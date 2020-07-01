@@ -1,0 +1,18 @@
+<resources>
+
+    <style name="AppTheme" 
+           parent="@android:style/Theme.Material.Light.NoActionBar">
+	    <!--<item name="android:windowBackground">@color/background_color</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+    </style>
+
+    <style name="DialogWithoutTitle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--[bug-109526] caoyuangui add 20160415 begin-->
+        <item name="android:backgroundDimAmount">0</item>
+        <!--[bug-109526] caoyuangui add 20160415 begin-->
+    </style>
+</resources>

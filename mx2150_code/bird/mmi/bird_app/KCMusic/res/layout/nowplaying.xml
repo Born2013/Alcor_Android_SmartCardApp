@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<!--[BIRD_WEIMI_MUSIC]wangyueyue 20150314 modify-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nowplaying"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bird_main_bottom_height"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/bird_music_bottom_playback_bg"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:splitMotionEvents="false"
+    android:paddingLeft="@dimen/bird_main_bottom_left"
+    android:paddingRight="@dimen/bird_main_bottom_right"
+    > <!--nowplaying_parent   android:visibility="gone"-->
+  
+    <!--begin-->
+    <ImageView
+        android:id="@+id/album_cover"
+        android:layout_width="@dimen/bird_main_album_size"
+        android:layout_height="@dimen/bird_main_album_size"
+        android:layout_centerVertical="true"        
+        android:background="@drawable/albumart_mp_unknown_list" />
+        <!--end-->
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_weight="1"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        
+        ><!--release  android:paddingLeft="9dip"-->
+        <!--begin-->
+        <SeekBar android:id="@+id/main_seekbar" 
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"  
+            android:layout_weight="1"
+            android:progressDrawable="@drawable/bird_main_bg_bar"  
+            android:indeterminateDrawable="@drawable/bird_main_bg_bar"              
+            android:thumb="@drawable/bird_main_thumb_bar"
+            android:background="@null"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/bird_main_bottom_left"
+            android:paddingRight="@dimen/bird_main_bottom_right"
+            > <!--release  android:paddingLeft="9dip"-->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="right"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/bird_main_bottom_left"
+                >
+                <!--end-->   
+                <TextView
+                    android:id="@+id/artist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#ffffff"
+                    android:maxWidth="@dimen/bird_main_artist_maxsize"
+                    android:ellipsize="marquee"
+                    android:text="@string/NoSinger"
+                    android:textAppearance="?android:attr/textAppearanceSmall" 
+                    android:textSize="@dimen/bird_artist_text_size"/>
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/bird_title_text_size"
+                    android:maxWidth="@dimen/bird_main_title_maxsize"
+                    android:ellipsize="marquee"
+                    android:text="@string/NoSong"
+                     />
+
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/control_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/control_play"
+                android:background="@drawable/bird_main_pre" />
+
+            <ImageView
+                android:id="@+id/control_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/control_next"
+                android:background="@drawable/bird_main_pause" />
+
+            <ImageView
+                android:id="@+id/control_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bird_main_next" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- begin-->
+    <ImageButton
+        android:id="@+id/search_menu_nowplaying"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:layout_gravity="right"
+        android:layout_weight="1"
+        android:visibility="gone" 
+        android:contentDescription="@string/menu_search"
+        android:src="@android:drawable/ic_menu_search"/> 
+        <!-- add android:visibility="gone" -->
+        <!-- end-->
+
+    <LinearLayout
+        android:id="@+id/blank_between_search_and_overflow"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:layout_weight="99"
+        android:visibility="gone" >
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/overflow_menu_nowplaying"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:layout_gravity="left"
+        android:contentDescription="@string/musicbrowserlabel"
+        android:src="@drawable/ic_menu_overflow"
+        android:visibility="gone" />
+
+</LinearLayout>

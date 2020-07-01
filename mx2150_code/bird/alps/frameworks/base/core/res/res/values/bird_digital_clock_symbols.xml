@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* Copyright 2012, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources>
+
+  	<private-symbols package="com.android.internal" />
+
+	<java-symbol type="layout" name="bird_digital_clock_layout" />
+    <java-symbol type="layout" name="bird_digital_clock_layout_align_left" />
+    <java-symbol type="layout" name="bird_kusai_digital_clock_layout" />
+	<java-symbol type="string" name="time_icon_contentDescription" />
+
+	<java-symbol type="string" name="week_monday" />
+	<java-symbol type="string" name="week_tuesday" />
+	<java-symbol type="string" name="week_wednesday" />
+	<java-symbol type="string" name="week_thursday" />
+	<java-symbol type="string" name="week_friday" />
+	<java-symbol type="string" name="week_saturday" />
+	<java-symbol type="string" name="week_sunday" />
+	<java-symbol type="string" name="month1" />
+	<java-symbol type="string" name="month2" />
+	<java-symbol type="string" name="month3" />
+	<java-symbol type="string" name="month4" />
+	<java-symbol type="string" name="month5" />
+	<java-symbol type="string" name="month6" />
+	<java-symbol type="string" name="month7" />
+	<java-symbol type="string" name="month8" />
+	<java-symbol type="string" name="month9" />
+	<java-symbol type="string" name="month10" />
+	<java-symbol type="string" name="month11" />
+	<java-symbol type="string" name="month12" />
+
+	<java-symbol type="string" name="end_mark" />
+	<java-symbol type="string" name="space_text" />
+	<java-symbol type="string" name="dot_pic_text" />
+	<java-symbol type="string" name="am" />
+	<java-symbol type="string" name="pm" />
+	<java-symbol type="id" name="click_area" />
+	<java-symbol type="id" name="time_layout" />
+	<java-symbol type="id" name="hour" />
+	<java-symbol type="id" name="minute" />
+	<java-symbol type="id" name="time_am_pm" />
+
+	<java-symbol type="id" name="date_layout" />
+	<java-symbol type="id" name="week_view" />
+	<java-symbol type="id" name="date_view" />
+
+
+
+
+
+</resources>

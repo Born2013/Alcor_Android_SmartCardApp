@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="volume_dialog_enable_toast">请先关闭安心锁定功能</string>
+</resources>

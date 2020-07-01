@@ -1,0 +1,8 @@
+模组厂	易欣达
+IC型号	nt35532
+玻璃	panda
+分辨率	FHD 1080*1920
+丝印	fpc-y85933 v01
+ID脚	0， 1
+command或vedio	video
+

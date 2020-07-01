@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="time_icon_contentDescription">time</string>
+
+	<string name="week_monday">Mon,&#160; </string>
+	<string name="week_tuesday">Tue,&#160; </string>
+	<string name="week_wednesday">Wed,&#160; </string>
+	<string name="week_thursday">Thu,&#160; </string>
+	<string name="week_friday">Fri,&#160; </string>
+	<string name="week_saturday">Sat,&#160; </string>	
+	<string name="week_sunday">Sun,&#160; </string>
+
+	<string name="month1">January&#160; </string>
+	<string name="month2">February&#160; </string>
+	<string name="month3">March&#160; </string>
+	<string name="month4">April&#160; </string>
+	<string name="month5">May&#160; </string>
+	<string name="month6">June&#160; </string>
+	<string name="month7">July&#160; </string>
+	<string name="month8">August&#160; </string>
+	<string name="month9">September&#160; </string>
+	<string name="month10">October&#160; </string>
+	<string name="month11">November&#160; </string>
+	<string name="month12">December&#160; </string>
+	
+	<string name="end_mark"> </string>
+	
+	<string name="space_text">" "</string>
+    	<string name="dot_pic_text">:</string>
+	<string name="am">AM</string>
+	<string name="pm">PM</string>
+</resources>

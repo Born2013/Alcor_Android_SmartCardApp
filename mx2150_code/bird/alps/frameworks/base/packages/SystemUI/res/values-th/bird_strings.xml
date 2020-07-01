@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/**
+ * Copyright (c) 2014, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="boost">ล้าง</string>
+    <!--[BIRD][BIRD_POWER_MANAGER_V2][省电管理V2.0][qianliliang][20160527] BEGIN-->
+    <string name="bird_low_battery">แบตเตอรี่ต่ำ</string>
+    <string name="bird_low_battery_remaining"><xliff:g id="NUMBER">%s</xliff:g>%% แบตเตอรี่เหลืออยู่.</string>
+    <string name="bird_low_battery_remaining_with_timer_count">มีการตั้งค่า <xliff:g id="NUMBER">%s</xliff:g>%% ของพลังงานโดยอัตโนมัติให้เป็นพลังงานซุปเปอร์ปัจจุบันมีเพียง <xliff:g id="NUMBER">%s</xliff:g>%% เท่านั้น  \n(<xliff:g id="NUMBER">%s</xliff:g>s ป้อนโดยอัตโนมัติ)</string>
+    <string name="bird_cancel">ยกเลิก</string>
+    <string name="bird_enter_super_saver">โหมดประหยัดพลังงาน</string>
+    <!--[BIRD][BIRD_POWER_MANAGER_V2][省电管理V2.0][qianliliang][20160527] END-->
+    <!--[BIRD][BIRD_LONG_CLICK_BACK_UNLOCK_MODE][长按back键解除屏幕固定][hongzhihao][20160727]begin-->
+    <string name="bird_screen_pinning_description" msgid="1346522416878235405">การทำเช่นนี้จะเก็บไว้จนกว่าคุณจะเลิกตรึง แตะและคลิกค้างในเวลาเดียวกันเพื่อเลิกตรึง</string>
+    <!--[BIRD][BIRD_LONG_CLICK_BACK_UNLOCK_MODE][长按back键解除屏幕固定][hongzhihao][20160727]end-->
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] BEGIN-->
+    <string name="bird_screenshot_name">ซูปเปอร์ สกรีนช๊อต</string>
+    <string name="bird_screenshot_full">เต็ม</string>
+    <string name="bird_screenshot_regional">ภูมิภาค</string>
+    <string name="bird_screenshot_long">ยาว</string>
+    <string name="bird_screenshot_help">ความช่วยเหลือ</string>
+    <string name="bird_guide_full_str">คำแนะนำเกี่ยวกับภาพแบบเต็มจอ</string>
+    <string name="bird_guide_regional_str">คำแนะนำเกี่ยวกับภาพหน้าจอภูมิภาค</string>
+    <string name="bird_guide_long_str">คู่มือภาพหน้าจอสกรีนช๊อต</string>
+    <string name="bird_guide_full_tip0">1. เลือกเปลี่ยนอย่างรวดเร็ว \"ภาพหน้าจอสกรีนช๊อต \"</string>
+    <string name="bird_guide_full_tip1">2. เลือก \"ภาพเต็มหน้าจอ \"</string>
+    <string name="bird_guide_full_tip2">3. สร้างภาพโดยอัตโนมัติและบันทึกลงในแกลเลอรี่</string>
+    <string name="bird_guide_full_tip3">4. วิธีที่รวดเร็ว: กด \"Power \" และ \"Vol- \" พร้อมกัน</string>
+    <string name="bird_guide_regional_tip0">1. เลือกเปลี่ยนอย่างรวดเร็ว \"ภาพหน้าจอซูปเปอร์ สกรีนช๊อต \"</string>
+    <string name="bird_guide_regional_tip1">2. เลือก \"ภาพหน้าจอสกรีนช๊อต \"</string>
+    <string name="bird_guide_regional_tip2">3. เลือกช่องทำเครื่องหมายเพื่อตัดภาพ</string>
+    <string name="bird_guide_regional_tip3">4. บันทึกลงในแกลเลอรี่</string>
+    <string name="bird_guide_long_tip0">1. เลือกเปลี่ยนอย่างรวดเร็ว \"ภาพหน้าจอซุปเปอร์สกรีนช็อต \"</string>
+    <string name="bird_guide_long_tip1">2. เลือก \"ภาพหน้าจอยาว \"</string>
+    <string name="bird_guide_long_tip2">3. เลือกช่องทำเครื่องหมายเพื่อเปลี่ยนจุดเริ่มต้นและสิ้นสุดในหน้าปัจจุบัน</string>
+    <string name="bird_guide_long_tip3">4. เลือกตัวเลือกเพื่อดำเนินการต่อ</string>
+    <string name="bird_guide_long_tip4">5. เลือก \"บันทึก \"</string>
+    <string name="bird_guide_long_tip5">6. บันทึกลงในแกลเลอรี่</string>
+    <string name="bird_donot_support_long_screenshot">ไม่สนับสนุนภาพหน้าจอแบบสกรีนช๊อต</string>
+    <string name="bird_no_picture_saved">ไม่มีรูปภาพที่บันทึกไว้</string>
+    <string name="bird_user_option_cancel">ยกเลิก</string>
+    <string name="bird_user_option_next">ถัดไป</string>
+    <string name="bird_user_option_choose">เลือก</string>
+    <string name="bird_user_option_save">บันทึก</string>
+    <string name="screenshot_failed_text">ไม่สามารถใช้ภาพหน้าจอเนื่องจากมีพื้นที่เก็บข้อมูล จำกัด หรือไม่อนุญาตโดยแอปหรือองค์กรของคุณ</string>
+    <string name="bird_screenshot_merge_or_scroll_fail">หน้านี้ไม่สามารถเชื่อมต่อหรือไม่รองรับการหมุน,ไม่มีภาพหน้าจอยาว</string>
+    <string name="bird_screenshot_maxmum_count">ภาพหน้าจอสูงสุด 10 นิ้ว</string>
+    <string name="bird_screenshot_done">จับภาพหน้าจอแล้ว</string>
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] END-->
+    <!--[BIRD][BIRD_FINGER_PRINT_HINT][录入指纹后，锁屏界面提示"按下主屏幕以解锁"][zhangaman][20170310]begin-->
+    <string name="bird_fingerprint_hint">กดปุ่มโฮมเพื่อปลดล็อก</string>
+    <!--[BIRD][BIRD_FINGER_PRINT_HINT][录入指纹后，锁屏界面提示"按下主屏幕以解锁"][zhangaman][20170310]end-->
+    <!--[BIRD][BIRD_QS_POWER_SAVE_SUPPORT][下拉菜单界面添加“超级省电”快捷图标][yangheng][201603017]BEGIN-->
+    <string name="bird_powermanager_name">การจัดการกำลังงานสูงสุด</string>
+    <!--[BIRD][BIRD_QS_POWER_SAVE_SUPPORT][下拉菜单界面添加“超级省电”快捷图标][yangheng][201603017]END-->
+    <!--[BIRD][BIRD_SHOTDOWN_CHARGE_SUGGESTION][由于电池容量较大，建议在关机状态下充电，保证充电过程稳定][客户需求][yangbo][20170726]BEGIN -->
+    <string name="bird_shotdown_charge_suggestion_title">เคล็ดลับการชาร์จไฟ</string>
+    <string name="bird_shotdown_charge_suggestion">เนื่องจากความจุแบตเตอรี่สูงขอแนะนำให้ชาร์จไฟในสถานะปิดเครื่อง</string>
+    <!--[BIRD][BIRD_SHOTDOWN_CHARGE_SUGGESTION][由于电池容量较大，建议在关机状态下充电，保证充电过程稳定][客户需求][yangbo][20170726]BEGIN --> 
+</resources>
+

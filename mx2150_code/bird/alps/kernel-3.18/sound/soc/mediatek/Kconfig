@@ -1,0 +1,287 @@
+config MT_SND_SOC_V1
+	bool "MT_SND_SOC_V1"
+	default n
+	help
+	  If you say Y, enable MT_SND_SOC_V1_driver.
+
+config MT_SND_SOC_V2
+	bool "MT_SND_SOC_V2"
+	default n
+	help
+	  If you say Y, enable MT_SND_SOC_V2_driver.
+
+config MT_SND_SOC_V3
+	bool "MT_SND_SOC_V3"
+	default n
+	help
+	  If you say Y, enable MT_SND_SOC_V3_driver.
+
+config MT_SND_SOC_6570
+	bool "MT_SND_SOC_6570"
+	default n
+	help
+	  If you say Y, enable MT_SND_SOC_6570_driver.
+	  Must enable this to use medatek audio driver.
+	  The default value is n for MT6570.
+	  It is recommended not to change this.
+
+config MT_SND_SOC_6580
+	bool "MT_SND_SOC_6580"
+	default n
+	help
+	  If you say Y, enable MT_SND_SOC_6580_driver.
+
+config MT_SND_SOC_6755
+	bool "MT_SND_SOC_6755"
+	default n
+	help
+	  If you say Y, enable MT_SND_SOC_6755_driver.
+
+config MT_SND_SOC_6750
+	bool "MT_SND_SOC_6750"
+	help
+	  If you say Y, enable MT_SND_SOC_6750_driver.
+	  Must enable this to use medatek audio driver.
+	  The default value is n for MT8127.
+	  Recommnad to configure it before using MT8127 audio driver.
+
+config MT_SND_SOC_6797
+	bool "MT_SND_SOC_6797"
+	default n
+	help
+	  If you say Y, enable MT_SND_SOC_6797_driver.
+	  Must enable this to use medatek audio driver.
+	  The default value is y for MT6797.
+	  It's recommended no to change this.
+
+config MT_SND_SOC_CODEC
+	string "String for Mediatek audio codec"
+	help
+	  Specify Mediatek audio codec.
+	  Say "mt6351" if you have mt6351 audio codec.
+
+config MT_SND_SOC_8163
+	bool "MT_SND_SOC_8163"
+	default n
+	help
+	  If you say Y, enable MT_SND_SOC_8163_driver.
+
+config MT_SND_SOC_8127
+	bool "MT_SND_SOC_8127"
+	help
+	  If you say Y, enable MT_SND_SOC_8127_driver.
+	  Must enable this to use medatek 8127 audio driver.
+	  The default value is n for MT8127.
+	  Recommnad to configure it before using MT8127 audio driver.
+
+config MTK_SPEAKER
+	bool "MTK_SPEAKER"
+	default n
+	help
+	  If you say Y, enable MTK_SPEAKER_AMP
+
+config MTK_SPEAKER_USE_CLASSD
+	bool "MTK_SPEAKER_USE_CLASSD"
+	default n
+	help
+	  If you say Y, enable MTK SPEAKER use class D.
+
+config MTK_NXP_TFA9890
+	bool "MTK_NXP_TFA9890"
+	default n
+	help
+	  If you say Y, enable MTK_NXP_TFA9890 driver.
+
+config SND_SOC_MT8173
+	tristate
+
+config SND_SOC_MT8173_MT6391_MACH
+	tristate "ASoC Audio driver for MT8173 with MT6391 codec"
+	depends on ARCH_MT8173
+	select SND_SOC_MT8173
+	select SND_SOC_MT6391
+	help
+	  This adds audio driver for MT8173 platform with the MT6391 audio codec.
+
+config SND_SOC_MT8173_MT6391_ARIEL_MACH
+    tristate "ASoC Audio driver for MT8173 Ariel board"
+    depends on ARCH_MT8173
+    select SND_SOC_MT8173
+    select SND_SOC_MT6391
+    help
+        This adds audio driver for MT8173 Ariel board
+        with the MT6391 audio codec.
+        It depends on ARCH_MT8173.
+        Select Y to include related drivers.
+
+config MT_SND_SOC_2701
+	tristate
+
+config SND_SOC_MT2701_EVB
+	bool "SND_SOC_MT2701_EVB"
+	select MT_SND_SOC_2701
+	help
+	  Say Y if you want to use the MT2701 EVB
+	  Audio interfaces for MT2701.
+
+config SND_SOC_MT2701_RT5640
+	bool "SND_SOC_MT2701_RT5640"
+	select MT_SND_SOC_2701
+	select SND_SOC_RT5640
+	help
+	  This adds ASoC driver for Mediatek MT2701 boards
+	  with the RT5640 audio codec.
+	  Select Y if you have such device.
+
+config SND_SOC_MT2701_CS42448
+	bool "SND_SOC_MT2701_CS42448"
+	select MT_SND_SOC_2701
+	select SND_SOC_CS42XX8_I2C
+	help
+	  This adds ASoC driver for Mediatek MT2701 boards
+	  with the CS42448 audio codec.
+	  Select Y if you have such device.
+
+config SND_SOC_MT7623_RFB
+	bool "SND_SOC_MT7623_RFB"
+	select MT_SND_SOC_2701
+	help
+	  This adds ASoC driver for Mediatek MT7623 RFB boards
+	  with WS2431 audio daughter board.
+	  The driver is based on MT_SND_SOC_2701.
+	  Select Y if you have such device.
+
+config SND_SOC_MT7623_WM8960
+	bool "SND_SOC_MT7623_WM8960"
+	select MT_SND_SOC_2701
+	select SND_SOC_WM8960
+	help
+	  This adds ASoC driver for Mediatek MT7623 RFB boards
+	  with WS2408(WM8960) audio daughter board.
+	  The driver is based on MT_SND_SOC_2701.
+	  Select Y if you have such device.
+
+config SND_SOC_MT8167
+	tristate
+
+config SND_SOC_MT8167_MT6392_MACH
+	tristate "ASoC Audio driver for MT8167 with internal codec"
+	depends on ARCH_MT8167
+	select SND_SOC_MT8167
+	select SND_SOC_MT8167_CODEC
+	help
+	  This adds support for ASoC machine driver for Mediatek MT8167
+	  platforms with internal audio codec and speaker amplifier MT6392.
+	  Select Y if you have such device.
+	  If unsure select "N".
+
+config MTK_SPKGPIO_REWORK
+	bool "MTK_SPKGPIO_REWORK"
+	default n
+	help
+	  This is only for MTK internal phone only
+	  Enable SPKGPIO REWORK check functionality
+	  Will choose the correct GPIO for external AMP
+	  If you say Y, enable MTK_SPKGPIO_REWORK
+
+config MTK_HP_ANASWITCH
+	bool "MTK_HP_ANASWITCH"
+	default n
+	help
+	  This will enable headphone analog switch control
+	  for de-pop functionality
+	  Only enable this when you have headphone analog switch
+	  If you say Y, enable MTK_HP_ANASWITCH
+
+config MTK_BTCVSD_ALSA
+	bool "MTK_BTCVSD_ALSA"
+	default n
+	help
+	  If you say Y, enable MTK_BTCVSD_ALSA.
+
+config MTK_SND_SOC_NEW_ARCH
+	bool "Support new audio architecture"
+	help
+	  If you say Y, enable MTK_SND_SOC_NEW_ARCH.
+	  Only enable this when you use refactored audio driver architecture.
+
+config MTK_OFFLOAD_PLAYBACK
+	bool "Audio playback through dsp"
+	help
+	  If you say Y, enable MTK_OFFLOAD_PLAYBACK.
+	  Only enable this when we have DSP.
+	  This makes audio out pass bitstream, and decoding process is done in DSP.
+
+config MTK_SND_HYBRID_DRE_SUPPORT
+	bool "Audio Hybrid DRE support"
+	help
+	  If you say Y, enable MTK_SND_HYBRID_DRE_SUPPORT.
+	  Only enable this when we have Hybrid DRE feature.
+	  
+# [BIRD Ext_Speaker_Amp single pulse mode control]
+# Add by Sky --20160428
+config BIRD_EXT_SPEAKER_AMP_SINGLE_PULSE
+	bool "BIRD_EXT_SPEAKER_AMP_SINGLE_PULSE"
+	default n
+	help
+	  If you say Y, enable BIRD_EXT_SPEAKER_AMP single pulse
+	  If you say N, enable BIRD_EXT_SPEAKER_AMP three pulses
+
+# [BIRD Ext_Speaker_Amp single pulse mode control]
+
+# [BIRD Ext_Speaker_Amp two pulse mode control]
+# Add by gl --20170803
+config BIRD_EXT_SPEAKER_AMP_TWO_PULSE
+	bool "BIRD_EXT_SPEAKER_AMP_TWO_PULSE"
+	default n
+	help
+	  If you say Y, enable BIRD_EXT_SPEAKER_AMP single pulse
+	  If you say N, enable BIRD_EXT_SPEAKER_AMP three pulses
+
+# [BIRD Ext_Speaker_Amp two pulse mode control]
+
+# [BIRD Ext_Speaker_Amp four pulse mode control]
+# Add by Crystal --20161103
+config BIRD_EXT_SPEAKER_AMP_FOUR_PULSE
+	bool "BIRD_EXT_SPEAKER_AMP_FOUR_PULSE"
+	default n
+	help
+	  If you say Y, enable BIRD_EXT_SPEAKER_AMP four pulse
+	  If you say N, enable BIRD_EXT_SPEAKER_AMP three pulses
+
+# [BIRD Ext_Speaker_Amp four pulse mode control]
+
+# [BIRD Ext_Speaker_Amp five pulse mode control]
+# Add by MichaelYu --20170801
+config BIRD_EXT_SPEAKER_AMP_FIVE_PULSE
+	bool "BIRD_EXT_SPEAKER_AMP_FIVE_PULSE"
+	default n
+	help
+	  If you say Y, enable BIRD_EXT_SPEAKER_AMP five pulse
+	  If you say N, enable BIRD_EXT_SPEAKER_AMP three pulses
+
+# [BIRD Ext_Speaker_Amp five pulse mode control]
+
+# Add by Crystal Bird --20160810
+config BIRD_MTK_FM_SHORT_ANTENNA_SUPPORT
+	bool "BIRD_MTK_FM_SHORT_ANTENNA_SUPPORT"
+	default n
+	help
+	  If you say Y, enable FM EXT
+	  If you say N, enable FM ACCDET
+
+config BIRD_MTK_FM_SHORT_ANTENNA_SUPPORT_FOR_MX2150E
+	bool "BIRD_MTK_FM_SHORT_ANTENNA_SUPPORT_FOR_MX2150E"
+    	depends on BIRD_MTK_FM_SHORT_ANTENNA_SUPPORT
+	default n
+	help
+	  If you say Y, enable FM EXT GPIO121
+	  If you say N, enable FM ACCDET
+
+# Add by Crystal --20170614
+config BIRD_AW87319_SPEAKER_PA_SUPPORT
+	bool "BIRD_AW87319_SPEAKER_PA_SUPPORT"
+	default n
+	help
+	  If you say Y, enable smart aw87319pa
+	  If you say N, enable normal aw8736pa

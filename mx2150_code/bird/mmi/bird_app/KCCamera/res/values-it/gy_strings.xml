@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="gy_accessibility_switch_to_bokeh">"La lente stereo è bloccata."</string>
+
+	<!--[BIRD][GANGYUN_BOKEH_SUPPORT][双摄][yangheng][20170215] BEGIN-->
+	<string name="bd_dual_cover">"La fotocamera secondaria è coperta."</string>
+	<!--[BIRD][GANGYUN_BOKEH_SUPPORT][双摄][yangheng][20170215] END-->
+</resources>

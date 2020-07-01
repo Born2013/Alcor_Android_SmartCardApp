@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView  
+        android:id="@+id/Accelerator"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:text="@string/accelerator_test"
+        android:textColor="#0000ff"
+        android:textSize="19sp" />
+    <TextView
+        android:id="@+id/Wifi"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/Accelerator"
+        android:text="@string/wifi_test"
+        android:textColor="#0000ff"
+        android:textSize="19sp" />
+    <TextView
+        android:id="@+id/Bluetooth"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/Wifi"
+        android:text="@string/bluetooth_test"
+        android:textColor="#0000ff"
+        android:textSize="19sp" />
+    <!--[BIRD][FM测试暂时改为c院 自动判断方式，放到wifi 蓝牙测试项一起][xuzhenguo][20150717]BEGIN-->
+    <TextView  
+        android:id="@+id/FMCheckStatus"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/Bluetooth"
+        android:text="@string/fm"
+        android:textColor="#0000ff"
+        android:textSize="19sp" />
+    <!--[BIRD][FM测试暂时改为c院 自动判断方式，放到wifi 蓝牙测试项一起][xuzhenguo][20150717]END-->
+    <TextView  
+        android:id="@+id/Proximity"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/FMCheckStatus"
+        android:text="@string/proximity_test"
+        android:textColor="#0000ff"
+        android:textSize="19sp" />     <!--[BIRD][FM测试暂时改为c院 自动判断方式，放到wifi 蓝牙测试项一起][xuzhenguo][20150717]-->
+    <TextView  
+        android:id="@+id/Hide_Proximity"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/Proximity"
+        android:text="@string/hide_proximity_sensor"
+        android:textColor="#ffffff"
+        android:textSize="19sp" />
+    <TextView  
+        android:id="@+id/Gps"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/Hide_Proximity"
+        android:text="@string/gps_waiting"
+        android:textColor="#0000ff"
+        android:textSize="19sp"
+        android:layout_marginTop="10dip" />
+
+    <LinearLayout
+        android:id="@+id/add_bottom_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/correct"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:text="@string/next_step_btn"
+            android:textSize="19sp" />
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:text="@string/reset"
+            android:textSize="19sp" />
+    </LinearLayout>
+
+</RelativeLayout>

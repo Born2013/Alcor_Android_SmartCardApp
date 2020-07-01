@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--[BIRD][BIRD_REBOOT_MENU][重新启动][yangheng][20161121] BEGIN -->
+    <string name="zzzzz_power_reboot">รีบูต</string>
+    <string name="zzzzz_power_restart">รีบูต</string>
+    <string name="zzzzz_power_restart_alert">รีสตาร์ทโทรศัพท์ของคุณจะลบไฟล์ชั่วคราวออกจากหน่วยความจำ คุณต้องการรีสตาร์ทโทรศัพท์ของคุณตอนนี้หรือไม่?</string>
+    <!--[BIRD][BIRD_REBOOT_MENU][重新启动][yangheng][20161121] END -->
+    <!--[BIRD][BIRD_ADD_SEARCH_ENGINE_AS_DEFAULT][全局增加搜索引擎并设为默认][qianliliang][20160627] BEGIN -->
+    <string name="zzzzz_bird_add_search_engine_sp">--</string>
+    <!--[BIRD][BIRD_ADD_SEARCH_ENGINE_AS_DEFAULT][全局增加搜索引擎并设为默认][qianliliang][20160627] END -->
+    <!--[BIRD][BIRD_PARBATTECH_APPRECOMMEND][基于Parbattech公司的接口实现的应用推荐][yangbo][20170529]BEGIN -->
+    <string name="zzzzz_bird_ic_app_recommend_notification_content">กำลังรอให้คุณตั้งค่าอุปกรณ์</string>
+    <string name="zzzzz_bird_ic_app_recommend_notification_title">ตั้งค่าอุปกรณ์ของคุณ</string>
+    <!--[BIRD][BIRD_PARBATTECH_APPRECOMMEND][基于Parbattech公司的接口实现的应用推荐][yangbo][20170529]END -->
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170629]BEGIN -->
+    <string name="zzzzz_secure_user_name">พื้นที่ความปลอดภัย</string>
+    <string name="zzzzz_secure_user_deleted">พื้นที่ความปลอดภัยถูกลบแล้ว</string>
+    <string name="zzzzz_secure_user_deleting">ลบพื้นที่ความปลอดภัย ...</string>
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170629]END --> 
+</resources>
+

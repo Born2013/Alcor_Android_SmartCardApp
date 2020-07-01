@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/otg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/otg_value"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="120dp"
+        android:visibility="gone"
+        android:textSize="16dp"/>
+
+    <!--[BIRD][BIRD_FACTORY_ASSEMBLE_TEST_OTG_SUPPORT][工厂装配测试 OTG][husijia][20151124]begin-->
+    <TextView
+        android:id="@+id/otg_device"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/otg_device_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="120dp"
+        android:textSize="16dp"/>
+    <!--[BIRD][BIRD_FACTORY_ASSEMBLE_TEST_OTG_SUPPORT][工厂装配测试 OTG][husijia][20151124]end-->
+
+    <LinearLayout
+        android:id="@+id/add_bottom_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/correct"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:text="@string/correct"
+            android:textSize="19dp" />
+
+        <Button
+            android:id="@+id/error"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:text="@string/error"
+            android:textSize="19dp" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:text="@string/reset"
+            android:textSize="19dp" />
+    </LinearLayout>
+
+</RelativeLayout>
+

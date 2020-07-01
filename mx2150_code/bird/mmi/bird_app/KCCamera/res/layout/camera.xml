@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This layout is shared by phone and tablet in landscape orientation. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/camera_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false">
+    <FrameLayout android:id="@+id/camera_surfaceview_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"> 
+    </FrameLayout>
+    <FrameLayout android:id="@+id/camera_app_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false">
+        <View android:id="@+id/camera_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:visibility="visible"/>
+	<!--[BIRD][GANGYUN_BOKEH_SUPPORT][双摄][yangheng][20170215] BEGIN-->
+	<!-- gangyun tech add begin -->
+	<FrameLayout
+	  	android:id="@+id/gy_preview_cover_root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <ImageView
+                    android:id="@+id/gy_preview_coverview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00000000"
+                     />
+        </FrameLayout>
+	<!-- gangyun tech add end -->
+	<!--[BIRD][GANGYUN_BOKEH_SUPPORT][双摄][yangheng][20170215] END-->
+        <include layout="@layout/preview_frame"/>
+        <include layout="@layout/view_layers"/>
+        <!--[BIRD][GANGYUN_BOKEH_SUPPORT][双摄][yangheng][20170215] BEGIN-->
+        <ImageView
+            android:id="@+id/bird_dual_guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/zzz_bird_dual_guide_image"
+            android:visibility="gone"
+             />
+        <!--[BIRD][GANGYUN_BOKEH_SUPPORT][双摄][yangheng][20170215] END-->
+    </FrameLayout>
+</FrameLayout>

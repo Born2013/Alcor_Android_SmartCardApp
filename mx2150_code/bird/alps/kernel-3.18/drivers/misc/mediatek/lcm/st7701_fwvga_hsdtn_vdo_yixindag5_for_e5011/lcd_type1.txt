@@ -1,0 +1,9 @@
+模组厂	易欣达
+IC型号	ST7701-G5
+玻璃	HSD（TN）
+分辨率	480*854
+丝印	Y85600
+ID脚	"ID1  R1=10K接（1）
+ID2  R3=10K接（1）"
+command或vedio	video
+

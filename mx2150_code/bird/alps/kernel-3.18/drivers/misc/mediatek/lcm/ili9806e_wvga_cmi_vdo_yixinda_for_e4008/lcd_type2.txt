@@ -1,0 +1,7 @@
+模组厂	易欣达
+IC型号	ILI9806E-2
+玻璃	奇美
+分辨率	WVGA
+丝印	Digital FPC-Y87136 V01
+ID脚	0，0
+

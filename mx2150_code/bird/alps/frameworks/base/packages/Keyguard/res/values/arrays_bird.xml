@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW][皮套][zhangaman][20160831]begin-->
+    <array name="zzzzz_keyguard_bird_digital_number_targets">
+        <item>@drawable/zzzz_keyguard_bird_leather_number_0</item>
+        <item>@drawable/zzzz_keyguard_bird_leather_number_1</item>
+        <item>@drawable/zzzz_keyguard_bird_leather_number_2</item>
+        <item>@drawable/zzzz_keyguard_bird_leather_number_3</item>
+        <item>@drawable/zzzz_keyguard_bird_leather_number_4</item>
+        <item>@drawable/zzzz_keyguard_bird_leather_number_5</item>
+        <item>@drawable/zzzz_keyguard_bird_leather_number_6</item>
+        <item>@drawable/zzzz_keyguard_bird_leather_number_7</item>
+        <item>@drawable/zzzz_keyguard_bird_leather_number_8</item>
+        <item>@drawable/zzzz_keyguard_bird_leather_number_9</item>
+        <item>@drawable/zzzz_keyguard_bird_leather_number_dot</item>
+    </array>
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW][皮套][zhangaman][20160831]end-->
+    
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW_STYLE][皮套风格1][zhangaman][20170524]begin-->
+    <array name="zzzzz_keyguard_bird_digital_number_targets_style1">
+        <item>@drawable/zzzz_bird_leather_style1_number_0</item>
+        <item>@drawable/zzzz_bird_leather_style1_number_1</item>
+        <item>@drawable/zzzz_bird_leather_style1_number_2</item>
+        <item>@drawable/zzzz_bird_leather_style1_number_3</item>
+        <item>@drawable/zzzz_bird_leather_style1_number_4</item>
+        <item>@drawable/zzzz_bird_leather_style1_number_5</item>
+        <item>@drawable/zzzz_bird_leather_style1_number_6</item>
+        <item>@drawable/zzzz_bird_leather_style1_number_7</item>
+        <item>@drawable/zzzz_bird_leather_style1_number_8</item>
+        <item>@drawable/zzzz_bird_leather_style1_number_9</item>
+        <item>@drawable/zzzz_bird_leather_style1_number_dot</item>
+    </array>
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW_STYLE][皮套风格1][zhangaman][20170524]end-->
+</resources>
+    

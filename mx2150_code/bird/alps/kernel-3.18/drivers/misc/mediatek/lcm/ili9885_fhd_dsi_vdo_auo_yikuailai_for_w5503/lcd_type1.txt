@@ -1,0 +1,8 @@
+模组厂	益快来
+IC型号	ILI9885
+玻璃	AUO 5.46寸 
+分辨率	FHD 1080*1920
+丝印	LP055AIRP425A
+ID脚	0， 0
+command或vedio	video
+

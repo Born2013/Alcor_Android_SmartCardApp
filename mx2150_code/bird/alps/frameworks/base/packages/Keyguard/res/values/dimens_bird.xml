@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/dimens.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources>
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW][皮套][zhangaman][20160831]begin-->
+    <dimen name="leather_cover_host_view_width">572px</dimen>
+    <dimen name="leather_cover_host_view_height">572px</dimen>
+    <dimen name="leather_cover_host_view_top">18dip</dimen>
+    <dimen name="leather_cover_clock_view_top">95dip</dimen>
+    <dimen name="leather_cover_music_top">40dip</dimen>
+    <dimen name="leather_cover_music_bottom">60dip</dimen>
+    <integer name="analogclock_date_size">16</integer>
+    <integer name="analogclock_date_offset">113</integer>
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW][皮套][zhangaman][20160831]end-->
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW_STYLE][皮套风格1][zhangaman][20170524]begin-->
+    <dimen name="leather_cover_music_bottom_style1">40dp</dimen>
+    <dimen name="leather_cover_host_view_width_style1">141dp</dimen>
+    <dimen name="leather_cover_host_view_height_style1">354dp</dimen>
+    <dimen name="leather_cover_host_view_margin_right_style1">24dp</dimen>
+    <dimen name="leather_cover_time_margin_top_stylel">12dp</dimen>
+    <dimen name="leather_cover_music_margin_top_stylel">127dp</dimen>
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW_STYLE][皮套风格1][zhangaman][20170524]end-->
+</resources>

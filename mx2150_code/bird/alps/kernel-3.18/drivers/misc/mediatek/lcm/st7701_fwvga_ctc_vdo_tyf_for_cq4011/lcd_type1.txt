@@ -1,0 +1,8 @@
+模组厂	天亿富
+IC型号	ST7701
+玻璃	3.97，
+分辨率	WVGA480*800
+丝印	FPC丝印：LCM-40Q031;
+ID脚	ID(ID1：GND，ID2：GND)
+command或vedio	viedio
+

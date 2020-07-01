@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> 
+    <!-- [BIRD MTK_THEMEMANAGER_APP][Actionbar Title style]xujing 20140806 -->
+    <style name="zzzz_actionbar_title_style" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/zzzzz_actionbar_title_size</item>
+        <item name="android:textColor">#ff1283cf</item>
+        <item name="android:shadowColor">#00ffffff</item>
+        <item name="android:shadowDx">1.6</item>
+        <item name="android:shadowDy">1.6</item>
+        <item name="android:shadowRadius">2.0</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- [BIRD MTK_THEMEMANAGER_APP][Actionbar button style]xujing 20140806 -->
+    <style name="zzzz_actionbar_button_text_style" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0dp</item>
+        <item name="android:textColor">@color/zzzzz_bottom_button_text_color</item>
+        <item name="android:shadowColor">#00ffffff</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.8</item>
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <!-- [BIRD MTK_THEMEMANAGER_APP][底部tab的style]huangzhangbin 20140826  -->
+    <style name="zzzzz_bottom_tab_text_style" parent="@android:style/TextAppearance">
+        <item name="android:textSize">13.0dp</item>
+        <item name="android:textColor">@color/zzzzz_bottom_button_text_color</item>
+        <item name="android:shadowColor">#00ffffff</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.8</item>
+    </style>
+
+    <!-- [BIRD][底部button的style]chengshujiang 20141118  -->
+    <style name="zzzzz_bottom_button_text_style" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/zzzzz_bottom_button_text_color</item>
+        <item name="android:shadowColor">#00ffffff</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.8</item>
+    </style>
+</resources>

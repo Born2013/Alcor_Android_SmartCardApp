@@ -1,0 +1,19 @@
+#
+# Touchscreen driver configuration
+#
+
+if TOUCHSCREEN_MTK_GT1XX
+
+
+config GT1XX_FIRMWARE
+	string "GT1XX for Mediatek firmware"
+
+
+config GT1XX_CONFIG
+	string "GT1XX for Mediatek config"
+
+
+
+
+
+endif

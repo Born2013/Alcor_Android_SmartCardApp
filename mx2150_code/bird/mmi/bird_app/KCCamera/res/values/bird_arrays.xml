@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+
+<resources>
+
+    <!-- [BIRD][BIRD_VOLUME_KEY_FEATURE_IN_CAMERA][相机设置中增加音量键功能选项][qianliliang][20151209]BEGIN -->
+    <string-array name="bird_pref_volume_key_feature_entries">
+        <item>@string/bird_pref_volume_key_feature_zoom</item>
+        <item>@string/bird_pref_volume_key_feature_shoot</item>
+        <item>@string/bird_pref_volume_key_feature_volume</item>
+    </string-array>
+    <string-array name="bird_pref_volume_key_feature_entryvalues" translatable="false">
+        <item>zoom</item>
+        <item>shoot</item>
+        <item>volume</item>
+    </string-array>
+    <!-- [BIRD][BIRD_VOLUME_KEY_FEATURE_IN_CAMERA][相机设置中增加音量键功能选项][qianliliang][20151209]END --> 
+
+    <!-- [BIRD][BIRD_ADD_CAMERA_SHUTTERSOUND][拍照提示音控制菜单][qianliliang][20151210] BEGIN -->
+    <!-- shuttersound -->
+    <string-array name="pref_camera_shutter_sound_entries">
+        <item>@string/pref_camera_shutter_sound_entry_off</item>
+        <item>@string/pref_camera_shutter_sound_entry_on</item>
+    </string-array>
+    <string-array name="pref_camera_shutter_sound_entryvalues" translatable="false">
+        <item>off</item>
+        <item>on</item>
+    </string-array>   
+    <!-- [BIRD][BIRD_ADD_CAMERA_SHUTTERSOUND][拍照提示音控制菜单][qianliliang][20151210] END -->
+
+</resources>

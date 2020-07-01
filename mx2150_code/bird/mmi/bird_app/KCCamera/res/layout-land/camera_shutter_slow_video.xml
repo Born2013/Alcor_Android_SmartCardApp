@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/camera_shutter"
+    style="@style/ShutterGroup"
+    android:splitMotionEvents="false">
+    <com.android.camera.ui.ShutterButton
+        android:id="@+id/shutter_button_photo"
+        style="@style/ShutterButton"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/btn_photo"
+        android:contentDescription="@string/accessibility_shutter_button"
+        android:layout_marginRight="10dp"/><!--[BIRD][BIRD_KUSAI_CAMERA][chengshujiang]20170623 -->
+    <!--[BIRD][BIRD_KUSAI_CAMERA][chengshujiang]20170623 begin-->
+    <!--<ImageView style="@style/ShutterButtonSeperator"
+        android:layout_height="1dp"
+        android:layout_weight="0" />-->
+    <!--[BIRD][BIRD_KUSAI_CAMERA][chengshujiang]20170623 end-->
+       <com.android.camera.ui.ShutterButton
+        android:id="@+id/shutter_button_slow_video"
+        style="@style/ShutterButton"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/btn_slow_video"
+        android:contentDescription="@string/accessibility_video_shutter_button"/>
+</LinearLayout>

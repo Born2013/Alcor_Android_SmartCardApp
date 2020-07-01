@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:fitsSystemWindows="true" 
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/background_color"
+        android:minHeight="@dimen/actionbar_height"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/action_help"
+            android:layout_width="48dp"
+            android:layout_height="48dp" 
+            android:layout_alignParentLeft="true">
+            
+            <ImageView
+                android:layout_height="24dp"
+                android:layout_width="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/actionbar_help"/>
+                
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/action_menu"
+            android:layout_width="48dp"
+            android:layout_height="48dp" 
+            android:layout_alignParentRight="true">
+            
+            <ImageView
+                android:layout_height="24dp"
+                android:layout_width="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/actionbar_menu"/>
+                
+        </RelativeLayout>
+    </RelativeLayout>
+    
+    <fragment 
+        android:id="@+id/circle_fragment"
+        android:name="com.sensortek.stkhealthcare2.PulseFragment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/circle_fragment_height"/>
+        
+    <fragment 
+        android:id="@+id/history_value_fragment"
+        android:name="com.sensortek.stkhealthcare2.HeartFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1"/>
+    </LinearLayout>

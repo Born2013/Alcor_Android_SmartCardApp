@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW][皮套][zhangaman][20160831]begin-->
+    <string name="zz_keyguard_low_battery">电量低</string>
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW][皮套][zhangaman][20160831]end-->
+
+    <!--[BIRD][BIRD_SHOW_NETWORK_LOCK_TIP][锁网界面显示“请在slot1插入Seatel SIM卡”][pangmeizhou][20161225]begin-->
+	<string name="bd_network_lock_tip">请在slot1插入Seatel SIM卡</string>
+    <!--[BIRD][BIRD_SHOW_NETWORK_LOCK_TIP][锁网界面显示“请在slot1插入Seatel SIM卡”][pangmeizhou][20161225]end-->
+    <!--[BIRD][BIRD_FINGER_PRINT][指纹功能拓展][指纹识别失败，亮屏提示][dingjiayuan][20161031]BEGIN-->
+    <string name="fingerprint_failed">指纹识别失败，请用密码解锁</string>
+    <!--[BIRD][BIRD_FINGER_PRINT][指纹功能拓展][指纹识别失败，亮屏提示][dingjiayuan][20161031]END-->
+
+    <!--[BIRD][BIRD_FREEZE_PHONE_WHEN_SLOT_PERMANENTLY_LOCKED][当卡槽被完全锁死(锁网剩余次数为0)时，手机将无法使用][yangbo][20170506]BEGIN -->
+    <string name="bird_freeze_phone_tip">"手机已被锁死"</string>
+    <!--[BIRD][BIRD_FREEZE_PHONE_WHEN_SLOT_PERMANENTLY_LOCKED][当卡槽被完全锁死(锁网剩余次数为0)时，手机将无法使用][yangbo][20170506]END -->
+
+    <!--[BIRD][BIRD_KUSAI_KEYGUARD][基于原生锁屏的酷赛锁屏][zhangaman][20170623]begin-->
+     <string name="bird_kusai_dateformat">MMMd日 E</string>
+    <!--[BIRD][BIRD_KUSAI_KEYGUARD][基于原生锁屏的酷赛锁屏][zhangaman][20170623]end-->
+
+    <!--[BIRD][BIRD_OLD_PHONE]add by caoyuangui 20170801 begin -->
+    <string name="zzzzz_unlock_tips">"向上滑动解锁"</string>
+    <string name="zzzzz_charging_tips">"正在充电 ( %1$d"</string>
+    <string name="zzzzz_charging_full">已充满</string>
+    <string name="zzzzz_oldphone_date_format">"M月d日"</string>
+    <string name="lunar">%1$s%2$s</string>
+    <string name="oldphone_count_msg">您有(%1$d)亲情消息</string>
+    <string name="oldphone_count_miss">您有(%1$d)个未接电话</string>
+    <string name="oldphone_start_contact">再次轻击打开</string>
+    <!--[BIRD][BIRD_OLD_PHONE]add by caoyuangui 20170801 end -->
+
+</resources>

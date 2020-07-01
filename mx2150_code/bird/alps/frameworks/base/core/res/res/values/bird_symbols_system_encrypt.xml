@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  <private-symbols package="com.android.internal" />
+  <!-- [BIRD][BIRD_SECRET_CODE_CUSTOM][手机暗码指令自定义][luye][20160520]BEGIN -->
+  <java-symbol type="string" name="zzzzz_system_tamper_prompt" />
+  <!-- [BIRD][BIRD_SECRET_CODE_CUSTOM][手机暗码指令自定义][luye][20160520]END -->
+</resources>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="true" android:state_pressed="true" android:drawable="@drawable/oldphone_dialog_bottom_btn_pre"/>
+    <item android:state_enabled="true" android:state_pressed="false" android:drawable="@drawable/oldphone_dialog_bottom_btn_nor"/>
+    <item android:state_enabled="false" android:drawable="@drawable/oldphone_dialog_bottom_btn_dis"/>
+    <item android:drawable="@drawable/oldphone_dialog_bottom_btn_nor"/>
+
+</selector>

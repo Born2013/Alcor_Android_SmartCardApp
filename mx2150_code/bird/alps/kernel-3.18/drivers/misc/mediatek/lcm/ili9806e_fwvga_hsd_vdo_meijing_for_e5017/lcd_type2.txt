@@ -1,0 +1,8 @@
+模组厂	美景
+IC型号	ILI9806E-2C
+玻璃	翰彩
+分辨率	480*854
+丝印	MJ50139N-A
+ID脚	LCM_ID1=1.8V LCM_ID2=GND
+command或vedio	Video
+

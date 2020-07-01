@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.bird.smt_sw"
+      android:versionCode="1"
+      android:versionName="1.0" android:sharedUserId="android.uid.system">
+    <uses-sdk android:minSdkVersion="9" />
+<!-- android:label="@string/Pro_info" -->
+      <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>  
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.DEVICE_POWER"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+	<uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FM_RADIO" />
+    <!--[BIRD][BIRD_SMT_SW_FINGER_PRINT_SENEOR][贴片测试_指纹传感器测试][zhangaman][20160815]begin-->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <!--[BIRD][BIRD_SMT_SW_FINGER_PRINT_SENEOR][贴片测试_指纹传感器测试][zhangaman][20160815]end-->
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".MMIStartTest"
+                   
+                  android:screenOrientation="portrait">
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                
+                <!--  -<category android:name="android.intent.category.HOME" />-->
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Test_launcherActivity"
+                  android:label="@string/test_report"
+                  android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity android:name=".Pro_info"
+                  android:label="@string/Pro_info" 
+                  android:screenOrientation="portrait">
+                  
+        </activity>
+        <activity android:name=".MMIProduceTest"
+                  android:label="@string/produce_info"
+                  android:screenOrientation="portrait">
+        </activity>
+         
+        <receiver android:name="Boot_receiver" >
+            <intent-filter >
+            <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        
+        <service android:name=".MMITestBootupService">
+            <intent-filter >
+            <action android:name="com.bird.smt_sw.MMITestBootupService"/>
+            </intent-filter>
+        </service>
+        <activity android:name=".MMILedTest" 
+                  android:label="@string/led"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".MMIMainCameraTest"
+                  android:label="@string/main_camera"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".MMISubCameraTest"
+                  android:label="@string/sub_camera"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".MMIRecordTest"
+                  android:label="@string/record"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".MMIRecordMainBoardMic"
+                  android:label="@string/record"
+                  android:screenOrientation="portrait">
+        </activity>
+        
+        <activity android:name=".MMIKeyBoardTest"
+                  android:label="@string/keyboard"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".MMIVibraterTest"
+                  android:label="@string/vibrater"
+                  android:screenOrientation="portrait">
+        </activity>
+        
+        <activity android:name=".MMIFMTest"
+                  android:label="@string/fm"
+                  android:screenOrientation="portrait">
+        </activity>
+        
+        <activity android:name=".MMIReceiverTest"
+                  android:label="@string/receiver"
+                  android:screenOrientation="portrait">
+        </activity>
+        
+        <activity android:name=".MMIHeadsetRecordTest"
+                  android:label="@string/record"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".MMIMicRecordTest"
+                  android:label="@string/record"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".MMIGPSTest"
+                  android:label="@string/gps"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".MMIBreathLedTest"
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".MMIOTGTest"
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".MMILightSensorTest"
+                  android:label="@string/light"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".MMITestMainMic"
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".MMITestSubMic"
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".MMITestSpeaker"
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait"/>
+		<activity android:name=".MMITestOTGOpen"
+		          android:configChanges="orientation"
+                          android:screenOrientation="portrait"/>                  
+	 <!--[BIRD]add by zhangaman 20150717 begin -->
+        <activity
+            android:name="MMITestLoopdEarphoneFactory"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+	 <!--[BIRD]add by zhangaman 20150717 end -->
+
+    <!--[BIRD][BIRD_SMT_SW_MAGNETIC_SENSOR][指南针测试][qianliliang][20160722]BEGIN-->
+    <activity android:name=".MMIMagneticSensorTest"
+        android:configChanges="orientation"
+        android:screenOrientation="portrait"/>
+    <!--[BIRD][BIRD_SMT_SW_MAGNETIC_SENSOR][指南针测试][qianliliang][20160722]END-->
+        <!--[BIRD][BIRD_SMT_SW_SDCARD][SD卡测试][zhangaman][20160726]begin-->
+        <activity android:name=".MMISDCardTest"
+                  android:label="@string/sd_card"
+                  android:screenOrientation="portrait">
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_SDCARD][SD卡测试][zhangaman][20160726]end-->
+	<!--[BIRD][BIRD_SMT_SW_FINGER_PRINT_SENEOR][贴片测试_指纹传感器测试][zhangaman][20160815]begin-->
+        <activity
+            android:name=".MMIFpTestFactory"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_FINGER_PRINT_SENEOR][贴片测试_指纹传感器测试][zhangaman][20160815]end-->
+        <!--[BIRD][BIRD_SMT_SW_SUB_BACK_CAMERA][贴片测试-副后摄][zhangaman][20160209]begin-->
+        <activity
+            android:name=".MMISubBackCameraTest"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_SUB_BACK_CAMERA][贴片测试-副后摄][zhangaman][20160209]end-->
+        <!--[BIRD][BIRD_SMT_SW_REMOTE][贴片测试_红外测试][zhangaman][20170515]begin-->
+        <activity
+            android:name=".MMIRemoteTest"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_REMOTE][贴片测试_红外测试][zhangaman][20170515]end-->
+        <!--[BIRD][BIRD_SMT_SW_GYROSCOPE][贴片测试_陀螺仪测试][zhangaman][20170516]begin-->
+        <activity
+            android:name=".MMITestGyroscope"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_GYROSCOPE][贴片测试_陀螺仪测试][zhangaman][20170516]end-->
+        <!--[BIRD][BIRD_SMT_SW_MARQUEE_LED_TEST][贴片测试_跑马灯测试][zhangaman][20170703]begin-->
+        <activity
+            android:name=".MMITestMarqueeLed"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_MARQUEE_LED_TEST][贴片测试_跑马灯测试][zhangaman][20170703]end-->
+        <!--[BIRD][BIRD_SMT_SW_PRESSURE_TEST][贴片测试_气压测试][zhangaman][20170706]begin-->
+        <activity
+            android:name=".MMITestPressure"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_PRESSURE_TEST][贴片测试_气压测试][zhangaman][20170706]end-->
+        <!--[BIRD][BIRD_SMT_SW_TEMPERATURE_TEST][贴片测试_气温测试][zhangaman][20170707]begin-->
+        <activity
+            android:name=".MMITestTemperature"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_TEMPERATURE_TEST][贴片测试_气温测试][zhangaman][20170707]end-->
+        <!--[BIRD][BIRD_SMT_SW_HALL_SENSOR_SUPPORT][贴片测试_霍尔测试][zhangaman][20170718]begin-->
+        <activity
+            android:name=".MMITestHall"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_HALL_SENSOR_SUPPORT][贴片测试_霍尔测试][zhangaman][20170718]end-->
+        <!--[BIRD][BIRD_SMT_SW_TOGGLE_SWITCH][贴片测试_波动开关测试][zhangaman][20170724]begin-->
+        <activity
+            android:name=".MMITestToggleSwitch"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_TOGGLE_SWITCH][贴片测试_波动开关测试][zhangaman][20170724]end-->
+        <!--[BIRD][BIRD_SMT_SW_SUB_BACK_CAMERA_COVER][贴片测试_副后摄遮挡测试][zhangaman][20170724]begin-->
+        <activity
+            android:name=".DeviceTestSubBackCameraCover"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_SUB_BACK_CAMERA_COVER][贴片测试_副后摄遮挡测试][zhangaman][20170724]end-->
+
+        <!--[BIRD][BIRD_SMT_SW_SMARTCARD_TEST][贴片测试_读卡器测试][chengci][20180328]begin-->
+        <activity
+            android:name=".SmartCardTest"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SMT_SW_SMARTCARD_TEST][贴片测试_读卡器测试][chengci][20180328]end-->
+        <!--[BIRD][BIRD_SERIAL_DATA_SUPPORT][串口数据测试][huangzhangbin][20180411]begin-->
+        <activity
+            android:name=".SerialDataTest"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--[BIRD][BIRD_SERIAL_DATA_SUPPORT][串口数据测试][huangzhangbin][20180411]end-->
+
+        <!--[BIRD_NFC_SUPPORT]huangzhangbin 20170309 begin-->
+        <activity android:name=".MMITestNfc"
+            android:screenOrientation="portrait"/>
+        <!--[BIRD_NFC_SUPPORT]huangzhangbin 20170309 end-->
+    </application>
+
+</manifest>

@@ -1,0 +1,41 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">老化测试</string>
+    <string name="select_options">请选择测试项:</string>
+    <string name="set_time">请设置测试时间:</string>
+    <string name="lcm_test">屏幕</string>
+    <string name="camera_test">前后摄</string>
+    <string name="back_camera_test">后摄</string>
+    <string name="motor_test">马达</string>
+    <string name="flashlight_test">闪光灯</string>
+    <string name="speaker_test">喇叭</string>
+    <string name="mic_test">MIC</string>
+    <string name="handset_test">听筒</string>
+    <string name="selected_all">全选</string>
+    <string name="selected_none">全不选</string>
+
+    <string name="start_test_title">开始测试</string>
+    <string name="finish_test_title">测试结束</string>
+    <string name="under_test_title">正在测试</string>
+    <string name="test_result_title">测试结果</string>
+    <string name="restart_test">重新测试</string>
+    <string name="exit">退出</string>
+
+    <string name="ok_title">确定</string>
+    <string name="cancle_title">取消</string>
+
+    <string name="selected_test_options">选择测试项:</string>
+    <string name="test_durations">设定时间:</string>
+
+    <string name="default_test_durations">4</string>
+    <string name="mic_test_reuslt">MIC:</string>
+
+    <string name="warning">提示</string>
+    <string name="show_tips">请选择测试项,并设定时间!</string>
+    <string name="about">关于</string>
+    <string name="about_title">说明</string>
+
+    <string name="hour_format">小时</string>
+    <string name="min_format">分钟</string>
+    <string name="details">1.软件版本:v1.0. \n\n2.当前测试项包括前后摄/马达/闪光灯/喇叭/Mic/听筒6项测试,默认4小时.\n\n3.为了保证某些测试能够正常测试,测试时默认屏幕常亮.\n\n4.当前闪光灯和前后摄不能同时测试.\n\n5.喇叭不要和听筒同时测试\n\n6.不要在重启测试界面进行关机,重启或拔电板操作</string>
+
+</resources>

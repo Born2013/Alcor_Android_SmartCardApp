@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- [BIRD][BIRD_VOLUME_KEY_FEATURE_IN_CAMERA][相机设置中增加音量键功能选项][qianliliang][20151209]BEGIN -->
+    <string name="bird_pref_volume_key_feature_title">音量侧键</string>
+    <string name="bird_pref_volume_key_feature_zoom">缩放</string>
+    <string name="bird_pref_volume_key_feature_shoot">拍照</string>
+    <string name="bird_pref_volume_key_feature_volume">音量</string>
+    <!-- [BIRD][BIRD_VOLUME_KEY_FEATURE_IN_CAMERA][相机设置中增加音量键功能选项][qianliliang][20151209]END -->
+    <!-- [BIRD][BIRD_ADD_CAMERA_SHUTTERSOUND][拍照提示音控制菜单][qianliliang][20151210]BEGIN -->
+    <string name="pref_camera_shutter_sound_title">快门声音</string>
+    <!-- [BIRD][BIRD_ADD_CAMERA_SHUTTERSOUND][拍照提示音控制菜单][qianliliang][20151210]END -->
+</resources>

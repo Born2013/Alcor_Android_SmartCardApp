@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!--如需修改搜索引擎，请从下面备选中选择合适的，替换该字符串-->
+    <string name="zzzzz_bird_add_search_engine_default">airfind--Airfind--airfind.com--http://www.airfind.com/favicon.ico--http://tracfone.xtopoly.com/search?brand=TF&amp;search_term={searchTerms}--UTF-8--http://tracfone.xtopoly.com/suggestions?searchTerms={searchTerms}</string>
+
+
+    <!--备选的-->
+    <string name="bird_test_need_replace1">airfind--Airfind--airfind.com--http://www.airfind.com/favicon.ico--http://tracfone.xtopoly.com/search?brand=TF&amp;search_term={searchTerms}--UTF-8--http://tracfone.xtopoly.com/suggestions?searchTerms={searchTerms}</string>
+
+    <string name="bird_test_need_replace2">mplore--MPlore--company.mplore.com--http://mplore.com/favicon.png--http://apploaded.mplore.com/search?q={searchTerms}--UTF-8--http://suggestqueries.google.com/complete/search?q={searchTerms}&amp;output=toolbar&amp;hl=es</string>
+
+    <string name="bird_test_need_replace3">yandex_ru--&#x042f;&#x043d;&#x0434;&#x0435;&#x043a;&#x0441;--yandex.ru--search_engine_yandex--http://yandex.ru/yandsearch?text={searchTerms}--UTF-8--http://suggest.yandex.net/suggest-ff.cgi?part={searchTerms}</string>
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* Copyright 2012, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources>
+
+  	<private-symbols package="com.android.internal" />
+  	
+  	<java-symbol type="layout" name="zzzzz_bird_analog_clock_layout" />
+  	<java-symbol type="id" name="clock_layout" />
+  	<java-symbol type="id" name="analogClockguide" />
+	<java-symbol type="id" name="analogClockone" />
+	<java-symbol type="id" name="analogClocktwo" />
+	<java-symbol type="id" name="analogClockthree" />
+	<java-symbol type="id" name="analogClockfour" />
+	<java-symbol type="id" name="analogClockfive" />
+	<java-symbol type="id" name="analogClocksix" />
+
+	<java-symbol type="drawable" name="zzzzz_widget_clock_guide" />
+	
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date01" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date02" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date03" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date04" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date05" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date06" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date07" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date08" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date09" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date10" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date11" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date12" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date13" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date14" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date15" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date16" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date17" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date18" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date19" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date20" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date21" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date22" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date23" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date24" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date25" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date26" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date27" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date28" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date29" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date30" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_date31" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_dial" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_hour" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_minute" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_01_second" />
+
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date01" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date02" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date03" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date04" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date05" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date06" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date07" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date08" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date09" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date10" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date11" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date12" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date13" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date14" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date15" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date16" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date17" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date18" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date19" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date20" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date21" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date22" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date23" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date24" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date25" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date26" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date27" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date28" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date29" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date30" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_date31" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_dial" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_hour" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_minute" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_02_second" />
+
+	<java-symbol type="drawable" name="zzzzz_widget_clock_03_date" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_03_dial" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_03_hour" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_03_minute" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_03_second" />
+	
+	<java-symbol type="drawable" name="zzzzz_widget_clock_04_date" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_04_dial" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_04_hour" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_04_minute" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_04_second" />
+	
+	<java-symbol type="drawable" name="zzzzz_widget_clock_05_date" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_05_dial" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_05_hour" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_05_minute" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_05_second" />
+	
+	<java-symbol type="drawable" name="zzzzz_widget_clock_06_date" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_06_dial" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_06_hour" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_06_minute" />
+	<java-symbol type="drawable" name="zzzzz_widget_clock_06_second" />
+
+</resources>

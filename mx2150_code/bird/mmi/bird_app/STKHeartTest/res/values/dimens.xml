@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="tab_elevation">2dp</dimen>
+    <dimen name="padding_start">16dp</dimen>
+    <dimen name="padding_end">16dp</dimen>
+    <dimen name="date_margin_left">180dp</dimen>
+    <dimen name="date_width">65dp</dimen>
+    <dimen name="listview_date_margin_right">50dp</dimen>
+    <dimen name="tab_list">70dp</dimen>
+    <dimen name="listview_padding_start">5dp</dimen>
+    <dimen name="listview_padding_end">5dp</dimen>
+    <dimen name="circle_padding_left">50dp</dimen>
+    <dimen name="circle_padding_right">50dp</dimen>
+    <dimen name="actionbar_height">48dp</dimen>
+    <dimen name="rate_padding_right">62dp</dimen>
+    <dimen name="bpm_rate_padding">55dp</dimen>
+    <dimen name="rate_padding_left">50dp</dimen>
+</resources>

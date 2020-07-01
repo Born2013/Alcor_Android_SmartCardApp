@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!--[BIRD_WEIMI_MUSIC]wangyueyue 20150314 add -->
+<resources>
+    <!-- height of a seachwindow -->
+    <dimen name="bird_searchwindow_height">44dp</dimen>
+    <dimen name="bird_searchwindow_width">320dp</dimen>
+    <dimen name="bird_searchwindow_widt">53dp</dimen>
+    <dimen name="bird_search_top">0dp</dimen>
+    <dimen name="bird_search_left">40dp</dimen>
+    <dimen name="bird_search_right">15dp</dimen>
+    <dimen name="bird_search_close_left">8dp</dimen>
+    <dimen name="bird_search_close_right">8dp</dimen>
+    <dimen name="bird_search_cancel_right">20dp</dimen>
+    <dimen name="bird_search_textsize">16dp</dimen>
+
+
+    <!-- 设置layout在PopupWindow中显示的位置 -->
+    <dimen name="bird_popupWindow_height">25dp</dimen>
+
+    <!--lricview-->
+    <dimen name="bird_lrcview_marginleft">20dp</dimen>
+    <dimen name="bird_lrcview_marginright">20dp</dimen>
+    <dimen name="bird_lrcview_margintop">20dp</dimen><!--[bug-null][gaowei][20170704]-->
+    <dimen name="bird_lrcview_marginbottom">30dp</dimen>
+
+    <dimen name="default_high_light_size">17sp</dimen>
+    <dimen name="default_text_size">17sp</dimen>
+    <dimen name="default_other_size">14sp</dimen>
+
+    <!--<integer name="default_high_light_size">34</integer>
+    <integer name="default_text_size">34</integer>
+    <integer name="default_other_size">28</integer>-->
+
+    <!--actionbar title size-->
+    <dimen name="bird_actionbar_titlesize">18dp</dimen>
+    <dimen name="bird_actionbar_subtitlesize">14dp</dimen>
+
+    <!--list item-->
+    <dimen name="bird_list_item_height">60dp</dimen>
+    <dimen name="bird_list_item_margin_left">6dp</dimen>
+    <dimen name="bird_list_item_textsize">14sp</dimen>
+    <dimen name="bird_list_item_textsize_small">10sp</dimen>
+
+    <!--tab-->
+    <dimen name="bird_main_tab_height">53dp</dimen>
+    <dimen name="bird_main_tab_left">10dp</dimen>
+    <dimen name="bird_main_tab_right">10dp</dimen>
+    <dimen name="bird_main_tab_textsize">16sp</dimen>
+
+    <!--list bottom item-->
+    <dimen name="bird_main_bottom_height">70dp</dimen>
+    <dimen name="bird_main_bottom_left">6dp</dimen>
+    <dimen name="bird_main_bottom_top">2dp</dimen>
+    <dimen name="bird_main_bottom_right">6dp</dimen>
+    <dimen name="bird_artist_text_size">12sp</dimen>
+    <dimen name="bird_title_text_size">15sp</dimen>
+    <dimen name="bird_main_album_size">50dp</dimen>
+    <dimen name="bird_main_bottom_artist_left">14dp</dimen>
+    <dimen name="bird_main_title_maxsize">143dp</dimen>
+    <dimen name="bird_main_artist_maxsize">103dp</dimen>
+
+    <!--media play layout-->
+    <dimen name="bird_media_title_height">60dp</dimen>
+    <dimen name="bird_media_title_left">4dp</dimen>
+    <dimen name="bird_media_title_right">4dp</dimen>
+    <dimen name="bird_media_button_gap">6dp</dimen>
+    <!--seekbar-->
+    <dimen name="bird_media_seekbar_top">18dp</dimen>
+    <dimen name="bird_media_seekbar_bottom">18dp</dimen>
+    <dimen name="bird_media_seekbar_timesize">12dp</dimen>
+    <dimen name="bird_media_seekbar_width">284dp</dimen>
+    <dimen name="bird_media_seekbar_left">8dp</dimen>
+    <dimen name="bird_media_seekbar_right">8dp</dimen>
+
+    <!--widget-->
+    <!-- kedongdong modify 20151214 begin-->
+    <dimen name="bird_widget_album_size">70dp</dimen>
+    <dimen name="bird_widget_appwidget_width">123dp</dimen><!--160-->
+    <dimen name="bird_widget_appwidget_height">41.5dp</dimen>
+    <dimen name="bird_widget_album_marginleft">23dp</dimen>
+    <dimen name="bird_widget_album_margintop">2.5dp</dimen>
+    <dimen name="bird_widget_title_marginleft">120dp</dimen><!--132-->
+    <dimen name="bird_widget_album_textsize">13dp</dimen>
+    <dimen name="bird_widget_title_textsize">12dp</dimen>
+    <dimen name="bird_widget_title_padding">1dp</dimen>
+    <!--[bug-108649][字体设置为华康少女,几个界面的显示问题]huangzhangbin 20151225 begin-->
+    <dimen name="bird_widget_artist_textsize">9dp</dimen><!--10dp-->
+    <dimen name="bird_widget_artist_margintop">2dp</dimen><!--0dp-->
+    <!--[bug-108649][字体设置为华康少女,几个界面的显示问题]huangzhangbin 20151225 end-->
+    <dimen name="bird_widget_button_gap">26dp</dimen>
+    <dimen name="bird_widget_button_marginLeft">106dp</dimen>
+    <dimen name="bird_widget_button_margintop">0dp</dimen>
+    <dimen name="bird_widget_button_marginbottom">4dp</dimen>
+    <!-- kedongdong modify 20151214 end-->
+    <dimen name="zzzzz_actionbar_title_size">18sp</dimen> <!--[BIRD] caoyuangui add 20151210 -->
+
+    <!--[bug-null][gaowei][20170704]begin-->
+    <dimen name="dialog_list_item_height">50dp</dimen>
+    <dimen name="pop_menu_padding_left">14dp</dimen>
+    <dimen name="pop_menu_location">-12dp</dimen>
+    <!--[bug-null][gaowei][20170704]end-->
+</resources>

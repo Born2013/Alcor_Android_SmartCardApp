@@ -1,0 +1,485 @@
+#include <linux/fs.h>
+#include <linux/init.h>
+#include <linux/kernel.h>
+#include <linux/mm.h>
+#include <linux/hugetlb.h>
+#include <linux/mman.h>
+#include <linux/mmzone.h>
+#include <linux/proc_fs.h>
+#include <linux/quicklist.h>
+#include <linux/seq_file.h>
+#include <linux/swap.h>
+#include <linux/vmstat.h>
+#include <linux/atomic.h>
+#include <linux/vmalloc.h>
+#include <asm/page.h>
+#include <asm/pgtable.h>
+#include "internal.h"
+//[BIRD][BIRD_FAKE_RAM]zxw 20160407 begin
+#include <asm/uaccess.h> //zxw add
+#if defined(CONFIG_BIRD_FAKE_RAM)
+    #if defined(CONFIG_RAM_VALUE_2) 
+    static long p = 2;
+    #elif defined(CONFIG_RAM_VALUE_3)
+    static long p = 3;
+    #elif defined(CONFIG_RAM_VALUE_4)
+    static long p = 4;
+    #else
+    static long p = 1;
+    #endif
+#else
+    static long p = 1;
+#endif 
+//[BIRD][BIRD_FAKE_RAM]zxw 20160407 end
+void __attribute__((weak)) arch_report_meminfo(struct seq_file *m)
+{
+}
+
+static int meminfo_proc_show(struct seq_file *m, void *v)
+{
+    struct sysinfo i;
+    unsigned long committed;
+    struct vmalloc_info vmi;
+    long cached;
+    long available;
+    unsigned long pagecache;
+    unsigned long wmark_low = 0;
+    unsigned long pages[NR_LRU_LISTS];
+    struct zone *zone;
+    int lru;
+
+/*
+ * display in kilobytes.
+ */
+#define K(x) ((x) << (PAGE_SHIFT - 10))
+    si_meminfo(&i);
+    si_swapinfo(&i);
+    committed = percpu_counter_read_positive(&vm_committed_as);
+
+    cached = global_page_state(NR_FILE_PAGES) -
+            total_swapcache_pages() - i.bufferram;
+    if (cached < 0)
+        cached = 0;
+
+    get_vmalloc_info(&vmi);
+
+    for (lru = LRU_BASE; lru < NR_LRU_LISTS; lru++)
+        pages[lru] = global_page_state(NR_LRU_BASE + lru);
+
+    for_each_zone(zone)
+        wmark_low += zone->watermark[WMARK_LOW];
+
+    /*
+     * Estimate the amount of memory available for userspace allocations,
+     * without causing swapping.
+     *
+     * Free memory cannot be taken below the low watermark, before the
+     * system starts swapping.
+     */
+    available = i.freeram - wmark_low;
+
+    /*
+     * Not all the page cache can be freed, otherwise the system will
+     * start swapping. Assume at least half of the page cache, or the
+     * low watermark worth of cache, needs to stay.
+     */
+    pagecache = pages[LRU_ACTIVE_FILE] + pages[LRU_INACTIVE_FILE];
+    pagecache -= min(pagecache / 2, wmark_low);
+    available += pagecache;
+
+    /*
+     * Part of the reclaimable slab consists of items that are in use,
+     * and cannot be freed. Cap this estimate at the low watermark.
+     */
+    available += global_page_state(NR_SLAB_RECLAIMABLE) -
+             min(global_page_state(NR_SLAB_RECLAIMABLE) / 2, wmark_low);
+
+    if (available < 0)
+        available = 0;
+
+    /*
+     * Tagged format, for easy grepping and expansion.
+     */
+    seq_printf(m,
+        "MemTotal:       %8lu kB\n"
+        "MemFree:        %8lu kB\n"
+        "MemAvailable:   %8lu kB\n"
+        "Buffers:        %8lu kB\n"
+        "Cached:         %8lu kB\n"
+        "SwapCached:     %8lu kB\n"
+        "Active:         %8lu kB\n"
+        "Inactive:       %8lu kB\n"
+        "Active(anon):   %8lu kB\n"
+        "Inactive(anon): %8lu kB\n"
+        "Active(file):   %8lu kB\n"
+        "Inactive(file): %8lu kB\n"
+        "Unevictable:    %8lu kB\n"
+        "Mlocked:        %8lu kB\n"
+#ifdef CONFIG_HIGHMEM
+        "HighTotal:      %8lu kB\n"
+        "HighFree:       %8lu kB\n"
+        "LowTotal:       %8lu kB\n"
+        "LowFree:        %8lu kB\n"
+#endif
+#ifndef CONFIG_MMU
+        "MmapCopy:       %8lu kB\n"
+#endif
+        "SwapTotal:      %8lu kB\n"
+        "SwapFree:       %8lu kB\n"
+        "Dirty:          %8lu kB\n"
+        "Writeback:      %8lu kB\n"
+        "AnonPages:      %8lu kB\n"
+        "Mapped:         %8lu kB\n"
+        "Shmem:          %8lu kB\n"
+        "Slab:           %8lu kB\n"
+        "SReclaimable:   %8lu kB\n"
+        "SUnreclaim:     %8lu kB\n"
+        "KernelStack:    %8lu kB\n"
+        "PageTables:     %8lu kB\n"
+#ifdef CONFIG_QUICKLIST
+        "Quicklists:     %8lu kB\n"
+#endif
+        "NFS_Unstable:   %8lu kB\n"
+        "Bounce:         %8lu kB\n"
+        "WritebackTmp:   %8lu kB\n"
+        "CommitLimit:    %8lu kB\n"
+        "Committed_AS:   %8lu kB\n"
+        "VmallocTotal:   %8lu kB\n"
+        "VmallocUsed:    %8lu kB\n"
+        "VmallocChunk:   %8lu kB\n"
+#ifdef CONFIG_MEMORY_FAILURE
+        "HardwareCorrupted: %5lu kB\n"
+#endif
+#ifdef CONFIG_TRANSPARENT_HUGEPAGE
+        "AnonHugePages:  %8lu kB\n"
+#endif
+        ,
+        p <10 ? ((p == 6)? ((K(i.totalram)*3) >> 1):K(i.totalram)*p) : K(p * 1024 / 4),//K(i.totalram * p) [BIRD][BIRD_FAKE_RAM]zxw 20160407
+        K(i.freeram),
+        K(available),
+        K(i.bufferram),
+        K(cached),
+        K(total_swapcache_pages()),
+        K(pages[LRU_ACTIVE_ANON]   + pages[LRU_ACTIVE_FILE]),
+        K(pages[LRU_INACTIVE_ANON] + pages[LRU_INACTIVE_FILE]),
+        K(pages[LRU_ACTIVE_ANON]),
+        K(pages[LRU_INACTIVE_ANON]),
+        K(pages[LRU_ACTIVE_FILE]),
+        K(pages[LRU_INACTIVE_FILE]),
+        K(pages[LRU_UNEVICTABLE]),
+        K(global_page_state(NR_MLOCK)),
+#ifdef CONFIG_HIGHMEM
+        K(i.totalhigh),
+        K(i.freehigh),
+        K(i.totalram-i.totalhigh),
+        K(i.freeram-i.freehigh),
+#endif
+#ifndef CONFIG_MMU
+        K((unsigned long) atomic_long_read(&mmap_pages_allocated)),
+#endif
+        K(i.totalswap),
+        K(i.freeswap),
+        K(global_page_state(NR_FILE_DIRTY)),
+        K(global_page_state(NR_WRITEBACK)),
+        K(global_page_state(NR_ANON_PAGES)),
+        K(global_page_state(NR_FILE_MAPPED)),
+        K(i.sharedram),
+        K(global_page_state(NR_SLAB_RECLAIMABLE) +
+                global_page_state(NR_SLAB_UNRECLAIMABLE)),
+        K(global_page_state(NR_SLAB_RECLAIMABLE)),
+        K(global_page_state(NR_SLAB_UNRECLAIMABLE)),
+        global_page_state(NR_KERNEL_STACK) * THREAD_SIZE / 1024,
+        K(global_page_state(NR_PAGETABLE)),
+#ifdef CONFIG_QUICKLIST
+        K(quicklist_total_size()),
+#endif
+        K(global_page_state(NR_UNSTABLE_NFS)),
+        K(global_page_state(NR_BOUNCE)),
+        K(global_page_state(NR_WRITEBACK_TEMP)),
+        K(vm_commit_limit()),
+        K(committed),
+        (unsigned long)VMALLOC_TOTAL >> 10,
+        vmi.used >> 10,
+        vmi.largest_chunk >> 10
+#ifdef CONFIG_MEMORY_FAILURE
+        ,atomic_long_read(&num_poisoned_pages) << (PAGE_SHIFT - 10)
+#endif
+#ifdef CONFIG_TRANSPARENT_HUGEPAGE
+        ,K(global_page_state(NR_ANON_TRANSPARENT_HUGEPAGES) *
+           HPAGE_PMD_NR)
+#endif
+        );
+
+    hugetlb_report_meminfo(m);
+
+    arch_report_meminfo(m);
+
+    return 0;
+#undef K
+}
+
+static int meminfo_proc_open(struct inode *inode, struct file *file)
+{
+    return single_open(file, meminfo_proc_show, NULL);
+}
+//[BIRD][BIRD_FAKE_RAM]zxw 20160407 begin
+static ssize_t seq_bird_write(struct file *file, const char *buffer, size_t count, loff_t *data)
+{
+    char desc[8];
+    long ram_times=0;
+    int len=0;
+    printk("zxw  proc_meminfo_init p=%ld\n",p);
+    len = (count < (sizeof(desc) - 1)) ? count : (sizeof(desc) - 1);
+    if (copy_from_user(desc, buffer, len)) {
+        return 0;
+    }
+    desc[len] = '\0';
+    if (sscanf(desc, "%ld", &ram_times) == 1) {
+        p = ram_times;
+        printk("zxw p=%ld\n",p);
+    }
+    return p;
+}
+//[BIRD][BIRD_FAKE_RAM]zxw 20160407 end
+static const struct file_operations meminfo_proc_fops = {
+    .open       = meminfo_proc_open,
+    .read       = seq_read,
+    .write      = seq_bird_write,//[BIRD][BIRD_FAKE_RAM]zxw 20160407 
+    .llseek     = seq_lseek,
+    .release    = single_release,
+};
+
+static int __init proc_meminfo_init(void)
+{
+    printk("zxw  proc_meminfo_init p=%ld\n",p);
+    proc_create("meminfo", 0, NULL, &meminfo_proc_fops);
+    return 0;
+}
+fs_initcall(proc_meminfo_init);
+
+//[BIRD][BIRD_SYSTEM_APP_DM_SWITCH]chengshujiang 20170824 begin
+static long times = 1;
+
+static int meminfotest_proc_show(struct seq_file *m, void *v)
+{
+    struct sysinfo i;
+    unsigned long committed;
+    struct vmalloc_info vmi;
+    long cached;
+    long available;
+    unsigned long pagecache;
+    unsigned long wmark_low = 0;
+    unsigned long pages[NR_LRU_LISTS];
+    struct zone *zone;
+    int lru;
+
+/*
+ * display in kilobytes.
+ */
+#define K(x) ((x) << (PAGE_SHIFT - 10))
+    si_meminfo(&i);
+    si_swapinfo(&i);
+    committed = percpu_counter_read_positive(&vm_committed_as);
+
+    cached = global_page_state(NR_FILE_PAGES) -
+            total_swapcache_pages() - i.bufferram;
+    if (cached < 0)
+        cached = 0;
+
+    get_vmalloc_info(&vmi);
+
+    for (lru = LRU_BASE; lru < NR_LRU_LISTS; lru++)
+        pages[lru] = global_page_state(NR_LRU_BASE + lru);
+
+    for_each_zone(zone)
+        wmark_low += zone->watermark[WMARK_LOW];
+
+    /*
+     * Estimate the amount of memory available for userspace allocations,
+     * without causing swapping.
+     *
+     * Free memory cannot be taken below the low watermark, before the
+     * system starts swapping.
+     */
+    available = i.freeram - wmark_low;
+
+    /*
+     * Not all the page cache can be freed, otherwise the system will
+     * start swapping. Assume at least half of the page cache, or the
+     * low watermark worth of cache, needs to stay.
+     */
+    pagecache = pages[LRU_ACTIVE_FILE] + pages[LRU_INACTIVE_FILE];
+    pagecache -= min(pagecache / 2, wmark_low);
+    available += pagecache;
+
+    /*
+     * Part of the reclaimable slab consists of items that are in use,
+     * and cannot be freed. Cap this estimate at the low watermark.
+     */
+    available += global_page_state(NR_SLAB_RECLAIMABLE) -
+             min(global_page_state(NR_SLAB_RECLAIMABLE) / 2, wmark_low);
+
+    if (available < 0)
+        available = 0;
+
+    /*
+     * Tagged format, for easy grepping and expansion.
+     */
+    seq_printf(m,
+        "MemTotal:       %8lu kB\n"
+        "MemFree:        %8lu kB\n"
+        "MemAvailable:   %8lu kB\n"
+        "Buffers:        %8lu kB\n"
+        "Cached:         %8lu kB\n"
+        "SwapCached:     %8lu kB\n"
+        "Active:         %8lu kB\n"
+        "Inactive:       %8lu kB\n"
+        "Active(anon):   %8lu kB\n"
+        "Inactive(anon): %8lu kB\n"
+        "Active(file):   %8lu kB\n"
+        "Inactive(file): %8lu kB\n"
+        "Unevictable:    %8lu kB\n"
+        "Mlocked:        %8lu kB\n"
+#ifdef CONFIG_HIGHMEM
+        "HighTotal:      %8lu kB\n"
+        "HighFree:       %8lu kB\n"
+        "LowTotal:       %8lu kB\n"
+        "LowFree:        %8lu kB\n"
+#endif
+#ifndef CONFIG_MMU
+        "MmapCopy:       %8lu kB\n"
+#endif
+        "SwapTotal:      %8lu kB\n"
+        "SwapFree:       %8lu kB\n"
+        "Dirty:          %8lu kB\n"
+        "Writeback:      %8lu kB\n"
+        "AnonPages:      %8lu kB\n"
+        "Mapped:         %8lu kB\n"
+        "Shmem:          %8lu kB\n"
+        "Slab:           %8lu kB\n"
+        "SReclaimable:   %8lu kB\n"
+        "SUnreclaim:     %8lu kB\n"
+        "KernelStack:    %8lu kB\n"
+        "PageTables:     %8lu kB\n"
+#ifdef CONFIG_QUICKLIST
+        "Quicklists:     %8lu kB\n"
+#endif
+        "NFS_Unstable:   %8lu kB\n"
+        "Bounce:         %8lu kB\n"
+        "WritebackTmp:   %8lu kB\n"
+        "CommitLimit:    %8lu kB\n"
+        "Committed_AS:   %8lu kB\n"
+        "VmallocTotal:   %8lu kB\n"
+        "VmallocUsed:    %8lu kB\n"
+        "VmallocChunk:   %8lu kB\n"
+#ifdef CONFIG_MEMORY_FAILURE
+        "HardwareCorrupted: %5lu kB\n"
+#endif
+#ifdef CONFIG_TRANSPARENT_HUGEPAGE
+        "AnonHugePages:  %8lu kB\n"
+#endif
+        ,
+        times <10 ? ((times == 6)? ((K(i.totalram)*3) >> 1):K(i.totalram)*times) : K(times * 1024 / 4),//K(i.totalram * times) [BIRD][BIRD_FAKE_RAM]zxw 20160407
+        K(i.freeram),
+        K(available),
+        K(i.bufferram),
+        K(cached),
+        K(total_swapcache_pages()),
+        K(pages[LRU_ACTIVE_ANON]   + pages[LRU_ACTIVE_FILE]),
+        K(pages[LRU_INACTIVE_ANON] + pages[LRU_INACTIVE_FILE]),
+        K(pages[LRU_ACTIVE_ANON]),
+        K(pages[LRU_INACTIVE_ANON]),
+        K(pages[LRU_ACTIVE_FILE]),
+        K(pages[LRU_INACTIVE_FILE]),
+        K(pages[LRU_UNEVICTABLE]),
+        K(global_page_state(NR_MLOCK)),
+#ifdef CONFIG_HIGHMEM
+        K(i.totalhigh),
+        K(i.freehigh),
+        K(i.totalram-i.totalhigh),
+        K(i.freeram-i.freehigh),
+#endif
+#ifndef CONFIG_MMU
+        K((unsigned long) atomic_long_read(&mmap_pages_allocated)),
+#endif
+        K(i.totalswap),
+        K(i.freeswap),
+        K(global_page_state(NR_FILE_DIRTY)),
+        K(global_page_state(NR_WRITEBACK)),
+        K(global_page_state(NR_ANON_PAGES)),
+        K(global_page_state(NR_FILE_MAPPED)),
+        K(i.sharedram),
+        K(global_page_state(NR_SLAB_RECLAIMABLE) +
+                global_page_state(NR_SLAB_UNRECLAIMABLE)),
+        K(global_page_state(NR_SLAB_RECLAIMABLE)),
+        K(global_page_state(NR_SLAB_UNRECLAIMABLE)),
+        global_page_state(NR_KERNEL_STACK) * THREAD_SIZE / 1024,
+        K(global_page_state(NR_PAGETABLE)),
+#ifdef CONFIG_QUICKLIST
+        K(quicklist_total_size()),
+#endif
+        K(global_page_state(NR_UNSTABLE_NFS)),
+        K(global_page_state(NR_BOUNCE)),
+        K(global_page_state(NR_WRITEBACK_TEMP)),
+        K(vm_commit_limit()),
+        K(committed),
+        (unsigned long)VMALLOC_TOTAL >> 10,
+        vmi.used >> 10,
+        vmi.largest_chunk >> 10
+#ifdef CONFIG_MEMORY_FAILURE
+        ,atomic_long_read(&num_poisoned_pages) << (PAGE_SHIFT - 10)
+#endif
+#ifdef CONFIG_TRANSPARENT_HUGEPAGE
+        ,K(global_page_state(NR_ANON_TRANSPARENT_HUGEPAGES) *
+           HPAGE_PMD_NR)
+#endif
+        );
+
+    hugetlb_report_meminfo(m);
+
+    arch_report_meminfo(m);
+
+    return 0;
+#undef K
+}
+
+static int meminfotest_proc_open(struct inode *inode, struct file *file)
+{
+    return single_open(file, meminfotest_proc_show, NULL);
+}
+//[BIRD][BIRD_FAKE_RAM]zxw 20160407 begin
+static ssize_t seq_birdtest_write(struct file *file, const char *buffer, size_t count, loff_t *data)
+{
+    char desc[8];
+    long ram_times=0;
+    int len=0;
+
+    len = (count < (sizeof(desc) - 1)) ? count : (sizeof(desc) - 1);
+    if (copy_from_user(desc, buffer, len)) {
+        return 0;
+    }
+    desc[len] = '\0';
+    if (sscanf(desc, "%ld", &ram_times) == 1) {
+        times = ram_times;
+        printk("zxw times=%ld\n",times);
+    }
+    return times;
+}
+
+//[BIRD][BIRD_FAKE_RAM]zxw 20160407 end
+static const struct file_operations meminfotest_proc_fops = {
+    .open       = meminfotest_proc_open,
+    .read       = seq_read,
+    .write      = seq_birdtest_write,//[BIRD][BIRD_FAKE_RAM]zxw 20160407 
+    .llseek     = seq_lseek,
+    .release    = single_release,
+};
+
+static int __init proc_meminfotest_init(void)
+{
+    proc_create("meminfotest", 0777, NULL, &meminfotest_proc_fops);
+    return 0;
+}
+fs_initcall(proc_meminfotest_init);
+//[BIRD][BIRD_SYSTEM_APP_DM_SWITCH]chengshujiang 20170824 end
+

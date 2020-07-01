@@ -1,0 +1,9 @@
+config MTK_BMI160_ACC_BIRD
+	bool "BMI160_ACC_BIRD_ACC for MediaTek package"
+	default n
+	help
+	  It support different accelerometer sensor.
+          If this option is set,
+	  it will support
+          BMI160_ACC_BIRD Accelerometer.
+

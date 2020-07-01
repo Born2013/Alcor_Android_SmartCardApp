@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/click_area"
+    android:gravity="top"
+    android:background="?android:attr/selectableItemBackground">
+    <LinearLayout android:id="@+id/time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20px"
+        android:gravity="center_horizontal|top"  
+        android:orientation="horizontal">
+        <TextView 
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="75sp"
+            android:fontFamily="sans-serif-thin" 
+            android:textColor="#ffffffff"/> 
+        <!-- <TextView 
+            android:id="@+id/space0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text ="@string/space_text"/>  	    	   	    
+        <TextView 
+            android:id="@+id/dot_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="75sp"
+            android:text ="@string/dot_pic_text"
+            android:fontFamily="sans-serif-thin"
+            android:textColor="#ffffffff"/>
+        <TextView 
+            android:id="@+id/space1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text ="@string/space_text"/> 
+
+        <TextView android:id="@+id/minute"
+            android:layout_toRightOf="@id/dot_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="75sp"
+            android:fontFamily="sans-serif-thin"
+            android:textColor="#ffffffff"
+            android:visibility="gone"/>	  -->  	  
+        
+        <TextView android:id="@+id/time_am_pm"
+            android:layout_toRightOf="@id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#ffffffff"/>
+    </LinearLayout>
+	
+    <LinearLayout android:id="@+id/date_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|bottom"
+        android:orientation="horizontal">
+        
+        <TextView android:id="@+id/week_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textColor="#ffffffff"/>
+            
+        <TextView 
+            android:id="@+id/space2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#ffffffff"
+            android:text ="@string/space_text"/>
+            
+        <TextView android:id="@+id/date_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textColor="#ffffffff"/>
+    </LinearLayout>
+</LinearLayout>

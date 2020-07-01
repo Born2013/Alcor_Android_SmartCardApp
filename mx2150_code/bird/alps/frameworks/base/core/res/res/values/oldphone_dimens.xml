@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="oldphone_toast_margin_bottom">88dp</dimen>
+    <dimen name="oldphone_notification_time_marginTop">13dp</dimen>
+</resources>

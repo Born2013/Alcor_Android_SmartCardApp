@@ -1,0 +1,9 @@
+LCD2 0912新增	
+模组厂	宝旭
+IC型号	ILI9806E-2
+玻璃	IVO（TN）
+分辨率	480*854
+丝印	BX498107-25C
+ID脚	ID1 =GND,ID2=1.8V
+command或vedio	video
+

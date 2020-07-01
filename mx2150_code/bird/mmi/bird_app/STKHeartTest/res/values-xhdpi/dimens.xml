@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="tab_elevation">2dp</dimen>
+    <dimen name="padding_start">16dp</dimen>
+    <dimen name="padding_end">16dp</dimen>
+    <dimen name="date_margin_left">180dp</dimen>
+    <dimen name="date_width">65dp</dimen>
+    <dimen name="listview_date_margin_right">50dp</dimen>
+    <dimen name="tab_list">70dp</dimen>
+    <dimen name="listview_padding_start">5dp</dimen>
+    <dimen name="listview_padding_end">5dp</dimen>
+    <dimen name="circle_padding_left">50dp</dimen>
+    <dimen name="circle_padding_right">50dp</dimen>
+    <dimen name="actionbar_height">48dp</dimen>
+    <dimen name="rate_padding_right">62dp</dimen>
+    <dimen name="bpm_rate_padding">55dp</dimen>
+    <dimen name="rate_padding_left">50dp</dimen>
+    <dimen name="slide_max_diatance">150dp</dimen>
+    <dimen name="rate_value_text_size">54sp</dimen>
+    <dimen name="rate_icon_height">40dp</dimen>
+    <dimen name="bpm_text_size">15sp</dimen>
+    <dimen name="circle_paint_strokesize">18dp</dimen>
+    <dimen name="line_chart_strokesize">4px</dimen>
+    <dimen name="progress_strokesize">12px</dimen>
+    <dimen name="progress_current_data_strokesize">16px</dimen>
+    <dimen name="big_column_width">27px</dimen>
+    <dimen name="small_column_width">15px</dimen>
+    <dimen name="histogram_view_padding_left">25px</dimen>
+    <dimen name="histogram_view_padding_top">20px</dimen>
+    <dimen name="histogram_left_text_sixe">11px</dimen>
+    <dimen name="histogram_bottome_text_sixe">8px</dimen>
+    <dimen name="histogram_top_text_sixe">10px</dimen>
+    <dimen name="histogram_left_text_padding_left">20px</dimen>
+    <dimen name="circle_fragment_height">322dp</dimen>
+    <dimen name="detection_state_padding">8dp</dimen>
+</resources>

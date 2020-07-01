@@ -1,0 +1,7 @@
+<resources>
+
+
+    <dimen name="big_column_width">17px</dimen>
+    <dimen name="histogram_view_padding_left">20px</dimen>
+    <dimen name="circle_fragment_height">282dp</dimen>
+</resources>

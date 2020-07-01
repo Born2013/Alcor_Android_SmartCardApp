@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[BIRD]add by zhangaman 20150717 begin-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/record_test_infor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/record_test_infor"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/start_record"
+        android:layout_width="150px"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/record_test_infor"
+        android:text="@string/start_test" />
+
+    <TextView
+        android:id="@+id/note_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_record"
+        android:textSize="16sp" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_title"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/add_bottom_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/correct"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:text="@string/correct"
+            android:textSize="19sp"
+            />
+        <Button
+            android:id="@+id/error"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:text="@string/error"
+            android:textSize="19sp"
+            />
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:text="@string/reset"
+            android:textSize="19sp"
+            />
+    </LinearLayout>
+
+</LinearLayout>
+<!--[BIRD]add by zhangaman 20150717 end-->

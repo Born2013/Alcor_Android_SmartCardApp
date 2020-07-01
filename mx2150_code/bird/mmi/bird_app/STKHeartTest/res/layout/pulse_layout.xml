@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical">
+        <FrameLayout
+        android:id="@+id/middle_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="13">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            
+            <com.sensortek.stkhealthcare2.CircleTimerView
+                android:id="@+id/pulse_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/bpm_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/circle_padding_left"
+                    android:paddingRight="@dimen/circle_padding_right">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" 
+                        android:layout_weight="3">
+                        <TextView
+                            android:id="@+id/rate_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="00dp"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/rate_value_text_size" />
+                    </RelativeLayout>
+                    
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" 
+                        android:layout_weight="2"
+                        android:layout_gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+                            
+                            <RelativeLayout
+                                android:layout_width="@dimen/rate_icon_height"
+                                android:layout_height="@dimen/rate_icon_height"
+                                android:layout_marginTop="-3dp">
+                                <ImageView
+                                    android:id="@+id/rate_icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_heartbeat_dis" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:text="@string/bpm"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/bpm_text_size" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/detection_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/bpm_layout"
+                    android:layout_marginBottom="@dimen/detection_state_padding"
+                    android:textSize="15sp"
+                    android:textColor="#000000"
+                    android:layout_centerHorizontal="true"/>
+                <TextView
+                    android:id="@+id/start_detection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bpm_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/detection_state_padding"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:text="@string/bpm" />
+
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="200dp"
+                android:layout_height="200dp" 
+                android:layout_gravity="center">
+                
+            </RelativeLayout>
+        
+       </FrameLayout>
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+        <TextView
+            android:id="@+id/remind"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:text="@string/remind_message" />
+
+        <com.sensortek.stkhealthcare2.progressView
+            android:id="@+id/grogress_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>   
+
+        <com.sensortek.stkhealthcare2.lineChartView
+            android:id="@+id/linechart_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>   
+    </FrameLayout>
+            
+</LinearLayout>

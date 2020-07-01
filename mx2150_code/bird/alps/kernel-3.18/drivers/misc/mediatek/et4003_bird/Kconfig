@@ -1,0 +1,19 @@
+config BIRD_IR_REMOTE_ET4003_SUPPORT
+  bool "BIRD IR REMOTE ET4003 SUPPORT Driver"
+  default n
+  help
+    BIRD_IR_REMOTE_ET4003_SUPPORT Driver
+
+config BIRD_IR_REMOTE_ET4003_SUPPORT_FOR_SMT
+  bool "BIRD_IR_REMOTE_ET4003_SUPPORT_FOR_SMT Driver"
+  depends on BIRD_IR_REMOTE_ET4003_SUPPORT
+  default n
+  help
+    if open this , only for smt , not for mp
+
+config BIRD_IR_REMOTE_ET4003_SUPPORT_FOR_MX2150E
+  bool "BIRD_IR_REMOTE_ET4003_SUPPORT_FOR_MX2150 Driver"
+  depends on BIRD_IR_REMOTE_ET4003_SUPPORT
+  default n
+  help
+    if open this , only for smt , not for mp

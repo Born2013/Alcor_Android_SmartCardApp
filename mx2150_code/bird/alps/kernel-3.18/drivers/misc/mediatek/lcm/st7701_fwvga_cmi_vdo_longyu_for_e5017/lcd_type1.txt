@@ -1,0 +1,8 @@
+模组厂	龙煜
+IC型号	ST7701S
+玻璃	CMI
+分辨率	480*854
+丝印	M-LYMC50139T3-1
+ID脚	ID1=1.8V； ID2=1.8V；
+command或vedio	Video
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright 2010, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources>
+    <color name="bird_single_color">#000000</color>
+    <color name="clear_button_color">#b3000000</color>
+    <color name="bird_battery_color">#fecb00</color>
+
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] BEGIN-->
+    <drawable name="livewallpaper_button_ripple">#66ffffff</drawable>
+    <drawable name="bird_gray_color_drawable">#eeeeee</drawable>
+    <color name="bird_screenshot_background_color">#dd000000</color>
+    <color name="bird_screenshot_textcolor">#ffffffff</color>
+    <color name="crop_shadow_color">#CF000000</color>
+    <color name="crop_shadow_wp_color">#4F000000</color>
+    <color name="crop_wp_markers">#7FFFFFFF</color>
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] END-->
+    <!--[BIRD][BIRD_KUSAI_VOLUME_DIALOG][基于原生的的酷赛音量调节][zhangaman][20170623]begin-->
+    <color name="bird_kusai_system_accent_color">#ff01bcf8</color><!-- deep teal 200 -->
+    <color name="bird_kusai_volume_slider_inactive">#FFABABAB</color><!-- blue grey 200 -->
+    <!--[BIRD][BIRD_KUSAI_VOLUME_DIALOG][基于原生的的酷赛音量调节][zhangaman][20170623]end-->
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--[bug-null][gaowei][20170704]add-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/hw_actionsheet_bg_normal"/>
+    <item android:drawable="@drawable/hw_actionsheet_bg_normal"/>
+</selector>

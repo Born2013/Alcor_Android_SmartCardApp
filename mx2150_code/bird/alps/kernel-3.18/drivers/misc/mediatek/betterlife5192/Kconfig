@@ -1,0 +1,11 @@
+#
+#Fingerprint
+#
+
+
+config BLESTECH_FINGERPRINT
+	tristate "BLESTECH_FINGERPRINT Fingerprint"
+	default n
+	---help---
+	Fingerprint mtk driver enable/disable in the kernel.
+	Say Y here if you want to use mediatek fingerprint driver,

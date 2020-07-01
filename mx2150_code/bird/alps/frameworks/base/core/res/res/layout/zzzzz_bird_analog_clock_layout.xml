@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/clock_layout"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:clipChildren="false"
+             android:background="@null">
+
+    <android.widget.AnalogClockguide
+        android:id="@+id/analogClockguide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.widget.AnalogClockguide>
+        
+    <android.widget.AnalogClockone
+        android:id="@+id/analogClockone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.widget.AnalogClockone>
+
+    <android.widget.AnalogClocktwo
+        android:id="@+id/analogClocktwo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.widget.AnalogClocktwo>
+
+    <android.widget.AnalogClockthree
+        android:id="@+id/analogClockthree"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.widget.AnalogClockthree>
+
+    <android.widget.AnalogClockfour
+        android:id="@+id/analogClockfour"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.widget.AnalogClockfour>
+
+    <android.widget.AnalogClockfive
+        android:id="@+id/analogClockfive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.widget.AnalogClockfive>
+    
+    <android.widget.AnalogClocksix
+        android:id="@+id/analogClocksix"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.widget.AnalogClocksix>
+    
+
+</FrameLayout>

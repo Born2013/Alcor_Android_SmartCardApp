@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/all_grid_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="#00000000"
+    android:orientation="vertical" >
+
+    <!--交替图0-->
+    <ImageView 
+        android:id="@+id/bird_screenshot_guider_alt0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"/>
+    <!--交替图1-->
+    <ImageView 
+        android:id="@+id/bird_screenshot_guider_alt1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"/>
+
+    <!--渐变色-->
+    <ImageView 
+        android:id="@+id/bird_screenshot_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bird_scrim_shadow"
+        android:visibility="visible"/>
+
+    <!--描述-->
+    <TextView 
+        android:id="@+id/bird_screenshot_des"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignTop="@id/bird_screenshot_shadow"
+        android:layout_marginBottom="@dimen/bird_guide_desc_margin_bottom"
+        android:layout_marginTop="@dimen/bird_guide_desc_margin_top"
+        android:layout_alignParentBottom="true"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="@string/bird_screenshot_name"
+        android:visibility="visible" />
+
+    <!--箭头-->
+    <ImageView 
+        android:id="@+id/bird_screenshot_slidedown"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="@dimen/bird_arrow_margin_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/zzzzz_screenshot_slide_down"
+        android:visibility="visible"/>
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[BIRD][BIRD_FREEZE_PHONE_WHEN_SLOT_PERMANENTLY_LOCKED][当卡槽被完全锁死(锁网剩余次数为0)时，手机将无法使用][yangbo][20170506]BEGIN -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    android:fitsSystemWindows="true">
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffffff"
+        android:text="@string/bird_freeze_phone_tip"
+        android:textSize="18sp" />
+
+</FrameLayout>
+<!--[BIRD][BIRD_FREEZE_PHONE_WHEN_SLOT_PERMANENTLY_LOCKED][当卡槽被完全锁死(锁网剩余次数为0)时，手机将无法使用][yangbo][20170506]END -->
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="false" android:color="@color/aui_primary_txt_color_black_disable"/>
+    <item android:color="@color/aui_primary_txt_color_black"/>
+
+</selector>

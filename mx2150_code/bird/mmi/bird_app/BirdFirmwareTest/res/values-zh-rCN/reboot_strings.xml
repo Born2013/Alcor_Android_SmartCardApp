@@ -1,0 +1,18 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="test_count">重启测试次数</string>
+    <string name="start_test">进入重启测试</string>
+    <string name="title_reboot_test">重启测试</string>
+    <string name="test_result">测试结果:</string>
+    <string name="test_total_count">测试次数 : <xliff:g id="count">%s</xliff:g></string>
+    <string name="test_used_count">已完成 : <xliff:g id="count">%s</xliff:g></string>
+    <string name="test_unused_count">未完成 : <xliff:g id="count">%s</xliff:g></string>
+    <string name="test_last_reboot_time">上次重启时间 : <xliff:g id="time">%s</xliff:g></string>
+    <string name="test_recent_reboot_time">本次重启时间 : <xliff:g id="time">%s</xliff:g></string>
+    <string name="test_result_tip">恭喜,测试成功,一共进行了<xliff:g id="time">%s</xliff:g>次测试</string>
+    <string name="clear_test">清空测试</string>
+    <string name="btn_stop_test_txt">停止测试</string>
+    <string name="btn_start_test_txt">开始测试</string>
+    <string name="error_test_num">开机重启测试次数必须大于0并且小于等于100!!</string>
+    <string name="set_reboot_times">请设置重启测试次数:</string>
+    <string name="result_error">数据异常请清空测试!!</string>
+</resources>

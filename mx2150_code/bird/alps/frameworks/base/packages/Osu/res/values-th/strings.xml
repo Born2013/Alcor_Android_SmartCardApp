@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources> 
+    <!--[BIRD][由客户提供的泰语翻译][yangbo][20170914]BEGIN -->
+    <string name="app_name">OSU</string>
+    <string name="no_osu">ไม่มี OSU ที่ใช้งานได้</string>
+    <!--[BIRD][由客户提供的泰语翻译][yangbo][20170914]END -->
+</resources>
+

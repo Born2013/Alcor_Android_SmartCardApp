@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources> 
+    <string name="app_name">อัตราการเต้นของหัวใจ</string>
+    <string name="tab_heart_list_title">รายการ</string>
+    <string name="tab_heart_chart_title">ตาราง</string>
+    <string name="bpm">BPM</string>
+    <string name="time">เวลา</string>
+    <string name="date">วันที่</string>
+    <string name="no_history_values">ไม่มีบันทึกประวัติ</string>
+    <string name="today">วันนี้</string>
+    <string name="yesterday">เมื่อวานนี้</string>
+    <string name="heart_rate_detection">การตรวจวัดอัตราการเต้นของหัวใจ</string>
+    <string name="click_start_detection">คลิกเริ่มต้นการตรวจสอบ</string>
+    <string name="click_to_restart">คลิกเพื่อเริ่มต้นใหม่</string>
+    <string name="click_to_end">คลิกเพื่อจบ</string>
+    <string name="detection">การตรวจพบ</string>
+    <string name="end_detection">การตรวจพบสิ้นสุด</string>
+    <string name="remind_message">กรุณาวางนิ้วของคุณเบา ๆ ใกล้ตรงหน้าเซ็นเซอร์</string>
+    <string name="no_data_detected">ไม่พบข้อมูล</string>
+    <string name="caption">คำบรรยายภาพ</string>
+    <string name="notice_title">โปรดเก็บท่าทางต่อไปนี้จนกว่าการตรวจสอบจะเสร็จสมบูรณ์</string>
+    <string name="notice_one">1. วางนิ้วลงบนเซ็นเซอร์ตรวจจับแสงด้านหน้าของโทรศัพท์เพื่อเริ่มต้นการทดสอบ,ตรวจสอบให้แน่ใจว่านิ้วของคุณได้ปกคลุมเซ็นเซอร์วัดแสงอย่างสมบูรณ์</string>
+    <string name="notice_two">2. เก็บท่าทางนิ้วมือของคุณจนกว่าการทดสอบจะเสร็จสมบูรณ์</string>
+    <string name="notice_three">โปรดทราบว่าผลการทดสอบเพื่อการอ้างอิงของคุณเท่านั้น,สถานการณ์จริงผลการทดสอบโดยอุปกรณ์ทางการแพทย์มีความถูกต้องแม่นยำกว่า,หากปัญหาสุขภาพใด ๆ โปรดปรึกษาแพทย์</string>
+    <string name="average_value">ค่าเฉลี่ย:</string>
+    <string name="last_ten_data">ข้อมูล 10 รายการล่าสุด</string>
+    <string name="clear_data">ล้างข้อมูล</string>
+    <string name="clear_all_data">คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลทั้งหมด?</string>
+    <string name="delete">ลบ</string>
+    <string name="cancel">ยกเลิก</string>
+</resources>
+

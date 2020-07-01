@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--BIRD_SMALL_VIEW_WINDOW yeyunfeng 20160301 -->
+<com.android.keyguard.KeyguardLeatherCoverView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidprv="http://schemas.android.com/apk/res/android"
+    xmlns:androidbird="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/zzzz_keyguard_leather_view"
+    android:layout_width="wrap_content"
+    android:layout_height="420dp"
+    android:background="@drawable/zzzzz_keyguard_bird_leather_cover_bg" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dip" >
+
+        <TextView
+            android:id="@+id/zzzz_leather_charge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/leather_bird_weather_color"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/zzzz_keyguard_leather_clock"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="@dimen/leather_cover_clock_view_top"
+        android:background="@drawable/zzzz_keyguard_bird_leather_number_bg" >
+
+        <com.android.keyguard.BirdDigitalClock
+            android:id="@+id/clock_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="95dp"
+            androidbird:time_hour_res="@array/zzzzz_keyguard_bird_digital_number_targets"
+            androidbird:time_minute_res="@array/zzzzz_keyguard_bird_digital_number_targets" />
+
+        <TextView
+            android:id="@+id/zzzz_keyguard_bird_leather_apm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="60dp"
+            android:textColor="@color/leather_bird_date_week_color"
+            android:textSize="18dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/zzzz_keyguard_leather_date_week"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clock_view"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextClock
+                android:id="@+id/zzzz_keyguard_bird_leather_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/leather_bird_date_week_color"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/zzzz_keyguard_bird_leather_week_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/leather_bird_date_week_color"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/zzzz_leather_weather"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/zzzz_leather_weather_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/zzzz_leather_weather_tem_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/zzzz_leather_weather_tem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/leather_bird_weather_color"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/weather_du"
+                android:textColor="@color/leather_bird_weather_color"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/zzzz_leather_call_mms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/zzzz_keyguard_leather_clock"
+        android:layout_marginTop="10dip" >
+
+        <LinearLayout
+            android:id="@+id/zzzz_leather_missed_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"   
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="140dp"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zzzzz_keyguard_bird_leather_miss_call" />
+
+            <TextView
+                android:id="@+id/zzzz_leather_missed_call_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-14dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:textColor="#f8dfa5"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zzzz_leather_mms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="120dp"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zzzzz_keyguard_bird_leather_unread_message" />
+
+            <TextView
+                android:id="@+id/zzzz_leather_mms_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-4dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:textColor="#f8dfa5"
+                android:textSize="10dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/music_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="295dp" 
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/music_song"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="#f8dfa5"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/music_artist"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="#f8dfa5"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/music_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/music_drawable_prev" />
+
+            <ImageButton
+                android:id="@+id/music_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dip"
+                android:background="@null"
+                android:src="@drawable/music_drawable_pause" />
+
+            <ImageButton
+                android:id="@+id/music_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dip"
+                android:background="@null"
+                android:src="@drawable/music_drawable_next" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp" >
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="#f8dfa5"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</com.android.keyguard.KeyguardLeatherCoverView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"  
+    package="com.bird.studentsos"  
+    android:versionCode="1"  
+    android:versionName="1.0"   
+    android:sharedUserId="android.uid.phone">  
+    <uses-permission android:name="android.permission.INJECT_EVENTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>   
+    <!--允许一个程序截获用户事件如按键、触摸、轨迹球等等到一个时间流-->
+    <uses-sdk android:minSdkVersion="15" />  
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <protected-broadcast android:name="android.intent.action.SIM_STATE_CHANGED" />
+    <protected-broadcast android:name="android.provider.Telephony.SPN_STRINGS_UPDATED" />
+    <application
+        android:name="PhoneApp" 
+        android:process="com.android.phone"
+        android:screenOrientation="portrait" 
+        android:label="@string/app_name" >  
+        <service android:name="com.bird.studentsos.StudentSosService" />
+        <receiver
+            android:name="com.bird.studentsos.StudentSosReceiver"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.STUDENTSOS" />
+            </intent-filter>
+        </receiver>
+    </application> 
+</manifest> 

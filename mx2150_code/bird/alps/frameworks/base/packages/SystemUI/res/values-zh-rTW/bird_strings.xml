@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2014, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--[BIRD][BIRD_POWER_MANAGER_V2][省电管理V2.0][qianliliang][20160527] BEGIN-->
+    <string name="bird_low_battery">電量低</string>
+    <string name="bird_low_battery_remaining">僅剩 <xliff:g id="NUMBER">%s</xliff:g>%% 電量。</string>
+    <string name="bird_low_battery_remaining_with_timer_count">已設置 <xliff:g id="NUMBER">%s</xliff:g>%% 電量自動進入超級省電, 當前僅剩<xliff:g id="NUMBER">%s</xliff:g>%%。 \n(<xliff:g id="NUMBER">%s</xliff:g>s 後自動進入)</string>
+    <string name="bird_cancel">取消</string>
+    <string name="bird_enter_super_saver">超級省電</string>
+    <!--[BIRD][BIRD_POWER_MANAGER_V2][省电管理V2.0][qianliliang][20160527] END-->
+    <!--[BIRD][BIRD_FINGER_PRINT_HINT][录入指纹后，锁屏界面提示"按下主屏幕以解锁"][zhangaman][20170310]begin-->
+    <string name="bird_fingerprint_hint">"按下主屏幕按鈕以解鎖"</string> 
+    <!--[BIRD][BIRD_FINGER_PRINT_HINT][录入指纹后，锁屏界面提示"按下主屏幕以解锁"][zhangaman][20170310]end-->
+    
+    <!--[BIRD][BIRD_QS_POWER_SAVE_SUPPORT][下拉菜单界面添加“超级省电”快捷图标][yangheng][201603017]BEGIN-->
+    <string name="bird_powermanager_name">超級省電</string>
+    <!--[BIRD][BIRD_QS_POWER_SAVE_SUPPORT][下拉菜单界面添加“超级省电”快捷图标][yangheng][201603017]END-->
+    
+    <!--[BIRD][BIRD_SHOTDOWN_CHARGE_SUGGESTION][由于电池容量较大，建议在关机状态下充电，保证充电过程稳定][客户需求][yangbo][20170726]BEGIN -->
+    <string name="bird_shotdown_charge_suggestion_title">"充電提示"</string>
+    <string name="bird_shotdown_charge_suggestion">"由於電池容量較大，建議在關機狀態下充電，以保證充電過程穩定"</string>
+    <!--[BIRD][BIRD_SHOTDOWN_CHARGE_SUGGESTION][由于电池容量较大，建议在关机状态下充电，保证充电过程稳定][客户需求][yangbo][20170726]BEGIN -->
+
+    <!--[BIRD][BIRD_TOAST_CHARGE_READ_SIM][充电时无法读写SIM卡提示][pangmeizhou][20180509]begin -->
+	<string name="bird_toast_charge_sim">注意：充电时无法读写SIM卡</string>
+	<!--[BIRD][BIRD_TOAST_CHARGE_READ_SIM][充电时无法读写SIM卡提示][pangmeizhou][20180509]end -->
+</resources>
+

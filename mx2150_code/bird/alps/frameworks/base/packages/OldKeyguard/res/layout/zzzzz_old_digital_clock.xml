@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.keyguard.BirdOldDigitalClock 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/zzzzz_default_clock"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="48dip" >        
+    <LinearLayout
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/zzzzz_default_am_pm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/zzzzz_default_am" />
+        <ImageView
+            android:id="@+id/zzzzz_default_clock_hour01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/oldphone_clock_numbers_0" />
+        <ImageView
+            android:id="@+id/zzzzz_default_clock_hour02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/oldphone_clock_numbers_0" />
+        <ImageView
+            android:id="@+id/zzzzz_default_clock_colon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/oldphone_clock_numbers_colon" />
+        <ImageView
+            android:id="@+id/zzzzz_default_clock_minute01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/oldphone_clock_numbers_0" />
+        <ImageView
+            android:id="@+id/zzzzz_default_clock_minute02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/oldphone_clock_numbers_0" />
+        <ImageView
+            android:id="@+id/zzzzz_default_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/oldphone_week_thursday_" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time"
+        android:layout_centerHorizontal="true"  
+        android:layout_marginTop="32dip"
+        android:orientation="horizontal">
+        
+        <TextClock android:id="@+id/date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/time"
+            android:textColor="@android:color/white"
+            android:textSize="24dip"
+            android:layout_marginRight="3dp"
+           android:textStyle="bold"
+            android:format12Hour="@string/zzzzz_oldphone_date_format"
+            android:format24Hour="@string/zzzzz_oldphone_date_format"/>
+            
+        <TextView android:id="@+id/date_nongli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"      
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="24dip"/>
+    </LinearLayout>
+</com.android.keyguard.BirdOldDigitalClock>

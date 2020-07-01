@@ -1,0 +1,36 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="StyleDialog" parent="@android:style/Theme.DeviceDefault.Light.Dialog.Alert">
+        <item name="android:colorAccent">#47b228</item>
+    </style>
+
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] BEGIN-->
+    <style name="BirdScreenShotStyleDialog" parent="@android:style/Theme.DeviceDefault.Light.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowMinWidthMajor">10dp</item>
+        <item name="android:windowMinWidthMinor">10dp</item>
+        <item name="android:backgroundDimAmount">0.8</item>
+    </style>
+
+    <style name="BottomButtonStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/bird_borderless_material</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="BirdScreenshotHelpStyle" parent="@android:style/Theme.Material.Light.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] END-->
+
+    <!--[BIRD][BIRD_KUSAI_VOLUME_DIALOG][基于原生的的酷赛音量调节][zhangaman][20170623]begin-->
+    <style name="BirdKusaiSeekbarTheme" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="android:colorPrimary">@color/system_primary_color</item>
+        <item name="android:colorControlActivated">@color/bird_kusai_system_accent_color</item>
+    </style>
+    <!--[BIRD][BIRD_KUSAI_VOLUME_DIALOG][基于原生的的酷赛音量调节][zhangaman][20170623]end-->
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.android.writeimei"
+      android:sharedUserId="android.uid.phone"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".WriteIMEI"
+                  android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".WriteIMEIGemini"
+                  android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <!--[BIRD][BIRD_SAVE_IMEI_WHEN_FACTORY_RESET][手动写码恢复出厂设置也要保留][zhangaman][20170913]begin-->
+        <service 
+            android:name=".WriteImeiService" 
+            android:process="com.android.phone"
+            android:exported="true">
+        </service>
+        <!--[BIRD][BIRD_SAVE_IMEI_WHEN_FACTORY_RESET][手动写码恢复出厂设置也要保留][zhangaman][20170913]end-->
+
+    </application>
+</manifest> 

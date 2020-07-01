@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">письменной IMEI!</string>
+    <string name="app_name">письменной IMEI</string>
+    <string name="ok">ОК</string>
+    <string name="write_success">Успешно</string>
+    <string name="write_fail">Сбой</string>
+    <string name="success_content_sim1">IMEI письменной успеха</string>
+    <string name="success_content_sim2">SIM2 IMEI письменной успеха</string>
+    <string name="fail_content_sim1">IMEI Ошибка записи</string>
+    <string name="fail_content_sim2">SIM2 IMEI Ошибка записи</string>
+</resources>

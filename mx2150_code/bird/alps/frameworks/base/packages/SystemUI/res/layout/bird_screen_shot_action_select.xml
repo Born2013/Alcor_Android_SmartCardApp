@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bird_qs_tile_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false" 
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="#77000000"
+    android:orientation="vertical" >
+
+
+
+    <LinearLayout
+        android:id="@+id/line_one_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:splitMotionEvents="false" 
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:background="#00ffffff"
+        android:gravity="center_horizontal">
+
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="#00ffffff"
+            android:orientation="vertical">
+            <ImageButton android:id="@+id/bird_full_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:background="@drawable/zzzzz_full_screenshot"/>
+            <TextView
+                android:layout_width="@dimen/bird_action_text_des_width"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/bird_screenshot_textcolor"
+                android:text="@string/bird_screenshot_full"/>
+        </LinearLayout>
+
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="#00ffffff"
+            android:orientation="vertical">
+            <ImageButton android:id="@+id/bird_regional_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:background="@drawable/zzzzz_regional_screenshot"/>
+            <TextView
+                android:layout_width="@dimen/bird_action_text_des_width"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/bird_screenshot_textcolor"
+                android:text="@string/bird_screenshot_regional"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line_two_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:splitMotionEvents="false" 
+        android:orientation="horizontal"
+        android:background="#00ffffff"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
+
+
+
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="#00ffffff"
+            android:orientation="vertical">
+            <ImageButton android:id="@+id/bird_long_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:scaleType="center"
+                android:background="@drawable/zzzzz_long_screenshot"/>
+            <TextView
+                android:layout_width="@dimen/bird_action_text_des_width"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/bird_screenshot_textcolor"
+                android:text="@string/bird_screenshot_long"/>
+        </LinearLayout>
+
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:background="#00ffffff"
+            android:orientation="vertical">
+            <ImageButton android:id="@+id/bird_help_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:scaleType="center"
+                android:background="@drawable/zzzzz_help_screenshot"/>
+            <TextView
+                android:layout_width="@dimen/bird_action_text_des_width"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/bird_screenshot_textcolor"
+                android:text="@string/bird_screenshot_help"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

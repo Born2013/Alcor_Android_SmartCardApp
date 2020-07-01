@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<!-- beauty -->
+	<string name="gy_accessibility_switch_to_faceart">Face beauty mode</string>
+	<string name="gy_faceart_guide_capture">FaceBeauty</string>
+        <string name="gy_faceart_guide_capture_off">FaceBeauty off</string>
+	<!-- beauty level -->
+	<string name="gy_exposure_tips">Beautify Skin Level</string>
+        <string name="pref_gybeauty_entry_off">off</string>
+        <string name="pref_gybeauty_entry_on">on</string>
+
+        <string name="gy_accessibility_switch_to_bokeh">Stereo lens is blocked</string>
+
+    <string name="pref_gybokeh_mode_default">off</string>
+	<string name="pref_camera_gybokeh_title">blur</string>
+	<string name="pref_camera_gyage_title">age</string>
+	<string name="pref_camera_gyage_year">year</string>
+	<string name="pref_camera_gyage_male">"male "</string>
+	<string name="pref_camera_gyage_female">"female "</string>
+	<string name="pref_gyage_mode_default">off</string>
+    <string name="pref_gyage_entry_off">off</string>
+    <string name="pref_gyage_entry_on">on</string>
+    
+    <declare-styleable name="ApertureView">
+        <attr name="blade_color" format="color" />
+        <attr name="background_color" format="color" />
+        <attr name="blade_space" format="dimension" />
+    </declare-styleable>
+    <color name="gy_seekbar_progress_color">#FF12B3B9</color>
+    <color name="gy_aperture_blade_color">#CCAAABAB</color>
+    <color name="gy_aperture_background_color">#FFFFFFFF</color>
+
+    <!--[BIRD][GANGYUN_BOKEH_SUPPORT][双摄][yangheng][20170215] BEGIN-->
+    <string name="bd_dual_cover">The Sub Camera is Covered</string>
+    <!--[BIRD][GANGYUN_BOKEH_SUPPORT][双摄][yangheng][20170215] END-->
+
+</resources>

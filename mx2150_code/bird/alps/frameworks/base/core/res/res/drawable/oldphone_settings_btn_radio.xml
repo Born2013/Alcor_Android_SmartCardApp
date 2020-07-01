@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_checked="true" android:state_enabled="true" android:state_pressed="true">
+        <bitmap android:src="@drawable/oldphone_btn_radio_on_pressed"  />
+    </item>
+    <item android:drawable="@drawable/oldphone_btn_radio_off_pressed" android:state_checked="false" android:state_enabled="true" android:state_pressed="true"/>
+    <item android:drawable="@drawable/oldphone_btn_radio_off" android:state_checked="false" android:state_enabled="true"/>
+    <item android:state_checked="true" android:state_enabled="true">
+        <bitmap android:src="@drawable/oldphone_btn_radio_on"  />
+    </item>
+
+    <!-- Disabled states -->
+    <item android:drawable="@drawable/oldphone_btn_radio_off_disabled" android:state_checked="false" android:state_enabled="false"/>
+    <item android:state_checked="true" android:state_enabled="false">
+        <bitmap android:src="@drawable/oldphone_btn_radio_on_disabled"  />
+    </item>
+
+</selector>

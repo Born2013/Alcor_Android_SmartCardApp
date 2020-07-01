@@ -1,0 +1,8 @@
+模组厂	COE(中光电)  
+IC型号	OTM8019
+玻璃	HSD
+分辨率	480*854
+丝印	
+ID脚	R2=10k,R4=10K
+command或vedio	
+

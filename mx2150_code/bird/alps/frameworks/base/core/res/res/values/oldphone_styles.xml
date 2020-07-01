@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!--
+===============================================================
+                        PLEASE READ
+===============================================================
+
+The Material themes must not be modified in order to pass CTS.
+Many related themes and styles depend on other values defined in this file.
+If you would like to provide custom themes and styles for your device,
+please see styles_device_defaults.xml.
+
+===============================================================
+                        PLEASE READ
+===============================================================
+ -->
+<resources>
+    <style name="AlertDialog.OldPhone" parent="AlertDialog">
+        <item name="fullDark">@empty</item>
+        <item name="topDark">@empty</item>
+        <item name="centerDark">@empty</item>
+        <item name="bottomDark">@empty</item>
+        <item name="fullBright">@empty</item>
+        <item name="topBright">@empty</item>
+        <item name="centerBright">@empty</item>
+        <item name="bottomBright">@empty</item>
+        <item name="bottomMedium">@empty</item>
+        <item name="centerMedium">@empty</item>
+        <item name="layout">@layout/oldphone_alert_dialog_material</item>
+        <item name="listLayout">@layout/select_dialog_material</item>
+        <item name="progressLayout">@layout/oldphone_progress_dialog_material</item>
+        <item name="horizontalProgressLayout">@layout/alert_dialog_progress_material</item>
+        <item name="listItemLayout">@layout/select_dialog_item_material</item>
+        <item name="multiChoiceItemLayout">@layout/select_dialog_multichoice_material</item>
+        <item name="singleChoiceItemLayout">@layout/oldphone_select_dialog_singlechoice_material</item>
+    </style>
+
+    <style name="AlertDialog.OldPhone.Ringtone" parent="@style/AlertDialog.OldPhone">
+        <item name="layout">@layout/oldphone_ringtone_alert_dialog_material</item>
+    </style>
+
+    <style name="AlertDialog.OldPhone.Light" />
+
+    <style name="OldPhoneProgressBar" parent="@style/Widget.Material.Light.ProgressBar">
+        <item name="indeterminateDrawable">@drawable/oldphone_progress_medium_material</item>
+    </style>
+</resources>

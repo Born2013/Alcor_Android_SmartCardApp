@@ -1,0 +1,8 @@
+模组厂	易欣达
+IC型号	ST7701
+玻璃	ctc
+分辨率	480*800
+丝印	
+ID脚	0,1
+command或vedio	video
+

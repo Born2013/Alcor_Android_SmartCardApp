@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.keyguard.KeyguardLeatherHostView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidprv="http://schemas.android.com/apk/res/android"
+    android:id="@+id/zzzz_keyguard_leather_host_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    android:orientation="vertical" >
+    
+    <include android:id="@+id/clock_bird"
+        layout="@layout/zzzz_keyguard_leather_cover_view"
+        android:visibility="gone"/>
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW_STYLE][皮套风格1][zhangaman][20170524]begin-->
+    <include android:id="@+id/zzzz_bird_clock_and_music"
+        layout="@layout/zzzz_leather_clock_and_music"
+        android:visibility="gone"/>
+    <!--[BIRD][BIRD_SMALL_VIEW_WINDOW_STYLE][皮套风格1][zhangaman][20170524]end-->
+</com.android.keyguard.KeyguardLeatherHostView>

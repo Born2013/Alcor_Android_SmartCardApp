@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [BIRD_WEIMI_MUSIC]wangyueyue 20150317 add -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/weimi_widget_background"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp" >
+
+    <LinearLayout
+        android:id="@+id/album_appwidget"
+        android:layout_width="@dimen/bird_widget_appwidget_width"
+        android:layout_height="@dimen/bird_widget_appwidget_height"
+        android:layout_marginLeft="@dimen/bird_widget_title_marginleft"
+        android:layout_marginTop="0dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <!-- 专辑名称 -->
+
+        <TextView
+            android:id="@+id/albumname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:textColor="@color/bird_widget_text_color"
+            android:textSize="@dimen/bird_widget_album_textsize"
+            android:visibility="gone" />
+
+        <!-- 歌曲名称 -->
+
+        <!--[bug-109116][字体设置为华康少女的两个显示问题]huangzhangbin 20160314 begin-->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:shadowColor="@color/bird_widget_text_shadecolor"
+            android:background="@drawable/weimi_widget_title_background"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:singleLine="true"
+            android:textColor="@color/bird_widget_text_color"
+            android:textSize="@dimen/bird_widget_title_textsize" />
+        <!-- 歌手名 -->
+
+        <TextView
+            android:id="@+id/artist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bird_widget_artist_margintop"
+            android:gravity="center"
+            android:shadowColor="@color/bird_widget_text_shadecolor"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:singleLine="true"
+            android:textColor="@color/bird_widget_text_color"
+            android:textSize="@dimen/bird_widget_artist_textsize" />
+        <!--[bug-109116][字体设置为华康少女的两个显示问题]huangzhangbin 20160314 end-->
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/button_cluster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginLeft="@dimen/bird_widget_button_marginLeft"
+            android:layout_marginTop="@dimen/bird_widget_button_margintop"
+            android:layout_marginBottom="@dimen/bird_widget_button_marginbottom"
+            android:orientation="horizontal" ><!-- kedongdong modify 20151214 -->
+
+            <ImageView
+                android:id="@+id/control_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/weimi_widget_prev" />
+
+            <ImageView
+                android:id="@+id/control_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/bird_widget_button_gap"
+                android:layout_marginRight="@dimen/bird_widget_button_gap"
+                android:src="@drawable/weimi_widget_play" />
+
+            <ImageView
+                android:id="@+id/control_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/weimi_widget_next" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/album_bitmap"
+            android:layout_width="@dimen/bird_widget_album_size"
+            android:layout_height="@dimen/bird_widget_album_size"
+            android:layout_marginLeft="@dimen/bird_widget_album_marginleft"
+            android:layout_marginTop="@dimen/bird_widget_album_margintop"
+            android:src="@drawable/weimi_widget_default_album" />
+    </FrameLayout>
+
+</RelativeLayout>

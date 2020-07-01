@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bird_qs_tile_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout 
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bird_guide_full"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:text="@string/bird_guide_full_str"
+            android:textAllCaps="false"
+            android:textStyle="normal"
+            android:fontFamily="sans-serif"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/bird_gray_background_ripple" />
+
+        <Button
+            android:id="@+id/bird_guide_regional"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="42dp"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:text="@string/bird_guide_regional_str"
+            android:textAllCaps="false"
+            android:textStyle="normal"
+            android:fontFamily="sans-serif"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/bird_gray_background_ripple" />
+
+        <Button
+            android:id="@+id/bird_guide_long"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="42dp"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:text="@string/bird_guide_long_str"
+            android:textAllCaps="false"
+            android:textStyle="normal"
+            android:fontFamily="sans-serif"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/bird_gray_background_ripple" />
+    </LinearLayout>
+</LinearLayout>

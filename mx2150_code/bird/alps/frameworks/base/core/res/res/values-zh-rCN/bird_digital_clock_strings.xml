@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="time_icon_contentDescription">时间</string>
+
+	<string name="week_monday">星期一&#160;&#160;</string>
+	<string name="week_tuesday">星期二&#160;&#160;</string>
+	<string name="week_wednesday">星期三&#160;&#160;</string>
+	<string name="week_thursday">星期四&#160;&#160;</string>
+	<string name="week_friday">星期五&#160;&#160;</string>
+	<string name="week_saturday">星期六&#160;&#160;</string>	
+	<string name="week_sunday">星期日&#160;&#160;</string>
+
+	<string name="month1">1月&#160;</string>
+	<string name="month2">2月&#160;</string>
+	<string name="month3">3月&#160;</string>
+	<string name="month4">4月&#160;</string>
+	<string name="month5">5月&#160;</string>
+	<string name="month6">6月&#160;</string>
+	<string name="month7">7月&#160;</string>
+	<string name="month8">8月&#160;</string>
+	<string name="month9">9月&#160;</string>
+	<string name="month10">10月&#160;</string>
+	<string name="month11">11月&#160;</string>
+	<string name="month12">12月&#160;</string>
+	
+	<string name="end_mark">日</string>
+	<string name="am">上午</string>
+	<string name="pm">下午</string>
+</resources>

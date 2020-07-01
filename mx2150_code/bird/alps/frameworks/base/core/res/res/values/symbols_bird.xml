@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* Copyright 2012, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources>
+
+  <!-- We don't want to publish private symbols in android.R as part of the
+       SDK.  Instead, put them here. -->
+  <private-symbols package="com.android.internal" />
+
+  <!-- Private symbols that we need to reference from framework code.  See
+       frameworks/base/core/res/MakeJavaSymbols.sed for how to easily generate
+       this.
+  -->
+
+    <!--[BIRD][BIRD_REBOOT_MENU][重新启动][yangheng][20161121] BEGIN -->
+    <java-symbol type="drawable" name="zzzzz_ic_lock_power_reboot" />
+    <java-symbol type="drawable" name="zzzzz_log_haishitong" />
+    <java-symbol type="string" name="zzzzz_power_reboot" />
+    <java-symbol type="string" name="zzzzz_power_restart" />
+    <java-symbol type="string" name="zzzzz_power_restart_alert" />
+    <!--[BIRD][BIRD_REBOOT_MENU][重新启动][yangheng][20161121] END -->
+    
+    <!--[BIRD][BIRD_LOCKSCREEN_WALLPAPER][锁屏壁纸][qianliliang][20160411]BEGIN -->
+    <java-symbol type="drawable" name="zzzzz_default_lockscreen" />
+    <!--[BIRD][BIRD_LOCKSCREEN_WALLPAPER][锁屏壁纸][qianliliang][20160411]END -->
+
+    <!--[BIRD][BIRD_ADD_SEARCH_ENGINE_AS_DEFAULT][全局增加搜索引擎并设为默认][qianliliang][20160627] BEGIN -->
+    <java-symbol type="string" name="zzzzz_bird_add_search_engine_default" />
+    <java-symbol type="string" name="zzzzz_bird_add_search_engine_sp" />
+    <!--[BIRD][BIRD_ADD_SEARCH_ENGINE_AS_DEFAULT][全局增加搜索引擎并设为默认][qianliliang][20160627] END -->
+    
+    <!--[BIRD][BIRD_PARBATTECH_APPRECOMMEND][基于Parbattech公司的接口实现的应用推荐][yangbo][20170529]BEGIN -->
+    <java-symbol type="string" name="zzzzz_bird_ic_app_recommend_notification_content" />
+    <java-symbol type="string" name="zzzzz_bird_ic_app_recommend_notification_title" />
+    <java-symbol type="drawable" name="zzzzz_bird_ic_app_recommend_notification" />
+    <!--[BIRD][BIRD_PARBATTECH_APPRECOMMEND][基于Parbattech公司的接口实现的应用推荐][yangbo][20170529]END -->
+    
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170629]BEGIN -->
+    <java-symbol type="string" name="zzzzz_secure_user_name" />
+    <java-symbol type="string" name="zzzzz_secure_user_deleted" />
+    <java-symbol type="string" name="zzzzz_secure_user_deleting" />
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170629]END -->
+    <!--[BIRD][BIRD_KUSAI_AUTO_MANAGER][库塞风格自启动管理,增加白名单][chenguangxiang][20170720] BEGIN-->
+    <java-symbol type="array" name="automanager_defaluton" />
+    <!--[BIRD][BIRD_KUSAI_AUTO_MANAGER][库塞风格自启动管理,增加白名单][chenguangxiang][20170720] END-->
+    <!--[BIRD][TASK #5427][呼叫转移西班牙语翻译][chenguangxiang][20170721] BEGIN-->
+    <java-symbol type="string" name="zzzzz_bird_serviceRegistered" />
+    <java-symbol type="string" name="zzzzz_bird_serviceDisabled" />
+    <!--[BIRD][TASK #5427][呼叫转移西班牙语翻译][chenguangxiang][20170721] END-->
+
+    <!--[BIRD_OLD_PHONE]huangzhangbin 20170907 begin-->
+    <java-symbol type="string" name="zzzzz_family_notify_text" />
+    <java-symbol type="string" name="zzzzz_family_notifi_area_text" />
+    <java-symbol type="string" name="zzzzz_oldphone_family_notifi" />
+    <java-symbol type="drawable" name="zzzzz_add_contacts_ring_bg" />
+    <java-symbol type="drawable" name="zzzzz_add_contacts1_picture" />
+    <java-symbol type="drawable" name="zzzzz_add_contacts2_picture" />
+    <java-symbol type="drawable" name="zzzzz_add_contacts3_picture" />
+    <java-symbol type="drawable" name="zzzzz_add_contacts4_picture" />
+    <java-symbol type="drawable" name="zzzzz_add_contacts5_picture" />
+    <java-symbol type="drawable" name="zzzzz_add_contacts6_picture" />
+    <java-symbol type="id" name="widget_layout" />
+    <java-symbol type="id" name="family_notify" />
+    <java-symbol type="id" name="family_image_area" />
+    <java-symbol type="id" name="family_image" />
+    <java-symbol type="id" name="family_notifi_area" />
+    <java-symbol type="layout" name="zzzzz_family_widget_main" />
+    <!--[BIRD_OLD_PHONE]huangzhangbin 20170907 end-->
+
+    <!-- [BIRD][一键静音][Task6105] chengci 20171015 begin  -->
+    <java-symbol type="string" name="volume_onestep_enable_toast" />
+    <!-- [BIRD][一键静音][Task6105] chengci 20171015 end  -->
+    
+    <!--[BIRD_FAKE_SIGNAL_CONFIG][信号格客制化项目可配置][xujing 20171206] begin-->
+    <java-symbol type="array" name="config_signal_lte_level_map" />
+    <java-symbol type="array" name="config_signal_tdd_level_map" />
+    <java-symbol type="array" name="config_signal_gsm_level_map" />
+    <java-symbol type="array" name="config_signal_evdo_level_map" />
+    <java-symbol type="array" name="config_signal_cdma_level_map" />
+    <!--[BIRD_FAKE_SIGNAL_CONFIG][信号格客制化项目可配置][xujing 20171206] end-->
+    
+    <!--[BIRD][BIRD_GLOBALACTIONS_ADD_SCREENSHOT][长按电源键弹出的对话框中增加"截屏"][yangbo][20180106]BEGIN -->
+    <java-symbol type="string" name="zzzzz_screenshot" />
+    <java-symbol type="string" name="zzzzz_screenshot_saving_ticker" />
+    <java-symbol type="drawable" name="zzzzz_ic_qs_screen_shot" />
+    <!--[BIRD][BIRD_GLOBALACTIONS_ADD_SCREENSHOT][长按电源键弹出的对话框中增加"截屏"][yangbo][20180106]END -->
+	<!--[BIRD][CTA权限提示框提示错误][pangmeizhou][20180123]begin -->
+    <java-symbol type="string" name="zzzzz_aerr_application_permission_connectivity" />
+    <java-symbol type="string" name="zzzzz_mtk_perm_err_dialog_ok" />
+	<!--[BIRD][CTA权限提示框提示错误][pangmeizhou][20180123]end -->
+	
+    <!--[BIRD][BIRD_MULTI_SIMLOCK_VIETTEL_IMPROVE][锁网特殊需求，详见TASK-6722][yangbo][20180131]BEGIN -->
+    <java-symbol type="string" name="zzzzz_simcard_unplugged_warning_title" />
+    <java-symbol type="string" name="zzzzz_simcard_unplugged_warning_message" />
+    <!--[BIRD][BIRD_MULTI_SIMLOCK_VIETTEL_IMPROVE][锁网特殊需求，详见TASK-6722][yangbo][20180131]END -->
+    
+    <!--[BIRD][BIRD_LOCALE_LIST_SORT][语言列表排序，可将部分语言排列在前面][yangbo][20180209]BEGIN -->
+    <java-symbol type="array" name="zzzzz_priority_locales" />
+    <!--[BIRD][BIRD_LOCALE_LIST_SORT][语言列表排序，可将部分语言排列在前面][yangbo][20180209]END -->
+</resources>

@@ -1,0 +1,9 @@
+模组厂	HLT
+IC型号	ST7701
+玻璃	CTC
+分辨率	480x854
+丝印	
+ID脚	0,0
+command或vedio	VEDIO
+
+

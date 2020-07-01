@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] BEGIN-->
+    <dimen name="bird_long_screenshot_action_height">60dp</dimen>
+    <dimen name="bird_long_screenshot_action_width">240dp</dimen>
+    <dimen name="bird_action_text_des_width">107dp</dimen>
+
+    <!--操作指南界面 相关参数-->
+    <dimen name="bird_arrow_margin_bottom">0dp</dimen>
+    <dimen name="bird_guide_desc_margin_bottom">30dp</dimen>
+    <dimen name="bird_guide_desc_margin_top">-6dp</dimen>
+
+    <!--CropView 相关参数-->
+    <dimen name="preview_margin">2dp</dimen>
+    <dimen name="shadow_margin">5dp</dimen>
+    <dimen name="crop_min_side">10dp</dimen>
+    <dimen name="crop_touch_tolerance">20dp</dimen>
+    <dimen name="wp_selector_dash_length">4dp</dimen>
+    <dimen name="wp_selector_off_length">4dp</dimen>
+    <dimen name="crop_indicator_size">35dp</dimen>
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] END-->
+
+</resources>

@@ -1,0 +1,33 @@
+config BIRD_CAMERA_COVER_SUPPORT
+  bool "DUAL CAMERA FOR ONE COVER Driver"
+  default n
+  help
+    BIRD_CAMERA_COVER_SUPPORT Driver
+
+config BIRD_CAMERA_COVER_SUPPORT_GC2145
+  bool "DUAL CAMERA FOR ONE GC2145 ONLY FOR COVER Driver"
+  depends on BIRD_CAMERA_COVER_SUPPORT
+  default n
+  help
+    BIRD_CAMERA_COVER_SUPPORT_GC2145 Driver
+
+config SHUTTER_MAPPING_VALUE
+   int "SHUTTER_MAPPING_VALUE"
+   depends on BIRD_CAMERA_COVER_SUPPORT
+   default 4000
+   help
+     shutter value shoud modify base sensor that is used now
+
+config BIRD_CAMERA_COVER_SUPPORT_ADD_GC2385
+   bool "DUAL CAMERA FOR ONE COVER GC2385 Driver"
+   depends on BIRD_CAMERA_COVER_SUPPORT
+   default n
+   help
+     BIRD_CAMERA_COVER_SUPPORT GC2385Driver
+
+config BIRD_CAMERA_COVER_SUPPORT_GC2145_FOR_SMT
+  bool "DUAL CAMERA FOR ONE GC2145 ONLY FOR FOR_SMT COVER Driver"
+  depends on BIRD_CAMERA_COVER_SUPPORT
+  default n
+  help
+    BIRD_CAMERA_COVER_SUPPORT_GC2145_FOR_SMT Driver

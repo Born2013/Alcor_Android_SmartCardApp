@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [BIRD][BIRD_QINGYU_CONTACTS]chengshujiang 20160413 begin -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:orientation="vertical"
+    android:paddingEnd="16dp"
+    android:paddingStart="16dp" >
+<!-- [BIRD][BIRD_QINGYU_CONTACTS]chengshujiang 20160413 end -->
+
+    <TextView
+        android:id="@+id/item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/contact_primary_text_color_black"
+        android:layout_centerVertical="true"
+        android:textSize="16sp" />
+
+</RelativeLayout>

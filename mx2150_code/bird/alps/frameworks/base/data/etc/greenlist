@@ -1,0 +1,10 @@
+﻿{
+    "version": "V1.0.0",
+    "greenList": [
+        "com.bird.einternet",
+        "com.bird.edownload",
+        "com.tencent.mm",
+        "com.haishangtong",
+        "com.android.launcher3"
+    ]
+}

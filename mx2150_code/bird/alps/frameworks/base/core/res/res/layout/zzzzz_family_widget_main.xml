@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/family_notify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:shadowColor="#88000000"
+        android:shadowDx="0.8"
+        android:shadowDy="0.5"
+        android:shadowRadius="0.3"
+        android:textStyle="bold" 
+        android:singleLine="true"
+        android:text="@string/zzzzz_family_notify_text"
+        android:textColor="#FFFFFFFF"
+        android:textSize="28dp" />
+
+    <RelativeLayout
+        android:id="@+id/family_image_area"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/family_notify"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/family_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:src="@drawable/zzzzz_add_contacts_ring_bg"
+            android:importantForAccessibility="no" />  
+
+    </RelativeLayout> 
+
+    <TextView
+        android:id="@+id/family_notifi_area"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="#88000000"
+        android:shadowDx="0.8"
+        android:shadowDy="0.5"
+        android:shadowRadius="0.3"
+        android:textStyle="bold" 
+        android:singleLine="true"
+        android:text="@string/zzzzz_family_notifi_area_text"
+        android:textColor="#FFFFFFFF"
+        android:textSize="28dp" />
+
+</RelativeLayout>

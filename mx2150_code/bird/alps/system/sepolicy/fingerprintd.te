@@ -1,0 +1,39 @@
+type fingerprintd, domain, domain_deprecated;
+type fingerprintd_exec, exec_type, file_type;
+
+# fingerprintd
+init_daemon_domain(fingerprintd)
+binder_use(fingerprintd)
+
+# need to find KeyStore and add self
+allow fingerprintd fingerprintd_service:service_manager { add find };
+
+# allow HAL module to read dir contents
+allow fingerprintd fingerprintd_data_file:file { create_file_perms };
+
+# allow HAL module to read/write/unlink contents of this dir
+allow fingerprintd fingerprintd_data_file:dir rw_dir_perms;
+
+# Need to add auth tokens to KeyStore
+use_keystore(fingerprintd)
+allow fingerprintd keystore:keystore_key { add_auth };
+
+#[BIRD][microarray指纹][yangbo][20161220]BEGIN
+allow fingerprintd microarray_finger_device:chr_file { create_file_perms };
+allow fingerprintd self:capability {dac_override dac_read_search};
+#[BIRD][microarray指纹][yangbo][20161220]END
+
+#add by wuchuang 20170721 for new microarray fingerprint begin
+allow ma_data_file labeledfs:filesystem associate;
+file_type_auto_trans(fingerprintd, system_data_file, ma_data_file);
+allow fingerprintd ma_data_file:file create_file_perms;
+#add by wuchuang 20170721 for new microarray fingerprint end
+
+# For permissions checking
+binder_call(fingerprintd, system_server);
+allow fingerprintd permission_service:service_manager find;
+
+#add by wuchuang 20170817 for cdfinger
+binder_call(fingerprintd, cdfingerserver)
+allow fingerprintd cdfingerserver_service:service_manager find;
+

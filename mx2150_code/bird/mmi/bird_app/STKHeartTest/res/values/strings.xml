@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Heart Rate</string>
+    <string name="tab_heart_list_title">List</string>
+    <string name="tab_heart_chart_title">Chart</string>
+    <string name="bpm">BPM</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="no_history_values">No history record</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="heart_rate_detection">Heart rate detection</string>
+    <string name="click_start_detection">Click start detection</string>
+    <string name="click_to_restart">Click to restart</string>
+    <string name="click_to_end">Click to end</string>
+    <string name="detection">Detection</string>
+    <string name="end_detection">End Detection</string>
+    <string name="remind_message">Please put your finger softly in front of proximity sensor</string>
+    <string name="no_data_detected">No data detected</string>
+    <string name="caption">Caption</string>
+    <string name="notice_title">Please keep the following gesture until the detection is complete</string>
+    <string name="notice_one">1.Put your finger on the phone\'s front light sensor to begin testing, make sure your fingers are completely covered by the light sensor.</string>
+    <string name="notice_two">2.Keep your finger gestures until the test is complete.</string>
+    <string name="notice_three">Please note that the test results are for your reference only, the actual situation of medical equipment test results are accurate, if any health problems, please consult a doctor</string>
+    <string name="average_value">Average value:</string>
+    <string name="last_ten_data">Last 10 data</string>
+    <string name="clear_data">Clear Data</string>
+    <string name="clear_all_data">Are you sure to clear all data?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+</resources>

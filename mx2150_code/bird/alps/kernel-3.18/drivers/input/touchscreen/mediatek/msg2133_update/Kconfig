@@ -1,0 +1,28 @@
+#
+# Touchscreen driver configuration
+#
+if TOUCHSCREEN_MTK_MSG2133_UPDATE
+	
+
+config  TPD_COMPATIBILITY_REPORT_KEY
+	bool "TPD_COMPATIBILITY_REPORT_KEY"
+	default n
+	help
+	Say Y here if you use msg2133 and compatibility other IC, msg2133 report key use g_TpVirtualKey instead of using dts.
+
+
+config  BIRD_MSG2XXX_CTP_TSFW
+	string "BIRD_MSG2XXX_CTP_TSFW Config"
+	---help---
+	  This selects the MSG2133_UPDATE driver.
+
+
+config  TPD_POWER_VTP28_USE_VCAMA
+	bool "TPD_POWER_VTP28_USE_VCAMA"
+	default n
+	help
+	Say Y here if you use VTP28 of VCAMA voltage for touch panel.
+
+
+
+endif

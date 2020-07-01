@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources> 
+    <string name="time_icon_contentDescription">เวลา</string>
+    <string name="week_monday">จันทร์</string>
+    <string name="week_tuesday">อังคาร</string>
+    <string name="week_wednesday">พุธ</string>
+    <string name="week_thursday">พฤหัส</string>
+    <string name="week_friday">ศุกร์</string>
+    <string name="week_saturday">เสาร์</string>
+    <string name="week_sunday">อาทิตย์</string>
+    <string name="month1">มกราคม</string>
+    <string name="month2">กุมภาพันธ์</string>
+    <string name="month3">มีนาคม</string>
+    <string name="month4">เมษายน</string>
+    <string name="month5">พฤษภาคม</string>
+    <string name="month6">มิถุนายน</string>
+    <string name="month7">กรกฏาคม</string>
+    <string name="month8">สิงหาคม</string>
+    <string name="month9">กันยายน</string>
+    <string name="month10">ตุลาคม</string>
+    <string name="month11">พฤศจิกายน</string>
+    <string name="month12">ธันวาคม</string>
+    <string name="end_mark"> </string>
+    <string name="dot_pic_text">:</string>
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+</resources>
+

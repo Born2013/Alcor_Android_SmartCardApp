@@ -1,0 +1,1493 @@
+commit c3cdabcd5cec24164fd5b35ba05a56efe17db0b6
+Author: pangmeizhou <meizhou.pang@nbbsw.com>
+Date:   Thu Aug 30 17:15:16 2018 +0800
+
+    [FOTA升级到5.22]
+
+diff --git a/bird/alps/system/sepolicy/platform_app.te b/bird/alps/system/sepolicy/platform_app.te
+index 0d3bdba..95e65fd 100644
+--- a/bird/alps/system/sepolicy/platform_app.te
++++ b/bird/alps/system/sepolicy/platform_app.te
+@@ -55,3 +55,8 @@ allow platform_app vr_manager_service:service_manager find;
+ # Access to /data/preloads
+ allow platform_app preloads_data_file:file r_file_perms;
+ allow platform_app preloads_data_file:dir r_dir_perms;
++
++# add for fota.
++allow platform_app recovery_service:service_manager find;
++allow platform_app { cache_file cache_recovery_file }:dir create_dir_perms;
++allow platform_app { cache_file cache_recovery_file }:file create_file_perms;
+
+commit 1039e250469131ae48de077ca34f2b1942907e96
+Author: pangmeizhou <meizhou.pang@nbbsw.com>
+Date:   Thu Aug 30 17:11:43 2018 +0800
+
+    [FOTA升级到5.22]
+
+diff --git a/bird/alps/system/sepolicy/platform_app.te b/bird/alps/system/sepolicy/platform_app.te
+new file mode 100644
+index 0000000..0d3bdba
+--- /dev/null
++++ b/bird/alps/system/sepolicy/platform_app.te
+@@ -0,0 +1,57 @@
++###
++### Apps signed with the platform key.
++###
++
++type platform_app, domain, domain_deprecated;
++app_domain(platform_app)
++# Access the network.
++net_domain(platform_app)
++# Access bluetooth.
++bluetooth_domain(platform_app)
++# Read from /data/local/tmp or /data/data/com.android.shell.
++allow platform_app shell_data_file:dir search;
++allow platform_app shell_data_file:file { open getattr read };
++allow platform_app icon_file:file { open getattr read };
++# Populate /data/app/vmdl*.tmp, /data/app-private/vmdl*.tmp files
++# created by system server.
++allow platform_app { apk_tmp_file apk_private_tmp_file }:dir rw_dir_perms;
++allow platform_app { apk_tmp_file apk_private_tmp_file }:file rw_file_perms;
++allow platform_app apk_private_data_file:dir search;
++# ASEC
++allow platform_app asec_apk_file:dir create_dir_perms;
++allow platform_app asec_apk_file:file create_file_perms;
++
++# Access to /data/media.
++allow platform_app media_rw_data_file:dir create_dir_perms;
++allow platform_app media_rw_data_file:file create_file_perms;
++
++# Write to /cache.
++allow platform_app { cache_file cache_recovery_file }:dir create_dir_perms;
++allow platform_app { cache_file cache_recovery_file }:file create_file_perms;
++
++# Likely not needed
++auditallow platform_app cache_recovery_file:dir create_dir_perms;
++auditallow platform_app cache_recovery_file:file create_file_perms;
++
++# Direct access to vold-mounted storage under /mnt/media_rw
++# This is a performance optimization that allows platform apps to bypass the FUSE layer
++allow platform_app mnt_media_rw_file:dir r_dir_perms;
++allow platform_app vfat:dir create_dir_perms;
++allow platform_app vfat:file create_file_perms;
++
++allow platform_app audioserver_service:service_manager find;
++allow platform_app cameraserver_service:service_manager find;
++allow platform_app drmserver_service:service_manager find;
++allow platform_app mediaserver_service:service_manager find;
++allow platform_app mediaextractor_service:service_manager find;
++allow platform_app mediacodec_service:service_manager find;
++allow platform_app persistent_data_block_service:service_manager find;
++allow platform_app radio_service:service_manager find;
++allow platform_app surfaceflinger_service:service_manager find;
++allow platform_app app_api_service:service_manager find;
++allow platform_app system_api_service:service_manager find;
++allow platform_app vr_manager_service:service_manager find;
++
++# Access to /data/preloads
++allow platform_app preloads_data_file:file r_file_perms;
++allow platform_app preloads_data_file:dir r_dir_perms;
+
+commit 47f0f602775df660576e531b6243e2dedd0f3af7
+Author: huangzhangbin <zhangbin.huang@nbbsw.com>
+Date:   Wed Nov 8 20:42:06 2017 +0800
+
+    [NB_MMI][8181作假和老人桌面入口修改]
+
+diff --git a/bird/alps/system/sepolicy/app.te b/bird/alps/system/sepolicy/app.te
+new file mode 100644
+index 0000000..0c26be3
+--- /dev/null
++++ b/bird/alps/system/sepolicy/app.te
+@@ -0,0 +1,444 @@
++###
++### Domain for all zygote spawned apps
++###
++### This file is the base policy for all zygote spawned apps.
++### Other policy files, such as isolated_app.te, untrusted_app.te, etc
++### extend from this policy. Only policies which should apply to ALL
++### zygote spawned apps should be added here.
++###
++
++# WebView and other application-specific JIT compilers
++allow appdomain self:process execmem;
++
++allow appdomain ashmem_device:chr_file execute;
++
++# Receive and use open file descriptors inherited from zygote.
++allow appdomain zygote:fd use;
++
++# gdbserver for ndk-gdb reads the zygote.
++# valgrind needs mmap exec for zygote
++allow appdomain zygote_exec:file rx_file_perms;
++
++# Read system properties managed by zygote.
++allow appdomain zygote_tmpfs:file read;
++
++# Notify zygote of death;
++allow appdomain zygote:process sigchld;
++
++# Place process into foreground / background
++allow appdomain cgroup:dir { search write };
++allow appdomain cgroup:file rw_file_perms;
++
++# Read /data/dalvik-cache.
++allow appdomain dalvikcache_data_file:dir { search getattr };
++allow appdomain dalvikcache_data_file:file r_file_perms;
++
++# Read the /sdcard and /mnt/sdcard symlinks
++allow appdomain rootfs:lnk_file r_file_perms;
++allow appdomain tmpfs:lnk_file r_file_perms;
++
++# Search /storage/emulated tmpfs mount.
++allow appdomain tmpfs:dir r_dir_perms;
++
++userdebug_or_eng(`
++  # Notify zygote of the wrapped process PID when using --invoke-with.
++  allow appdomain zygote:fifo_file write;
++
++  # Allow apps to create and write method traces in /data/misc/trace.
++  allow appdomain method_trace_data_file:dir w_dir_perms;
++  allow appdomain method_trace_data_file:file { create w_file_perms };
++')
++
++# Notify shell and adbd of death when spawned via runas for ndk-gdb.
++allow appdomain shell:process sigchld;
++allow appdomain adbd:process sigchld;
++
++# child shell or gdbserver pty access for runas.
++allow appdomain devpts:chr_file { getattr read write ioctl };
++
++# Use pipes and sockets provided by system_server via binder or local socket.
++allow appdomain system_server:fifo_file rw_file_perms;
++allow appdomain system_server:unix_stream_socket { read write setopt getattr getopt shutdown };
++allow appdomain system_server:tcp_socket { read write getattr getopt shutdown };
++
++# Communication with other apps via fifos
++allow appdomain appdomain:fifo_file rw_file_perms;
++
++# Communicate with surfaceflinger.
++allow appdomain surfaceflinger:unix_stream_socket { read write setopt getattr getopt shutdown };
++
++# App sandbox file accesses.
++allow { appdomain -isolated_app } app_data_file:dir create_dir_perms;
++allow { appdomain -isolated_app } app_data_file:notdevfile_class_set create_file_perms;
++
++# lib subdirectory of /data/data dir is system-owned.
++allow appdomain system_data_file:dir r_dir_perms;
++allow appdomain system_data_file:file { execute execute_no_trans open execmod };
++
++# Traverse into expanded storage
++allow appdomain mnt_expand_file:dir r_dir_perms;
++
++# Keychain and user-trusted credentials
++allow appdomain keychain_data_file:dir r_dir_perms;
++allow appdomain keychain_data_file:file r_file_perms;
++allow appdomain misc_user_data_file:dir r_dir_perms;
++allow appdomain misc_user_data_file:file r_file_perms;
++
++# Access to OEM provided data and apps
++allow appdomain oemfs:dir r_dir_perms;
++allow appdomain oemfs:file rx_file_perms;
++
++# Execute the shell or other system executables.
++allow appdomain shell_exec:file rx_file_perms;
++allow appdomain system_file:file rx_file_perms;
++allow appdomain toolbox_exec:file rx_file_perms;
++
++# Renderscript needs the ability to read directories on /system
++r_dir_file(appdomain, system_file)
++
++# Execute dex2oat when apps call dexclassloader
++allow appdomain dex2oat_exec:file rx_file_perms;
++
++# Read/write wallpaper file (opened by system).
++allow appdomain wallpaper_file:file { getattr read write };
++
++# Read/write cached ringtones (opened by system).
++allow appdomain ringtone_file:file { getattr read write };
++
++# Read ShortcutManager icon files (opened by system).
++allow appdomain shortcut_manager_icons:file { getattr read };
++
++# Read icon file (opened by system).
++allow appdomain icon_file:file { getattr read };
++
++# Write to /data/anr/traces.txt.
++allow appdomain anr_data_file:dir search;
++allow appdomain anr_data_file:file { open append };
++
++# Allow apps to send dump information to dumpstate
++allow appdomain dumpstate:fd use;
++allow appdomain dumpstate:unix_stream_socket { read write getopt getattr shutdown };
++allow appdomain dumpstate:fifo_file { write getattr };
++allow appdomain shell_data_file:file { write getattr };
++
++# Write profiles /data/misc/profiles
++allow appdomain user_profile_data_file:dir { search write add_name };
++allow appdomain user_profile_data_file:file create_file_perms;
++# Profiles for foreign dex files are just markers and only need create permissions.
++allow appdomain user_profile_foreign_dex_data_file:dir { search write add_name };
++allow appdomain user_profile_foreign_dex_data_file:file create;
++# There is no way to create user_profile_foreign_dex_data_file without
++# generating open/read denials. These permissions should not be granted and the
++# denial is harmless. dontaudit to suppress the denial.
++dontaudit appdomain user_profile_foreign_dex_data_file:file { open read };
++
++# Send heap dumps to system_server via an already open file descriptor
++# % adb shell am set-watch-heap com.android.systemui 1048576
++# % adb shell dumpsys procstats --start-testing
++# debuggable builds only.
++userdebug_or_eng(`
++  allow appdomain heapdump_data_file:file append;
++')
++
++# Write to /proc/net/xt_qtaguid/ctrl file.
++allow appdomain qtaguid_proc:file rw_file_perms;
++# Everybody can read the xt_qtaguid resource tracking misc dev.
++# So allow all apps to read from /dev/xt_qtaguid.
++allow appdomain qtaguid_device:chr_file r_file_perms;
++
++# Grant GPU access to all processes started by Zygote.
++# They need that to render the standard UI.
++allow { appdomain -isolated_app } gpu_device:chr_file rw_file_perms;
++
++# Use the Binder.
++binder_use(appdomain)
++# Perform binder IPC to binder services.
++binder_call(appdomain, binderservicedomain)
++# Perform binder IPC to other apps.
++binder_call(appdomain, appdomain)
++
++# Already connected, unnamed sockets being passed over some other IPC
++# hence no sock_file or connectto permission. This appears to be how
++# Chrome works, may need to be updated as more apps using isolated services
++# are examined.
++allow appdomain appdomain:unix_stream_socket { getopt getattr read write shutdown };
++
++# Backup ability for every app. BMS opens and passes the fd
++# to any app that has backup ability. Hence, no open permissions here.
++allow appdomain backup_data_file:file { read write getattr };
++allow appdomain cache_backup_file:file { read write getattr };
++allow appdomain cache_backup_file:dir getattr;
++# Backup ability using 'adb backup'
++allow appdomain system_data_file:lnk_file getattr;
++
++# Allow read/stat of /data/media files passed by Binder or local socket IPC.
++allow appdomain media_rw_data_file:file { read getattr };
++
++# Read and write /data/data/com.android.providers.telephony files passed over Binder.
++allow appdomain radio_data_file:file { read write getattr };
++
++# Allow access to external storage; we have several visible mount points under /storage
++# and symlinks to primary storage at places like /storage/sdcard0 and /mnt/user/0/primary
++allow appdomain storage_file:dir r_dir_perms;
++allow appdomain storage_file:lnk_file r_file_perms;
++allow appdomain mnt_user_file:dir r_dir_perms;
++allow appdomain mnt_user_file:lnk_file r_file_perms;
++
++# Read/write visible storage
++allow appdomain fuse:dir create_dir_perms;
++allow appdomain fuse:file create_file_perms;
++allow appdomain sdcardfs:dir create_dir_perms;
++allow appdomain sdcardfs:file create_file_perms;
++
++# Access OBBs (vfat images) mounted by vold (b/17633509)
++# File write access allowed for FDs returned through Storage Access Framework
++allow appdomain vfat:dir r_dir_perms;
++allow appdomain vfat:file rw_file_perms;
++
++# Allow apps to use the USB Accessory interface.
++# http://developer.android.com/guide/topics/connectivity/usb/accessory.html
++#
++# USB devices are first opened by the system server (USBDeviceManagerService)
++# and the file descriptor is passed to the right Activity via binder.
++allow appdomain usb_device:chr_file { read write getattr ioctl };
++allow appdomain usbaccessory_device:chr_file { read write getattr };
++
++# For art.
++allow appdomain dalvikcache_data_file:file execute;
++allow appdomain dalvikcache_data_file:lnk_file r_file_perms;
++
++# Allow any app to read shared RELRO files.
++allow appdomain shared_relro_file:dir search;
++allow appdomain shared_relro_file:file r_file_perms;
++
++# Allow apps to read/execute installed binaries
++allow appdomain apk_data_file:dir r_dir_perms;
++allow appdomain apk_data_file:file { rx_file_perms execmod };
++
++# /data/resource-cache
++allow appdomain resourcecache_data_file:file r_file_perms;
++allow appdomain resourcecache_data_file:dir r_dir_perms;
++
++# logd access
++read_logd(appdomain)
++control_logd(appdomain)
++# application inherit logd write socket (urge is to deprecate this long term)
++allow appdomain zygote:unix_dgram_socket write;
++
++allow { appdomain -isolated_app } keystore:keystore_key { get_state get insert delete exist list sign verify };
++
++use_keystore({ appdomain -isolated_app })
++
++allow appdomain console_device:chr_file { read write };
++
++# only allow unprivileged socket ioctl commands
++allowxperm { appdomain -bluetooth } self:{ rawip_socket tcp_socket udp_socket }
++  ioctl { unpriv_sock_ioctls unpriv_tty_ioctls };
++
++allow { appdomain -isolated_app } ion_device:chr_file rw_file_perms;
++
++# For app fuse.
++allow appdomain app_fuse_file:file { getattr read append write };
++
++###
++### CTS-specific rules
++###
++
++# For cts/tests/tests/permission/src/android/permission/cts/FileSystemPermissionTest.java.
++# testRunAsHasCorrectCapabilities
++allow appdomain runas_exec:file getattr;
++# Others are either allowed elsewhere or not desired.
++
++# For cts/tests/tests/security/src/android/security/cts/SELinuxTest.java
++# Check SELinux policy and contexts.
++selinux_check_access(appdomain)
++selinux_check_context(appdomain)
++
++# Apps receive an open tun fd from the framework for
++# device traffic. Do not allow untrusted app to directly open tun_device
++allow { appdomain -isolated_app } tun_device:chr_file { read write getattr ioctl append };
++
++# Connect to adbd and use a socket transferred from it.
++# This is used for e.g. adb backup/restore.
++allow appdomain adbd:unix_stream_socket connectto;
++allow appdomain adbd:fd use;
++allow appdomain adbd:unix_stream_socket { getattr getopt ioctl read write shutdown };
++
++allow appdomain cache_file:dir getattr;
++
++###
++### Neverallow rules
++###
++### These are things that Android apps should NEVER be able to do
++###
++
++# Superuser capabilities.
++# bluetooth requires net_admin and wake_alarm.
++neverallow { appdomain -bluetooth } self:capability *;
++neverallow { appdomain -bluetooth } self:capability2 *;
++
++# Block device access.
++neverallow appdomain dev_type:blk_file { read write };
++
++# Access to any of the following character devices.
++neverallow appdomain {
++    audio_device
++    camera_device
++    dm_device
++    gps_device
++    radio_device
++    rpmsg_device
++    video_device
++}:chr_file { read write };
++
++# Note: Try expanding list of app domains in the future.
++neverallow { untrusted_app isolated_app shell } graphics_device:chr_file { read write };
++
++neverallow { appdomain -nfc } nfc_device:chr_file
++    { read write };
++neverallow { appdomain -bluetooth } hci_attach_dev:chr_file
++    { read write };
++neverallow appdomain tee_device:chr_file { read write };
++
++# Privileged netlink socket interfaces.
++neverallow appdomain
++    domain:{
++        netlink_firewall_socket
++        netlink_tcpdiag_socket
++        netlink_nflog_socket
++        netlink_xfrm_socket
++        netlink_audit_socket
++        netlink_ip6fw_socket
++        netlink_dnrt_socket
++    } *;
++
++# These messages are broadcast messages from the kernel to userspace.
++# Do not allow the writing of netlink messages, which has been a source
++# of rooting vulns in the past.
++neverallow appdomain domain:netlink_kobject_uevent_socket { write append };
++
++# Sockets under /dev/socket that are not specifically typed.
++neverallow appdomain socket_device:sock_file write;
++
++# Unix domain sockets.
++neverallow appdomain adbd_socket:sock_file write;
++neverallow appdomain installd_socket:sock_file write;
++neverallow { appdomain -radio } rild_socket:sock_file write;
++neverallow appdomain vold_socket:sock_file write;
++neverallow appdomain zygote_socket:sock_file write;
++
++# ptrace access to non-app domains.
++neverallow appdomain { domain -appdomain }:process ptrace;
++
++# Write access to /proc/pid entries for any non-app domain.
++neverallow appdomain { domain -appdomain }:file write;
++
++# signal access to non-app domains.
++# sigchld allowed for parent death notification.
++# signull allowed for kill(pid, 0) existence test.
++# All others prohibited.
++neverallow appdomain { domain -appdomain }:process
++    { sigkill sigstop signal };
++
++# Transition to a non-app domain.
++# Exception for the shell domain and the su domain, can transition to runas,
++# etc.
++neverallow { appdomain -shell userdebug_or_eng(`-su') } { domain -appdomain }:process
++    { transition dyntransition };
++
++# Write to rootfs.
++neverallow appdomain rootfs:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++
++# Write to /system.
++neverallow appdomain system_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++
++# Write to entrypoint executables.
++neverallow appdomain exec_type:file
++    { create write setattr relabelfrom relabelto append unlink link rename };
++
++# Write to system-owned parts of /data.
++# This is the default type for anything under /data not otherwise
++# specified in file_contexts.  Define a different type for portions
++# that should be writable by apps.
++neverallow appdomain system_data_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++
++# Write to various other parts of /data.
++neverallow appdomain drm_data_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++neverallow { appdomain -system_app }
++    gps_data_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++neverallow { appdomain -platform_app }
++    apk_data_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++neverallow { appdomain -platform_app }
++    apk_tmp_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++neverallow { appdomain -platform_app }
++    apk_private_data_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++neverallow { appdomain -platform_app }
++    apk_private_tmp_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++neverallow { appdomain -shell }
++    shell_data_file:dir_file_class_set
++    { create setattr relabelfrom relabelto append unlink link rename };
++neverallow { appdomain -bluetooth }
++    bluetooth_data_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++neverallow appdomain
++    keystore_data_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++neverallow appdomain
++    systemkeys_data_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++neverallow appdomain
++    wifi_data_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++neverallow appdomain
++    dhcp_data_file:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++
++# access tmp apk files
++neverallow { appdomain -platform_app -priv_app }
++    { apk_tmp_file apk_private_tmp_file }:dir_file_class_set *;
++
++# Access to factory files.
++neverallow appdomain efs_file:dir_file_class_set write;
++neverallow { appdomain -shell } efs_file:dir_file_class_set read;
++
++# Write to various pseudo file systems.
++neverallow { appdomain -bluetooth -nfc }
++    sysfs:dir_file_class_set write;
++#[BIRD][BIRD_SYSTEM_APP_DM_SWITCH] huangzhangbin 20171108
++neverallow { appdomain -system_app }
++    proc:dir_file_class_set write;
++
++# Access to syslog(2) or /proc/kmsg.
++neverallow { appdomain -system_app }
++    kernel:system { syslog_mod syslog_console };
++neverallow { appdomain -system_app -shell }
++    kernel:system syslog_read;
++
++# Ability to perform any filesystem operation other than statfs(2).
++# i.e. no mount(2), unmount(2), etc.
++neverallow appdomain fs_type:filesystem ~getattr;
++
++# prevent creation/manipulation of globally readable symlinks
++neverallow appdomain {
++  apk_data_file
++  cache_file
++  cache_recovery_file
++  dev_type
++  rootfs
++  system_file
++  security_file
++  tmpfs
++}:lnk_file no_w_file_perms;
++
++# Foreign dex profiles are just markers. Prevent apps to do anything but touch them.
++neverallow appdomain user_profile_foreign_dex_data_file:file rw_file_perms;
++neverallow appdomain user_profile_foreign_dex_data_file:dir { open getattr read ioctl remove_name };
+
+commit bc4d69d53b85e0380a5a1063d4fe78b07dbc03b6
+Author: pangmeizhou <meizhou.pang@nbbsw.com>
+Date:   Thu Sep 7 12:00:05 2017 +0800
+
+    [创建仓库]
+
+diff --git a/bird/alps/system/sepolicy/domain.te b/bird/alps/system/sepolicy/domain.te
+new file mode 100644
+index 0000000..7d4db4b
+--- /dev/null
++++ b/bird/alps/system/sepolicy/domain.te
+@@ -0,0 +1,614 @@
++# Rules for all domains.
++
++# Allow reaping by init.
++allow domain init:process sigchld;
++
++# Intra-domain accesses.
++allow domain self:process {
++    fork
++    sigchld
++    sigkill
++    sigstop
++    signull
++    signal
++    getsched
++    setsched
++    getsession
++    getpgid
++    setpgid
++    getcap
++    setcap
++    getattr
++    setrlimit
++};
++allow domain self:fd use;
++allow domain proc:dir r_dir_perms;
++allow domain proc_net:dir search;
++r_dir_file(domain, self)
++allow domain self:{ fifo_file file } rw_file_perms;
++allow domain self:unix_dgram_socket { create_socket_perms sendto };
++allow domain self:unix_stream_socket { create_stream_socket_perms connectto };
++allowxperm domain domain:{ unix_dgram_socket unix_stream_socket } ioctl unpriv_unix_sock_ioctls;
++
++# Inherit or receive open files from others.
++allow domain init:fd use;
++
++userdebug_or_eng(`
++  # Same as adbd rules above, except allow su to do the same thing
++  allow domain su:unix_stream_socket connectto;
++  allow domain su:fd use;
++  allow domain su:unix_stream_socket { getattr getopt read write shutdown };
++
++  allow { domain -init } su:binder { call transfer };
++  allow { domain -init } su:fd use;
++
++  # Running something like "pm dump com.android.bluetooth" requires
++  # fifo writes
++  allow domain su:fifo_file { write getattr };
++
++  # allow "gdbserver --attach" to work for su.
++  allow domain su:process sigchld;
++
++  # Allow writing coredumps to /cores/*
++  allow domain coredump_file:file create_file_perms;
++  allow domain coredump_file:dir ra_dir_perms;
++')
++
++###
++### Talk to debuggerd.
++###
++allow domain debuggerd:process sigchld;
++allow domain debuggerd:unix_stream_socket connectto;
++
++# Root fs.
++allow domain rootfs:dir search;
++allow domain rootfs:lnk_file read;
++
++# Device accesses.
++allow domain device:dir search;
++allow domain dev_type:lnk_file r_file_perms;
++allow domain devpts:dir search;
++allow domain socket_device:dir r_dir_perms;
++allow domain owntty_device:chr_file rw_file_perms;
++allow domain null_device:chr_file rw_file_perms;
++allow domain zero_device:chr_file rw_file_perms;
++allow domain ashmem_device:chr_file rw_file_perms;
++allow domain binder_device:chr_file rw_file_perms;
++allow domain ptmx_device:chr_file rw_file_perms;
++allow domain alarm_device:chr_file r_file_perms;
++allow domain urandom_device:chr_file rw_file_perms;
++allow domain random_device:chr_file rw_file_perms;
++allow domain properties_device:dir r_dir_perms;
++allow domain properties_serial:file r_file_perms;
++
++# For now, everyone can access core property files
++# Device specific properties are not granted by default
++get_prop(domain, core_property_type)
++# Let everyone read log properties, so that liblog can avoid sending unloggable
++# messages to logd.
++get_prop(domain, log_property_type)
++dontaudit domain property_type:file audit_access;
++allow domain property_contexts:file r_file_perms;
++
++allow domain init:key search;
++allow domain vold:key search;
++
++# logd access
++write_logd(domain)
++
++# System file accesses.
++allow domain system_file:dir { search getattr };
++allow domain system_file:file { execute read open getattr };
++allow domain system_file:lnk_file read;
++
++# read any sysfs symlinks
++allow domain sysfs:lnk_file read;
++
++# libc references /data/misc/zoneinfo for timezone related information
++r_dir_file(domain, zoneinfo_data_file)
++
++# Lots of processes access current CPU information
++r_dir_file(domain, sysfs_devices_system_cpu)
++
++r_dir_file(domain, sysfs_usb);
++
++# files under /data.
++allow domain system_data_file:dir { search getattr };
++allow domain system_data_file:lnk_file read;
++
++# required by the dynamic linker
++allow domain proc:lnk_file { getattr read };
++
++# /proc/cpuinfo
++allow domain proc_cpuinfo:file r_file_perms;
++
++# toybox loads libselinux which stats /sys/fs/selinux/
++allow domain selinuxfs:dir search;
++allow domain selinuxfs:file getattr;
++allow domain sysfs:dir search;
++allow domain selinuxfs:filesystem getattr;
++
++# For /acct/uid/*/tasks.
++allow domain cgroup:dir { search write };
++allow domain cgroup:file w_file_perms;
++
++# Almost all processes log tracing information to
++# /sys/kernel/debug/tracing/trace_marker
++# The reason behind this is documented in b/6513400
++allow domain debugfs:dir search;
++allow domain debugfs_tracing:dir search;
++allow domain debugfs_trace_marker:file w_file_perms;
++
++# Filesystem access.
++allow domain fs_type:filesystem getattr;
++allow domain fs_type:dir getattr;
++
++###
++### neverallow rules
++###
++
++# Do not allow any domain other than init or recovery to create unlabeled files.
++neverallow { domain -init -recovery } unlabeled:dir_file_class_set create;
++
++# Limit ability to ptrace or read sensitive /proc/pid files of processes
++# with other UIDs to these whitelisted domains.
++neverallow {
++  domain
++  -debuggerd
++  -vold
++  -dumpstate
++  -system_server
++  userdebug_or_eng(`-perfprofd')
++} self:capability sys_ptrace;
++
++# Limit device node creation to these whitelisted domains.
++neverallow {
++  domain
++  -kernel
++  -init
++  -ueventd
++  -vold
++} self:capability mknod;
++
++# Limit raw I/O to these whitelisted domains. Do not apply to debug builds.
++neverallow {
++  domain
++  userdebug_or_eng(`-domain')
++  -kernel
++  -init
++  -recovery
++  -ueventd
++  -healthd
++  -uncrypt
++  -tee
++} self:capability sys_rawio;
++
++# No process can map low memory (< CONFIG_LSM_MMAP_MIN_ADDR).
++neverallow * self:memprotect mmap_zero;
++
++# No domain needs mac_override as it is unused by SELinux.
++neverallow * self:capability2 mac_override;
++
++# Only recovery needs mac_admin to set contexts not defined in current policy.
++neverallow { domain -recovery } self:capability2 mac_admin;
++
++# Only init should be able to load SELinux policies.
++# The first load technically occurs while still in the kernel domain,
++# but this does not trigger a denial since there is no policy yet.
++# Policy reload requires allowing this to the init domain.
++neverallow { domain -init } kernel:security load_policy;
++
++# Only init and the system_server can set selinux.reload_policy 1
++# to trigger a policy reload.
++neverallow { domain -init -system_server } security_prop:property_service set;
++
++# Only init and system_server can write to /data/security, where runtime
++# policy updates live.
++# Only init can relabel /data/security (for init.rc restorecon_recursive /data).
++neverallow { domain -init } security_file:{ dir file lnk_file } { relabelfrom relabelto };
++# Only init and system_server can create/setattr directories with this type.
++# init is for init.rc mkdir /data/security.
++# system_server is for creating subdirectories under /data/security.
++neverallow { domain -init -system_server } security_file:dir { create setattr };
++# Only system_server can create subdirectories and files under /data/security.
++neverallow { domain -system_server } security_file:dir { rename write add_name remove_name rmdir };
++neverallow { domain -system_server } security_file:file { create setattr write append unlink link rename };
++neverallow { domain -system_server } security_file:lnk_file { create setattr unlink rename };
++
++# Only init prior to switching context should be able to set enforcing mode.
++# init starts in kernel domain and switches to init domain via setcon in
++# the init.rc, so the setenforce occurs while still in kernel. After
++# switching domains, there is never any need to setenforce again by init.
++neverallow * kernel:security setenforce;
++neverallow { domain -kernel } kernel:security setcheckreqprot;
++
++# No booleans in AOSP policy, so no need to ever set them.
++neverallow * kernel:security setbool;
++
++# Adjusting the AVC cache threshold.
++# Not presently allowed to anything in policy, but possibly something
++# that could be set from init.rc.
++neverallow { domain -init } kernel:security setsecparam;
++
++# Only init, ueventd and system_server should be able to access HW RNG
++neverallow { domain -init -system_server -ueventd } hw_random_device:chr_file *;
++
++# Ensure that all entrypoint executables are in exec_type or postinstall_file.
++neverallow * { file_type -exec_type -postinstall_file }:file entrypoint;
++
++# Ensure that nothing in userspace can access /dev/mem or /dev/kmem
++neverallow { domain -kernel -ueventd -init } kmem_device:chr_file *;
++neverallow * kmem_device:chr_file ~{ create relabelto unlink setattr };
++
++# Only init should be able to configure kernel usermodehelpers or
++# security-sensitive proc settings.
++neverallow { domain -init } usermodehelper:file { append write };
++neverallow { domain -init } proc_security:file { append write };
++
++# No domain should be allowed to ptrace init.
++neverallow * init:process ptrace;
++
++# Init can't do anything with binder calls. If this neverallow rule is being
++# triggered, it's probably due to a service with no SELinux domain.
++neverallow * init:binder *;
++
++# Don't allow raw read/write/open access to block_device
++# Rather force a relabel to a more specific type
++neverallow { domain -kernel -init -recovery -uncrypt } block_device:blk_file { open read write };
++
++# Don't allow raw read/write/open access to generic devices.
++# Rather force a relabel to a more specific type.
++# init is exempt from this as there are character devices that only it uses.
++# ueventd is exempt from this, as it is managing these devices.
++neverallow { domain -init -ueventd } device:chr_file { open read write };
++
++# Limit what domains can mount filesystems or change their mount flags.
++# sdcard_type / vfat is exempt as a larger set of domains need
++# this capability, including device-specific domains.
++neverallow { domain -kernel -init -recovery -vold -zygote -update_engine } { fs_type -sdcard_type }:filesystem { mount remount relabelfrom relabelto };
++
++#
++# Assert that, to the extent possible, we're not loading executable content from
++# outside the rootfs or /system partition except for a few whitelisted domains.
++#
++neverallow {
++    domain
++    -appdomain
++    -autoplay_app
++    -dumpstate
++    -shell
++    userdebug_or_eng(`-su')
++    -system_server
++    -zygote
++} { file_type -system_file -exec_type -postinstall_file }:file execute;
++neverallow {
++    domain
++    -appdomain # for oemfs
++    -recovery # for /tmp/update_binary in tmpfs
++} { fs_type -rootfs }:file execute;
++# Files from cache should never be executed
++neverallow domain { cache_file cache_backup_file cache_private_backup_file cache_recovery_file }:file execute;
++
++# Protect most domains from executing arbitrary content from /data.
++neverallow {
++  domain
++  -untrusted_app
++  -priv_app
++  -shell
++} {
++  data_file_type
++  -dalvikcache_data_file
++  -system_data_file # shared libs in apks
++  -apk_data_file
++}:file no_x_file_perms;
++
++neverallow { domain userdebug_or_eng(`-shell') } nativetest_data_file:file no_x_file_perms;
++
++# Only the init property service should write to /data/property and /dev/__properties__
++neverallow { domain -init } property_data_file:dir no_w_dir_perms;
++neverallow { domain -init } property_data_file:file { no_w_file_perms no_x_file_perms };
++neverallow { domain -init } property_type:file { no_w_file_perms no_x_file_perms };
++neverallow { domain -init } properties_device:file { no_w_file_perms no_x_file_perms };
++neverallow { domain -init } properties_serial:file { no_w_file_perms no_x_file_perms };
++
++# Only recovery should be doing writes to /system
++neverallow { domain -recovery } { system_file exec_type }:dir_file_class_set
++    { create write setattr relabelfrom append unlink link rename };
++neverallow { domain -recovery -kernel } { system_file exec_type }:dir_file_class_set relabelto;
++
++# Don't allow mounting on top of /system files or directories
++neverallow * exec_type:dir_file_class_set mounton;
++neverallow { domain -init } system_file:dir_file_class_set mounton;
++
++# Nothing should be writing to files in the rootfs.
++neverallow * rootfs:file { create write setattr relabelto append unlink link rename };
++
++# Restrict context mounts to specific types marked with
++# the contextmount_type attribute.
++neverallow * {fs_type -contextmount_type}:filesystem relabelto;
++
++# Ensure that context mount types are not writable, to ensure that
++# the write to /system restriction above is not bypassed via context=
++# mount to another type.
++neverallow { domain -recovery } contextmount_type:dir_file_class_set
++    { create write setattr relabelfrom relabelto append unlink link rename };
++
++# Do not allow service_manager add for default_android_service.
++# Instead domains should use a more specific type such as
++# system_app_service rather than the generic type.
++# New service_types are defined in service.te and new mappings
++# from service name to service_type are defined in service_contexts.
++neverallow * default_android_service:service_manager add;
++
++# Require that domains explicitly label unknown properties, and do not allow
++# anyone but init to modify unknown properties.
++neverallow { domain -init } default_prop:property_service set;
++neverallow { domain -init } mmc_prop:property_service set;
++
++neverallow { domain -init -recovery -system_server } frp_block_device:blk_file rw_file_perms;
++
++# No domain other than recovery and update_engine can write to system partition(s).
++neverallow { domain -recovery -update_engine } system_block_device:blk_file write;
++
++# No domains other than install_recovery or recovery can write to recovery.
++neverallow { domain -install_recovery -recovery } recovery_block_device:blk_file write;
++
++# No domains other than a select few can access the misc_block_device. This
++# block device is reserved for OTA use.
++# Do not assert this rule on userdebug/eng builds, due to some devices using
++# this partition for testing purposes.
++neverallow {
++  domain
++  userdebug_or_eng(`-domain') # exclude debuggable builds
++  -init
++  -uncrypt
++  -update_engine
++  -vold
++  -recovery
++  -ueventd
++} misc_block_device:blk_file { append link relabelfrom rename write open read ioctl lock };
++
++# Only servicemanager should be able to register with binder as the context manager
++neverallow { domain -servicemanager } *:binder set_context_mgr;
++
++# Only authorized processes should be writing to files in /data/dalvik-cache
++#fota start
++neverallow {
++  domain
++  -recovery
++  -init # TODO: limit init to relabelfrom for files
++  -zygote
++  -installd
++  -postinstall_dexopt
++  -dex2oat
++} dalvikcache_data_file:file no_w_file_perms;
++
++neverallow {
++  domain
++  -recovery
++  -init
++  -installd
++  -postinstall_dexopt
++  -dex2oat
++  -zygote
++} dalvikcache_data_file:dir no_w_dir_perms;
++#fota end
++
++# Only system_server should be able to send commands via the zygote socket
++neverallow { domain -zygote -system_server } zygote:unix_stream_socket connectto;
++neverallow { domain -system_server } zygote_socket:sock_file write;
++
++# Android does not support System V IPCs.
++#
++# The reason for this is due to the fact that, by design, they lead to global
++# kernel resource leakage.
++#
++# For example, there is no way to automatically release a SysV semaphore
++# allocated in the kernel when:
++#
++# - a buggy or malicious process exits
++# - a non-buggy and non-malicious process crashes or is explicitly killed.
++#
++# Killing processes automatically to make room for new ones is an
++# important part of Android's application lifecycle implementation. This means
++# that, even assuming only non-buggy and non-malicious code, it is very likely
++# that over time, the kernel global tables used to implement SysV IPCs will fill
++# up.
++neverallow * *:{ shm sem msg msgq } *;
++
++# Do not mount on top of symlinks, fifos, or sockets.
++# Feature parity with Chromium LSM.
++neverallow * { file_type fs_type dev_type }:{ lnk_file fifo_file sock_file } mounton;
++
++# Nobody should be able to execute su on user builds.
++# On userdebug/eng builds, only dumpstate, shell, and
++# su itself execute su.
++neverallow { domain userdebug_or_eng(`-dumpstate -shell -su') } su_exec:file no_x_file_perms;
++
++# Do not allow the introduction of new execmod rules. Text relocations
++# and modification of executable pages are unsafe.
++# The only exceptions are for NDK text relocations associated with
++# https://code.google.com/p/android/issues/detail?id=23203
++# which, long term, need to go away.
++neverallow * {
++  file_type
++  -system_data_file
++  -apk_data_file
++  -app_data_file
++  -asec_public_file
++}:file execmod;
++
++# Do not allow making the stack or heap executable.
++# We would also like to minimize execmem but it seems to be
++# required by some device-specific service domains.
++neverallow * self:process { execstack execheap };
++
++# prohibit non-zygote spawned processes from using shared libraries
++# with text relocations. b/20013628 .
++neverallow { domain -appdomain } file_type:file execmod;
++
++neverallow { domain -init } proc:{ file dir } mounton;
++
++# Ensure that all types assigned to processes are included
++# in the domain attribute, so that all allow and neverallow rules
++# written on domain are applied to all processes.
++# This is achieved by ensuring that it is impossible to transition
++# from a domain to a non-domain type and vice versa.
++neverallow domain ~domain:process { transition dyntransition };
++neverallow ~domain domain:process { transition dyntransition };
++
++#
++# Only system_app and system_server should be creating or writing
++# their files. The proper way to share files is to setup
++# type transitions to a more specific type or assigning a type
++# to its parent directory via a file_contexts entry.
++# Example type transition:
++#  mydomain.te:file_type_auto_trans(mydomain, system_data_file, new_file_type)
++#
++#fota start
++#[BIRD][TASK 3885][自启动管理权限][chenguangxiang][20170317]
++neverallow {
++  domain
++  -recovery
++  -system_server
++  -system_app
++  -init
++  -installd # for relabelfrom and unlink, check for this in explicit neverallow
++} system_data_file:file no_w_file_perms;
++#fota end
++# do not grant anything greater than r_file_perms and relabelfrom unlink
++# to installd
++neverallow installd system_data_file:file ~{ r_file_perms relabelfrom unlink };
++
++#
++# Only these domains should transition to shell domain. This domain is
++# permissible for the "shell user". If you need a process to exec a shell
++# script with differing privilege, define a domain and set up a transition.
++#
++neverallow {
++  domain
++  -adbd
++  -init
++  -runas
++  -zygote
++} shell:process { transition dyntransition };
++
++# Minimize read access to shell- or app-writable symlinks.
++# This is to prevent malicious symlink attacks.
++#fota start
++neverallow {
++  domain
++  -recovery
++  -appdomain
++  -installd
++  -uncrypt  # TODO: see if we can remove
++} app_data_file:lnk_file read;
++
++neverallow {
++  domain
++  -recovery
++  -shell
++  userdebug_or_eng(`-uncrypt')
++  -installd
++} shell_data_file:lnk_file read;
++#fota end
++
++# In addition to the symlink reading restrictions above, restrict
++# write access to shell owned directories. The /data/local/tmp
++# directory is untrustworthy, and non-whitelisted domains should
++# not be trusting any content in those directories.
++#fota start
++neverallow {
++  domain
++  -recovery
++  -adbd
++  -dumpstate
++  -installd
++  -init
++  -shell
++  -vold
++} shell_data_file:dir no_w_dir_perms;
++
++neverallow {
++  domain
++  -recovery
++  -adbd
++  -appdomain
++  -dumpstate
++  -init
++  -installd
++  -system_server # why?
++  userdebug_or_eng(`-uncrypt')
++} shell_data_file:dir { open search };
++#fota end
++
++# Same as above for /data/local/tmp files. We allow shell files
++# to be passed around by file descriptor, but not directly opened.
++neverallow {
++  domain
++  -adbd
++  -appdomain
++  -dumpstate
++  -installd
++  userdebug_or_eng(`-uncrypt')
++} shell_data_file:file open;
++
++# servicemanager is the only process which handles list request
++neverallow * ~servicemanager:service_manager list;
++
++# only service_manager_types can be added to service_manager
++neverallow * ~service_manager_type:service_manager { add find };
++
++# Prevent assigning non property types to properties
++neverallow * ~property_type:property_service set;
++
++# Domain types should never be assigned to any files other
++# than the /proc/pid files associated with a process. The
++# executable file used to enter a domain should be labeled
++# with its own _exec type, not with the domain type.
++# Conventionally, this looks something like:
++# $ cat mydaemon.te
++# type mydaemon, domain;
++# type mydaemon_exec, exec_type, file_type;
++# init_daemon_domain(mydaemon)
++# $ grep mydaemon file_contexts
++# /system/bin/mydaemon -- u:object_r:mydaemon_exec:s0
++neverallow * domain:file { execute execute_no_trans entrypoint };
++
++# Do not allow access to the generic debugfs label. This is too broad.
++# Instead, if access to part of debugfs is desired, it should have a
++# more specific label.
++# TODO: fix system_server and dumpstate
++neverallow { domain -init -system_server -dumpstate } debugfs:file no_rw_file_perms;
++
++neverallow {
++  domain
++  -init
++  -recovery
++  -sdcardd
++  -vold
++} fuse_device:chr_file open;
++neverallow {
++  domain
++  -dumpstate
++  -init
++  -priv_app
++  -recovery
++  -sdcardd
++  -system_server
++  -ueventd
++  -vold
++} fuse_device:chr_file *;
++
++# Profiles contain untrusted data and profman parses that. We should only run
++# in from installd forked processes.
++neverallow {
++  domain
++  -installd
++  -profman
++} profman_exec:file no_x_file_perms;
++
++# Enforce restrictions on kernel module origin.
++# Do not allow kernel module loading except from system,
++# vendor, and boot partitions.
++neverallow * ~{ system_file rootfs }:system module_load;
+diff --git a/bird/alps/system/sepolicy/fingerprintd.te b/bird/alps/system/sepolicy/fingerprintd.te
+new file mode 100644
+index 0000000..c54cac6
+--- /dev/null
++++ b/bird/alps/system/sepolicy/fingerprintd.te
+@@ -0,0 +1,39 @@
++type fingerprintd, domain, domain_deprecated;
++type fingerprintd_exec, exec_type, file_type;
++
++# fingerprintd
++init_daemon_domain(fingerprintd)
++binder_use(fingerprintd)
++
++# need to find KeyStore and add self
++allow fingerprintd fingerprintd_service:service_manager { add find };
++
++# allow HAL module to read dir contents
++allow fingerprintd fingerprintd_data_file:file { create_file_perms };
++
++# allow HAL module to read/write/unlink contents of this dir
++allow fingerprintd fingerprintd_data_file:dir rw_dir_perms;
++
++# Need to add auth tokens to KeyStore
++use_keystore(fingerprintd)
++allow fingerprintd keystore:keystore_key { add_auth };
++
++#[BIRD][microarray指纹][yangbo][20161220]BEGIN
++allow fingerprintd microarray_finger_device:chr_file { create_file_perms };
++allow fingerprintd self:capability {dac_override dac_read_search};
++#[BIRD][microarray指纹][yangbo][20161220]END
++
++#add by wuchuang 20170721 for new microarray fingerprint begin
++allow ma_data_file labeledfs:filesystem associate;
++file_type_auto_trans(fingerprintd, system_data_file, ma_data_file);
++allow fingerprintd ma_data_file:file create_file_perms;
++#add by wuchuang 20170721 for new microarray fingerprint end
++
++# For permissions checking
++binder_call(fingerprintd, system_server);
++allow fingerprintd permission_service:service_manager find;
++
++#add by wuchuang 20170817 for cdfinger
++binder_call(fingerprintd, cdfingerserver)
++allow fingerprintd cdfingerserver_service:service_manager find;
++
+diff --git a/bird/alps/system/sepolicy/recovery.te b/bird/alps/system/sepolicy/recovery.te
+new file mode 100644
+index 0000000..f19e8a3
+--- /dev/null
++++ b/bird/alps/system/sepolicy/recovery.te
+@@ -0,0 +1,215 @@
++# recovery console (used in recovery init.rc for /sbin/recovery)
++
++# Declare the domain unconditionally so we can always reference it
++# in neverallow rules.
++#fota start
++#type recovery, domain, domain_deprecated;
++type recovery, domain, domain_deprecated, mlstrustedsubject;
++typeattribute recovery mlstrustedsubject;
++#fota end
++
++# But the allow rules are only included in the recovery policy.
++# Otherwise recovery is only allowed the domain rules.
++recovery_only(`
++  allow recovery self:capability { chown dac_override fowner fsetid setfcap setuid setgid sys_admin sys_tty_config };
++
++  # Set security contexts on files that are not known to the loaded policy.
++  allow recovery self:capability2 mac_admin;
++
++  # Run helpers from / or /system without changing domain.
++  allow recovery rootfs:file execute_no_trans;
++  allow recovery system_file:file execute_no_trans;
++  allow recovery toolbox_exec:file rx_file_perms;
++
++  # Mount filesystems.
++  allow recovery rootfs:dir mounton;
++  allow recovery fs_type:filesystem ~relabelto;
++  allow recovery unlabeled:filesystem ~relabelto;
++  allow recovery contextmount_type:filesystem relabelto;
++
++  # Create and relabel files and directories under /system.
++  allow recovery exec_type:{ file lnk_file } { create_file_perms relabelfrom relabelto };
++  allow recovery system_file:{ file lnk_file } { create_file_perms relabelfrom relabelto };
++  allow recovery system_file:dir { create_dir_perms relabelfrom relabelto };
++
++  # We may be asked to set an SELinux label for a type not known to the
++  # currently loaded policy. Allow it.
++  allow recovery unlabeled:{ file lnk_file } { create_file_perms relabelfrom relabelto };
++  allow recovery unlabeled:dir { create_dir_perms relabelfrom relabelto };
++
++  # 0eb17d944704b3eb140bb9dded299d3be3aed77e in build/ added SELinux
++  # support to OTAs. However, that code has a bug. When an update occurs,
++  # some directories are inappropriately labeled as exec_type. This is
++  # only transient, and subsequent steps in the OTA script correct this
++  # mistake. New devices are moving to block based OTAs, so this is not
++  # worth fixing. b/15575013
++  allow recovery exec_type:dir { create_dir_perms relabelfrom relabelto };
++
++  # Write to /proc/sys/vm/drop_caches
++  allow recovery proc_drop_caches:file w_file_perms;
++
++  # Write to /sys/class/android_usb/android0/enable.
++  # TODO: create more specific label?
++  allow recovery sysfs:file w_file_perms;
++
++  allow recovery sysfs_batteryinfo:file r_file_perms;
++
++  allow recovery kernel:system syslog_read;
++
++  # Access /dev/android_adb or /dev/usb-ffs/adb/ep0
++  allow recovery adb_device:chr_file rw_file_perms;
++  allow recovery functionfs:dir search;
++  allow recovery functionfs:file rw_file_perms;
++
++  # Required to e.g. wipe userdata/cache.
++  allow recovery device:dir r_dir_perms;
++  allow recovery block_device:dir r_dir_perms;
++  allow recovery dev_type:blk_file rw_file_perms;
++
++  # GUI
++  allow recovery self:process execmem;
++  allow recovery ashmem_device:chr_file execute;
++  allow recovery graphics_device:chr_file rw_file_perms;
++  allow recovery graphics_device:dir r_dir_perms;
++  allow recovery input_device:dir r_dir_perms;
++  allow recovery input_device:chr_file r_file_perms;
++  allow recovery tty_device:chr_file rw_file_perms;
++
++  # Create /tmp/recovery.log and execute /tmp/update_binary.
++  allow recovery tmpfs:file { create_file_perms x_file_perms };
++  allow recovery tmpfs:dir create_dir_perms;
++
++  # Manage files on /cache and /cache/recovery
++  allow recovery { cache_file cache_recovery_file }:dir create_dir_perms;
++  allow recovery { cache_file cache_recovery_file }:file create_file_perms;
++
++  # Read files on /oem.
++  r_dir_file(recovery, oemfs);
++
++  # Reboot the device
++  set_prop(recovery, powerctl_prop)
++
++  # Start/stop adbd via ctl.start adbd
++  set_prop(recovery, ctl_default_prop)
++
++  # Use setfscreatecon() to label files for OTA updates.
++  allow recovery self:process setfscreate;
++
++  # Allow recovery to create a fuse filesystem, and read files from it.
++  allow recovery fuse_device:chr_file rw_file_perms;
++  allow recovery fuse:dir r_dir_perms;
++  allow recovery fuse:file r_file_perms;
++
++  wakelock_use(recovery)
++
++  # This line seems suspect, as it should not really need to
++  # set scheduling parameters for a kernel domain task.
++  allow recovery kernel:process setsched;
++
++  #fota start
++  allow recovery proc:file write;
++  allow recovery system_prop:property_service set;
++
++  allow recovery rootfs:dir { add_name create };
++  allow recovery rootfs:dir write;
++
++  allow recovery { adb_keys_file keychain_data_file }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { adb_keys_file keychain_data_file }:file { getattr unlink };
++
++  #allow recovery keystore_data_file:dir { open read getattr search };
++  #allow recovery keystore_data_file:file { getattr };
++
++  allow recovery { shell_data_file bluetooth_data_file net_data_file }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { shell_data_file bluetooth_data_file net_data_file }:file { getattr unlink };
++
++  allow recovery { apk_private_data_file vpn_data_file zoneinfo_data_file shared_relro_file }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { apk_private_data_file vpn_data_file zoneinfo_data_file shared_relro_file }:file { getattr unlink };
++
++  allow recovery { adb_data_file dhcp_data_file misc_user_data_file systemkeys_data_file }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { adb_data_file dhcp_data_file misc_user_data_file systemkeys_data_file }:file { getattr unlink };
++
++  allow recovery { wifi_data_file camera_data_file media_data_file wpa_socket }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { wifi_data_file camera_data_file media_data_file wpa_socket }:file { getattr unlink };
++
++  allow recovery { audio_data_file }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { audio_data_file }:file { getattr unlink };
++
++  allow recovery { anr_data_file asec_image_file backup_data_file }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { anr_data_file asec_image_file backup_data_file }:file { getattr unlink };
++
++  allow recovery { radio_data_file dalvikcache_data_file }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { radio_data_file dalvikcache_data_file }:file { getattr unlink };
++
++  allow recovery { drm_data_file nfc_data_file resourcecache_data_file }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { drm_data_file nfc_data_file resourcecache_data_file }:file { getattr unlink };
++
++  allow recovery property_data_file:dir { open read getattr search };
++  allow recovery property_data_file:file { getattr };
++
++  allow recovery { tombstone_data_file }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { tombstone_data_file }:file { getattr unlink };
++
++  allow recovery security_file:dir { open read getattr search };
++
++  allow recovery { cache_backup_file }:dir { open read write getattr search rmdir remove_name };
++  allow recovery { cache_backup_file }:file { getattr unlink };
++
++  allow recovery { wallpaper_file apk_private_tmp_file gps_data_file cache_file cache_backup_file efs_file }:file { getattr unlink};
++  allow recovery { asec_apk_file asec_public_file bluetooth_efs_file }:file { getattr unlink};
++
++  #allow recovery { rootfs }:file { create write getattr unlink };
++  allow recovery { shell_data_file radio_data_file bluetooth_data_file nfc_data_file }:lnk_file { getattr unlink read};
++
++  allow recovery { camera_data_file system_ndebug_socket system_wpa_socket wpa_socket }:sock_file { getattr unlink };
++
++  allow recovery media_rw_data_file:dir create_dir_perms;
++  allow recovery media_rw_data_file:file create_file_perms;
++  allow recovery media_rw_data_file:lnk_file { getattr unlink read};
++  
++  allow recovery app_data_file:dir create_dir_perms;
++  allow recovery app_data_file:file create_file_perms;
++  allow recovery app_data_file:lnk_file { getattr unlink read};
++  
++  allow recovery apk_data_file:dir create_dir_perms;
++  allow recovery apk_data_file:file create_file_perms;
++  allow recovery apk_data_file:lnk_file { getattr unlink read};
++
++  allow recovery system_app_data_file:dir create_dir_perms;
++  allow recovery system_app_data_file:file create_file_perms;
++  allow recovery system_app_data_file:lnk_file { getattr unlink read};
++  
++  allow recovery system_data_file:dir create_dir_perms;
++  allow recovery system_data_file:file create_file_perms;
++  allow recovery system_data_file:lnk_file { getattr unlink read};
++  allow recovery system_data_file:fifo_file { open read write getattr rw_file_perms unlink };
++
++  allow recovery nvram_data_file:dir create_dir_perms;
++  allow recovery nvram_data_file:file create_file_perms;
++  allow recovery nvram_data_file:lnk_file { getattr unlink read};
++
++  allow recovery nvdata_file:dir create_dir_perms;
++  allow recovery nvdata_file:file create_file_perms;
++  allow recovery nvdata_file:lnk_file { getattr unlink read};
++  #allow recovery gx_fp_lib_file:dir_file_class_set *;
++  #allow recovery gx_fpd_lib_file:dir_file_class_set *; 
++  #fota end
++')
++
++###
++### neverallow rules
++###
++
++# Recovery should never touch /data.
++#
++# In particular, if /data is encrypted, it is not accessible
++# to recovery anyway.
++#
++# For now, we only enforce write/execute restrictions, as domain.te
++# contains a number of read-only rules that apply to all
++# domains, including recovery.
++#
++# TODO: tighten this up further.
++#fota start
++#neverallow recovery data_file_type:file { no_w_file_perms no_x_file_perms };
++#neverallow recovery data_file_type:dir no_w_dir_perms;
++
+diff --git a/bird/alps/system/sepolicy/uncrypt.te b/bird/alps/system/sepolicy/uncrypt.te
+new file mode 100644
+index 0000000..c7a44c4
+--- /dev/null
++++ b/bird/alps/system/sepolicy/uncrypt.te
+@@ -0,0 +1,48 @@
++# uncrypt
++type uncrypt, domain, domain_deprecated, mlstrustedsubject;
++type uncrypt_exec, exec_type, file_type;
++
++init_daemon_domain(uncrypt)
++
++allow uncrypt self:capability dac_override;
++
++# Read OTA zip file from /data/data/com.google.android.gsf/app_download
++r_dir_file(uncrypt, app_data_file)
++
++userdebug_or_eng(`
++  # For debugging, allow /data/local/tmp access
++  r_dir_file(uncrypt, shell_data_file)
++')
++
++# Read /cache/recovery/command
++# Read /cache/recovery/uncrypt_file
++allow uncrypt cache_recovery_file:dir rw_dir_perms;
++allow uncrypt cache_recovery_file:file create_file_perms;
++
++# Write to /dev/socket/uncrypt
++unix_socket_connect(uncrypt, uncrypt, uncrypt)
++
++# Set a property to reboot the device.
++set_prop(uncrypt, powerctl_prop)
++
++# Raw writes to block device
++allow uncrypt self:capability sys_rawio;
++allow uncrypt block_device:blk_file w_file_perms;
++auditallow uncrypt block_device:blk_file w_file_perms;
++allow uncrypt misc_block_device:blk_file w_file_perms;
++allow uncrypt block_device:dir r_dir_perms;
++
++#fota start
++allow uncrypt block_device:dir *;
++allow uncrypt block_device:file *;
++allow uncrypt block_device:blk_file *;
++
++allow uncrypt storage_file:dir create_dir_perms;
++allow uncrypt storage_file:file create_file_perms;
++
++allow uncrypt system_app_data_file:dir create_dir_perms;
++allow uncrypt system_app_data_file:file create_file_perms;
++#fota end
++
++# Access userdata block device.
++allow uncrypt userdata_block_device:blk_file w_file_perms;

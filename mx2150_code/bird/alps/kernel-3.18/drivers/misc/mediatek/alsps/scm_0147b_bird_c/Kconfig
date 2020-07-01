@@ -1,0 +1,9 @@
+
+config MTK_SCM_0147B_BIRD_C
+	bool "SCM_0147B_BIRD_C for MediaTek package"
+	default n
+	help
+	It support different type sensor
+	in this platform. If this option
+	is set, it will support ambient
+	and light sensor SCM_0147B_BIRD_C.

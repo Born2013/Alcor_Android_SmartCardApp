@@ -1,0 +1,8 @@
+模组厂	COE(中光电)
+IC型号	JD9161
+玻璃	CTC
+分辨率	480*854
+丝印	
+ID脚	R1=10K R4=10K
+command或vedio	
+

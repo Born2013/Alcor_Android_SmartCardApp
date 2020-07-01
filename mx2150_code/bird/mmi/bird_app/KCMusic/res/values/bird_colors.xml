@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <color name="weimi_accent_material_dark">#ffff0000</color>
+    <color name="weimi_colorControlActivated">#ffffffff</color>
+    <color name="weimi_colorControlNormal">#ffffffff</color> 
+    <color name="weimi_colorControlActivated_thumb">#ffd7ff07</color>
+    <color name="weimi_colorControlNormal_thumb">#ffffffff</color> 
+    <item name="weimi_disabledAlpha" format="float" type="dimen">0</item>
+    <color name="bird_weimi_actionbar_colorPrimaryDark">#ff000000</color>  <!--color of notify-->
+    <color name="bird_weimi_actionbar_colorPrimary">#ff414151</color>      <!--color of actionbar-->
+    <color name="bird_weimi_actionbar_colorAccent">#ffffffff</color>       <!--color of actionbartext-->
+
+    <color name="bird_actionbar_titlecolor">#ffffffff</color>      <!--color of actionbar title-->
+
+
+    <!--color of list item-->
+    <color name="bird_listitem_color_transparent">#80ffffff</color>
+    <color name="bird_listitem_color">#ffffffff</color>       
+  
+    <color name="bird_main_tab_color">#ffffffff</color> 
+
+    <color name="bird_main_search_color">#ffffffff</color>  
+    <color name="bird_media_seekbar_timecolor">#ffffffff</color>  
+    <color name="bird_widget_text_color">#ffffffff</color> 
+    <color name="bird_widget_text_shadecolor">#ff000000</color> 
+    <color name="bird_search_hinttext_color">#80ffffff</color>  
+    <!--[BIRD][BIRD_WEIMI_SYSTEMUI]huangzhangbin 20150515 begin-->
+    <drawable name="notification_row_normal">#00ffffff</drawable>
+    <drawable name="notification_row_press">#FF3cb3ff</drawable>
+    <!--[BIRD][BIRD_WEIMI_SYSTEMUI]huangzhangbin 20150515 end-->
+    <!--[BIRD][统一状态栏背景颜色]xujing 20150319 begin-->
+    <color name="zzzzz_weimi_statubar_color">#fff8f8f8</color>
+    <!--[BIRD][统一状态栏背景颜色]xujing 20150319 end-->
+    <!--[bug-null][gaowei][20170704]begin-->
+    <color name="background_primary">#00FFFFFF</color>
+    <color name="pop_window_title_color">#171717</color>
+    <!--[bug-null][gaowei][20170704]end-->
+</resources>
+

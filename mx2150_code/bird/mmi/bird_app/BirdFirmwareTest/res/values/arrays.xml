@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="all_test_options">
+        <item>@string/camera_test</item>
+        <item>@string/motor_test</item>
+        <item>@string/flashlight_test</item>
+        <item>@string/speaker_test</item>
+        <item>@string/mic_test</item>
+        <item>@string/handset_test</item>
+    </array>
+
+    <array name="time_format">
+        <item>@string/hour_format</item>
+        <item>@string/min_format</item>
+    </array>
+</resources>

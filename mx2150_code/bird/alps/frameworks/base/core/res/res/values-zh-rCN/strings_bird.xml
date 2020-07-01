@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--[BIRD][BIRD_REBOOT_MENU][重新启动][yangheng][20161121] BEGIN -->
+    <string name="zzzzz_power_reboot">重新启动</string>  
+    <string name="zzzzz_power_restart">重新开机</string> 
+    <string name="zzzzz_power_restart_alert">重新开机将清除内存中的临时文件。您需要重新开机吗？</string> 
+    <!--[BIRD][BIRD_REBOOT_MENU][重新启动][yangheng][20161121] END -->
+    
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170629]BEGIN -->
+    <string name="zzzzz_secure_user_name">安全系统</string>
+    <string name="zzzzz_secure_user_deleted">安全系统已删除</string>
+    <string name="zzzzz_secure_user_deleting">"安全系统删除中..."</string>
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170629]END -->
+    <!--[BIRD_OLD_PHONE]huangzhangbin 20170907 begin-->
+    <string name="zzzzz_family_notify_text">亲情消息盒</string>
+    <string name="zzzzz_family_notifi_area_text">暂无消息</string>
+    <string name="zzzzz_oldphone_family_notifi">您有(%1$d条)亲情消息</string>
+    <!--[BIRD_OLD_PHONE]huangzhangbin 20170907 end-->
+
+    <!-- [BIRD][一键静音][Task6105] chengci 20171015 begin  -->
+    <string name="volume_onestep_enable_toast">请关闭手机侧面的一键静音按钮</string>
+    <!-- [BIRD][一键静音][Task6105] chengci 20171015 end  -->
+    
+    <!--[BIRD][BIRD_GLOBALACTIONS_ADD_SCREENSHOT][长按电源键弹出的对话框中增加"截屏"][yangbo][20180106]BEGIN -->
+    <string name="zzzzz_screenshot">屏幕截图</string>
+    <string name="zzzzz_screenshot_saving_ticker">"正在保存屏幕截图..."</string>
+    <!--[BIRD][BIRD_GLOBALACTIONS_ADD_SCREENSHOT][长按电源键弹出的对话框中增加"截屏"][yangbo][20180106]END -->
+
+	<!--[BIRD][CTA权限提示框提示错误][pangmeizhou][20180123]begin -->
+    <string name="zzzzz_aerr_application_permission_connectivity">\"<xliff:g id="err_ap_name">%1$s</xliff:g>\" 无法<xliff:g id="permission_name">%2$s</xliff:g>，您可以在\"设置\"中<xliff:g id="permission_name2">%2$s</xliff:g></string>
+
+	<string name="zzzzz_mtk_perm_err_dialog_ok">去开启</string>
+	<!--[BIRD][CTA权限提示框提示错误][pangmeizhou][20180123]end -->
+	
+    <!--[BIRD][BIRD_MULTI_SIMLOCK_VIETTEL_IMPROVE][锁网特殊需求，详见TASK-6722][yangbo][20180131]BEGIN -->
+    <string name="zzzzz_simcard_unplugged_warning_title">警告</string>
+    <string name="zzzzz_simcard_unplugged_warning_message">SIM卡被拔出，非法操作，手机将重启!</string>
+    <!--[BIRD][BIRD_MULTI_SIMLOCK_VIETTEL_IMPROVE][锁网特殊需求，详见TASK-6722][yangbo][20180131]END -->
+    
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gangyun.camera.FilterSeekBar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:maxHeight="2dp"
+    android:minHeight="2dp"
+    android:progress="50"
+    android:progressDrawable="@drawable/gy_seekbar_progress"
+    android:thumb="@drawable/gy_seekbar_thumb"
+    android:visibility="visible" />

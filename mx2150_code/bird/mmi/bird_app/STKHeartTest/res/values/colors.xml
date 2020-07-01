@@ -1,0 +1,26 @@
+<!--
+  ~ Copyright (C) 2012 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<resources>
+    <!-- Divider color for header separator -->
+    <color name="main_header_separator_color">#26000000</color>
+    <color name="background_color">#ffeff0f3</color>
+    <!--[BIRD][BIRD_KUSAI_CONTACT]caoyuanguj 20160929 begin-->     
+    <color name="listview_normal_color">#ffffff</color>    
+    <!--[BIRD][BIRD_KUSAI_CONTACT]caoyuanguj 20160929 end-->   
+    <color name="aui_primary_txt_color_black_disable">#66333333</color>
+    <color name="aui_primary_txt_color_black">#FF333333</color>
+</resources>

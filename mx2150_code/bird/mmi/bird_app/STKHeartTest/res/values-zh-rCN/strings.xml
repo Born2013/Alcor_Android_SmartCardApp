@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">心率检测</string>
+    <string name="tab_heart_list_title">列表</string>
+    <string name="tab_heart_chart_title">图表</string>
+    <string name="bpm">BPM</string>
+    <string name="time">时间</string>
+    <string name="date">日期</string>
+    <string name="no_history_values">暂无历史记录</string>
+    <string name="today">今天</string>
+    <string name="yesterday">昨天</string>
+    <string name="heart_rate_detection">心率检测</string>
+    <string name="click_start_detection">点击开始检测</string>
+    <string name="click_to_restart">点击重新检测</string>
+    <string name="click_to_end">点击结束检测</string>
+    <string name="detection">检测中</string>
+    <string name="end_detection">检测完成</string>
+    <string name="remind_message">请将您的指尖放在手机前面的光线感应器上</string>
+    <string name="no_data_detected">没有检测到数据</string>
+    <string name="caption">说明</string>
+    <string name="notice_title">请保持以下手势，直至检测完成</string>
+    <string name="notice_one">1.将您的指尖放在手机正面的光线感应器上开始测试，请确保手指完全遮住光线感应器件。</string>
+    <string name="notice_two">2.保持在测手指的手势，直至检测完成。</string>
+    <string name="notice_three">请注意，检测结果仅供您做健康参考，实际状况请以医疗器械检测结果为准，如有任何健康问题，请咨询医生。</string>
+    <string name="average_value">平均值:</string>
+    <string name="last_ten_data">最近10次测量数据</string>
+    <string name="clear_data">清除记录</string>
+    <string name="clear_all_data">确定清除所有历史记录吗?</string>
+    <string name="delete">清除</string>
+    <string name="cancel">取消</string>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.android.keyguard.BirdOldMusicAblum
+        android:id="@+id/album_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/song_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:maxWidth="200dip"
+        android:layout_marginTop="6dp"
+        android:textColor="@android:color/white"
+        android:shadowColor="#ff303030"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="3"
+        android:textSize="24dip" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@null"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/player_last_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:background="@null"
+            android:src="@drawable/oldphone_player_last" />
+
+
+        <ImageButton
+            android:id="@+id/player_start_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@null"
+            android:src="@drawable/oldphone_player_start" />
+
+        <ImageButton
+            android:id="@+id/player_next_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:background="@null"
+            android:src="@drawable/oldphone_player_next" />
+
+    </LinearLayout>
+
+</merge>

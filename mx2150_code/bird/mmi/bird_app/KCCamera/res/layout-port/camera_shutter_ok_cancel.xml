@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/camera_shutter"
+    style="@style/ShutterGroup"
+    android:splitMotionEvents="false" 
+    android:layout_width = "match_parent"><!--[BIRD][bug_12360][拍照后确定和取消图标显示太集中，建议分开一点][luye][20170701]-->
+    <com.android.camera.ui.RotateImageView android:id="@+id/btn_cancel"
+        style="@style/ShutterButton"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@android:string/cancel"
+        android:src="@drawable/btn_cancel" />
+    <ImageView style="@style/ShutterButtonSeperator"
+        android:layout_width="1dp"
+        android:layout_weight="0" />
+    <com.android.camera.ui.RotateImageView android:id="@+id/btn_done"
+        style="@style/ShutterButton"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@android:string/ok"
+        android:src="@drawable/btn_ok" />
+</LinearLayout>

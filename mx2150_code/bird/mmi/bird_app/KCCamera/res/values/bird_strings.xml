@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- [BIRD][BIRD_VOLUME_KEY_FEATURE_IN_CAMERA][相机设置中增加音量键功能选项][qianliliang][20151209]BEGIN -->
+    <string name="bird_pref_volume_key_feature_title">Volume keys</string>
+    <string name="bird_pref_volume_key_feature_default" translatable="false">shoot</string>
+    <string name="bird_pref_volume_key_feature_zoom">Zoom</string>
+    <string name="bird_pref_volume_key_feature_shoot">Shoot</string>
+    <string name="bird_pref_volume_key_feature_volume">Volume</string>
+    <!-- [BIRD][BIRD_VOLUME_KEY_FEATURE_IN_CAMERA][相机设置中增加音量键功能选项][qianliliang][20151209]END -->
+    <!-- [BIRD][BIRD_ADD_CAMERA_SHUTTERSOUND][拍照提示音控制菜单][qianliliang][20151210]BEGIN -->
+    <!--  SHUTTERSOUND properties   --> 
+    <string name="pref_camera_shutter_sound_title">Shutter Sound</string>
+    <string name="pref_camera_shutter_sound_default" translatable="false">on</string>
+    <string name="pref_camera_shutter_sound_entry_off">Off</string>
+    <string name="pref_camera_shutter_sound_entry_on">On</string>   
+    <!-- [BIRD][BIRD_ADD_CAMERA_SHUTTERSOUND][拍照提示音控制菜单][qianliliang][20151210]END -->
+    <!--[BIRD][GANGYUN_BOKEH_SUPPORT][双摄 光圈默认值][chengaungxiang][20180103] BEGIN-->
+    <integer name="bird_gangyun_gyradius_default">80</integer>
+    <!--[BIRD][GANGYUN_BOKEH_SUPPORT][双摄 光圈默认值][chengaungxiang][20180103] END-->
+</resources>

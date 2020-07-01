@@ -1,0 +1,8 @@
+模组厂	易欣达
+IC型号	9806E-2c
+玻璃	HSD
+分辨率	FW
+丝印	y85751
+ID脚	0,1
+command或vedio	vedio
+

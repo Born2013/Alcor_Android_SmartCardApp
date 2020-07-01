@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Test_launcherActivity!</string>
+    <string name="app_name">Test_launcher</string>
+    <string name="Pro_info">Pro info</string>
+    <string name="wifi">WIFI</string>
+    <string name="correct">Correct</string>
+    <string name="error">Error</string>
+    <string name="pass">Pass</string>
+    <string name="fail">Fail</string>
+    <string name="reset">Reset</string>
+    <string name="all_pass">All test items pass!</string>
+    <string name="accelerator_test">Accelerator</string>
+    <string name="wifi_test">WIFI</string>
+    <string name="bluetooth_test">Bluetooth</string>
+    <string name="proximity_test">Proximity</string>
+    <string name="wait_test">->waiting for testing</string>
+    <drawable name="GREEN">#00FF00</drawable>
+    <drawable name="BLUE">#0000FF</drawable>
+    <string name="item_pass">->Pass</string>
+    <string name="next_step">Test pass, go to next test item!</string>
+    <string name="bar_code">Bar code</string>
+    <string name="imei1">IMEI1</string>
+    <string name="imei2">IMEI2</string>
+    <string name="sim1">SIM1</string>
+    <string name="sim2">SIM2</string>
+    <string name="sim_nok">NOK</string>
+    <string name="produce_info">Produce Info</string>
+    <string name="led">LED</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="main_camera">Main Camera</string>
+    <string name="sub_camera">Sub Camera</string>
+    <string name="record_test_infor">Start sound record test,2 seconds......</string>
+    <string name="start_test">START_TEST</string>
+    <string name="start_record">START_RECORD</string>
+    <string name="stop_record">STOP_RECORD</string>
+    <string name="start_play">Play begin</string>
+	<string name="stop_play">Play end</string>
+	<string name="record">Record</string>
+	<string name="sd_note_no">Sorry,find no SD card</string>
+    <string name="keyboard">Funtion keyboard</string>
+	<drawable name="RED">#FF0000</drawable>
+    <drawable name="WHITE">#FFFFFF</drawable>
+    <drawable name="BLACK">#000000</drawable>
+    <string name="no_test">Not test</string>
+    <string name="item_fail">->fail</string>
+    <string name="hide_proximity_sensor">For testing proximity sensor, please hide screen with hand</string>
+    <string name="plug_in_headset">Please plug in headset</string>
+    <string name="plug_out_headset">Please plug out headset</string>
+    <string name="headset_record">Record by headset mic</string>
+    <string name="board_record">Record by mainboard mic</string>
+    <string name="first_test">GSensor、WIFI、Bluetooth、Lightmeter、GPS</string>
+    <string name="test_report">Test report</string>
+    <string name="vibrater">Vibrater</string>
+    <string name="s_headset_insert">Insert headset bifore do FM test,please!</string>
+    <string name="tune">Tune</string>
+    <string name="fm">FM</string>
+    <string name="receiver">Receiver</string>
+    <string name="next_step_btn">Next test</string>
+    <string name="conneted_num">The nums of WIFI been conneted successfully : </string>
+    <string name="record_test_amend_infor">Start sound record test, playing at the same time of recording......</string>
+    <string name="write_sn_successfully">Write Barcode successfully!</string>
+    <string name="sd_volume">SDCard volume: </string>
+    <string name="internal_storage_string">Internal storage volume: </string>
+    <string name="gps_searching">GPS is searching...</string>
+    <string name="gps">GPS</string>
+    <string name="longitude">Longitude:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="num_satellites">The number of satellites be searched:</string>
+    <string name="sw_version">Software version:</string>
+    <string name="headset_not_connected">Headset ist connected!</string>
+    <string name="headset_connected">Headset is connected!</string>
+    <string name="gps_test_pass">GPS test pass!</string>
+    <string name="gps_test_fail">GPS test fail!</string>
+    <string name="gps_waiting">GPS waiting for testing</string> 
+    <string name="breathled">BreathLed</string>  
+    <string name="fix_fm_freq">FM freq :96.2M</string> 
+    <string name="otg_test">OTG</string>
+    <string name="otg_function">OTG function： </string>
+    <string name="light">light sensor</string>
+    <string name="board_mic">Mainboard Mic</string>
+    <string name="mic_warning">Please speak from main microphone,\nvoice swing will dance:</string>
+    <string name="sub_mic">Sub Mic</string>
+    <string name="sub_mic_warning">Please speak from sub microphone,\nvoice swing will dance:</string>
+    <string name="led_red">RED</string>
+    <string name="led_green">GREEN</string>
+    <string name="led_blue">BLUE</string>
+    <string name="speaker">Speaker</string>
+    <!--[BIRD]add by zhangaman 20150717 begin-->   
+    <string name="EarphoneMicLoop">Earphone Mic Loop Test</string>  
+    <string name="factoryrecord_test_infor">Start sound record test,2 seconds......</string> 
+    <string name="plusinEarphone">Please plusin earphone</string>
+    <!--[BIRD]add by zhangaman 20150717 end-->   
+
+    <!--[BIRD][BIRD_FACTORY_ASSEMBLE_TEST_OTG_SUPPORT][工厂贴片测试 OTG][husijia][20151124]begin-->
+    <string name="otg_sw">OTG Function Test</string>
+    <string name="otg_device">OTG Function Test：</string>
+    <string name="otg_connected">Device has been connected</string>
+    <string name="otg_not_connected">Device not connected</string>
+    <string name="support">OK!</string>
+    <string name="not_support">NOK!</string>
+    <string name="otg_mk_confg">OTG fast charging support:</string>
+    <!--[BIRD][BIRD_FACTORY_ASSEMBLE_TEST_OTG_SUPPORT][工厂贴片测试 OTG][husijia][20151124]end-->	
+
+    <!--[BIRD][BIRD_SMT_SW_MAGNETIC_SENSOR][指南针测试][qianliliang][20160722] BEGIN-->
+    <string name="magnetic">magnetic</string>
+    <!--[BIRD][BIRD_SMT_SW_MAGNETIC_SENSOR][指南针测试][qianliliang][20160722] END-->
+    <!--[BIRD][BIRD_SMT_SW_SDCARD][SD卡测试][zhangaman][20160726]begin-->
+    <string name="sd_card">SDCard</string>
+    <string name="sd_note_have">SD card is working</string>
+    <string name="sdallsize">Total size:</string>
+    <string name="sdfreesize">Free size:</string>
+    <!--[BIRD][BIRD_SMT_SW_SDCARD][SD卡测试][zhangaman][20160726]end-->
+    <!--[BIRD][BIRD_SMT_SW_FINGER_PRINT_SENEOR][贴片测试_指纹传感器测试][zhangaman][20160815]begin-->
+    <string name="fp_test_guide">put your finger to the sensor</string>
+    <string name="fp_sensor">FingerPrint sensor</string>
+    <string name="capture_notice">Attention</string>
+    <string name="no_pretest_notice">this chip not do the pre-test, continue test?</string>
+    <string name="register_dialog_key_good">OK</string>
+    <string name="Cancel">Cancel</string>
+    <string name="application_crash">Sorry,some exception occurs ,exit immdiately</string>
+    <string name="have_no_fp_chip">Fail！</string>
+    <string name="have_no_hardware">Have No Hardware Device！</string>
+    <!--[BIRD][BIRD_SMT_SW_FINGER_PRINT_SENEOR][贴片测试_指纹传感器测试][zhangaman][20160815]end-->
+    <!--[BIRD][BIRD_SMT_SW_SUB_BACK_CAMERA][贴片测试-副后摄][zhangaman][20160209]begin-->
+    <string name="sub_back_camera">Sub Back Camera</string>
+    <!--[BIRD][BIRD_SMT_SW_SUB_BACK_CAMERA][贴片测试-副后摄][zhangaman][20160209]end-->
+    <!--[BIRD][BIRD_SMT_SW_REMOTE][贴片测试_红外测试][zhangaman][20170515]begin-->
+    <string name="remote">Remote</string>
+    <string name="send_remote">Send Remote</string>
+    <string name="chip_open_failed">"Open the remote control chip failed, please re-enter the remote"</string>
+    <string name="remote_version_info">Remote Version information</string>
+    <string name="test_complete">Test Complete</string>
+    <string name="test_start">Test Start</string>
+    <string name="testing">Testing</string>
+    <string name="test_fail">Test Fail</string>
+    <string name="remote_version">Remote Version</string>
+    <string name="test">Test</string>
+    <!--[BIRD][BIRD_SMT_SW_REMOTE][贴片测试_红外测试][zhangaman][20170515]end-->
+    <!--[BIRD][BIRD_SMT_SW_GYROSCOPE][贴片测试_陀螺仪测试][zhangaman][20170516]begin-->
+    <string name="gyroscope">Gyroscope</string>
+    <!--[BIRD][BIRD_SMT_SW_GYROSCOPE][贴片测试_陀螺仪测试][zhangaman][20170516]end-->
+    <!--[BIRD][BIRD_SMT_SW_MARQUEE_LED_TEST][贴片测试_跑马灯测试][zhangaman][20170703]begin-->
+    <string name="marquee_led">Marquee Led</string>
+    <string name="all_lighs_on">All lights on</string>
+    <!--[BIRD][BIRD_SMT_SW_MARQUEE_LED_TEST][贴片测试_跑马灯测试][zhangaman][20170703]end-->
+    <!--[BIRD][BIRD_SMT_SW_PRESSURE_TEST][贴片测试_气压测试][zhangaman][20170706]begin-->
+    <string name="pressure">Pressure</string>
+    <!--[BIRD][BIRD_SMT_SW_PRESSURE_TEST][贴片测试_气压测试][zhangaman][20170706]end-->
+    <!--[BIRD][BIRD_SMT_SW_TEMPERATURE_TEST][贴片测试_气温测试][zhangaman][20170707]begin-->
+    <string name="temperature">Temperature</string>
+    <!--[BIRD][BIRD_SMT_SW_TEMPERATURE_TEST][贴片测试_气温测试][zhangaman][20170707]end-->
+    <!--[BIRD][BIRD_SMT_SW_HALL_SENSOR_SUPPORT][贴片测试_霍尔测试][zhangaman][20170718]begin-->
+    <string name="hall">Hall</string>
+    <!--[BIRD][BIRD_SMT_SW_HALL_SENSOR_SUPPORT][贴片测试_霍尔测试][zhangaman][20170718]end-->
+    <!--[BIRD][BIRD_SMT_SW_TOGGLE_SWITCH][贴片测试_波动开关测试][zhangaman][20170724]begin-->
+    <string name="toggle_switch">Toggle switch</string>
+    <!--[BIRD][BIRD_SMT_SW_TOGGLE_SWITCH][贴片测试_波动开关测试][zhangaman][20170724]end-->
+    <!--[BIRD][BIRD_SMT_SW_SUB_BACK_CAMERA_COVER][贴片测试_副后摄遮挡测试][zhangaman][20170724]begin-->
+    <string name="sub_back_camera_cover">Sub back camera cover</string>
+    <string name="camera_blocked">The sub back camera it is blocked</string>
+    <string name="camera_blocked_no">The sub back camera it is not blocked</string>
+    <!--[BIRD][BIRD_SMT_SW_SUB_BACK_CAMERA_COVER][贴片测试_副后摄遮挡测试][zhangaman][20170724]end-->
+
+    <!--[BIRD][BIRD_SMT_SW_SMARTCARD_TEST][贴片测试_读卡器测试][chengci][20180328]begin-->
+    <string name="reader_test">Reader test</string>
+    <!--[BIRD][BIRD_SMT_SW_SMARTCARD_TEST][贴片测试_读卡器测试][chengci][20180328]end-->
+    
+    <!--[BIRD][BIRD_SERIAL_DATA_SUPPORT][串口数据测试][huangzhangbin][20180411]begin-->
+    <string name="serial_test">Serial test</string>
+    <!--[BIRD][BIRD_SERIAL_DATA_SUPPORT][串口数据测试][huangzhangbin][20180411]end-->
+
+    <!--[BIRD_NFC_SUPPORT]huangzhangbin 20170309 begin-->
+    <string name="bird_nfc_title">NFC</string>
+    <string name="bird_nfc_test">Test Result:</string>
+    <!--[BIRD_NFC_SUPPORT]huangzhangbin 20170309 end-->
+</resources>

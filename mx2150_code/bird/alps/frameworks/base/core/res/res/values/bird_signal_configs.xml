@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <integer-array translatable="false" name="config_signal_lte_level_map">　<!--4G 信号配置-->
+        <item>-100</item> <!--4格，满格-->
+        <item>-120</item> <!--3格-->
+        <item>-122</item> <!--2格-->
+        <item>-124</item> <!--1格-->
+        <!--小于1格的就是无信号-->
+    </integer-array>
+
+    <integer-array translatable="false" name="config_signal_tdd_level_map">　<!--移动联通3G 信号配置-->
+        <item>-95</item> <!--4格，满格-->
+        <item>-102</item> <!--3格-->
+        <item>-108</item> <!--2格-->
+        <item>-112</item> <!--1格-->
+        <!--小于1格的就是无信号-->
+    </integer-array>
+
+    <integer-array translatable="false" name="config_signal_gsm_level_map">　<!--移动联通2G 信号配置-->
+        <item>-92</item> <!--4格，满格-->
+        <item>-100</item> <!--3格-->
+        <item>-106</item> <!--2格-->
+        <item>-110</item> <!--1格-->
+        <!--小于1格的就是无信号-->
+    </integer-array>
+
+    <integer-array translatable="false" name="config_signal_evdo_level_map">　<!--evdo(电信3G) 信号配置-->
+        <item>-95</item> <!--4格，满格-->
+        <item>-102</item> <!--3格-->
+        <item>-108</item> <!--2格-->
+        <item>-112</item> <!--1格-->
+        <!--小于1格的就是无信号-->
+    </integer-array>
+
+    <integer-array translatable="false" name="config_signal_cdma_level_map">　<!--cdma(电信2G) 信号配置-->
+        <item>-92</item> <!--4格，满格-->
+        <item>-100</item> <!--3格-->
+        <item>-106</item> <!--2格-->
+        <item>-110</item> <!--1格-->
+        <!--小于1格的就是无信号-->
+    </integer-array>
+
+</resources>

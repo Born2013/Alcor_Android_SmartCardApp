@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <include layout="@layout/zzzzz_old_digital_clock"/>
+
+    <LinearLayout android:id="@+id/lock_widget"             
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="16dp"
+            android:layout_centerInParent="true" >
+    
+    <com.android.keyguard.BirdOldMusicWdiget
+            android:id="@+id/oldphone_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" 
+            android:elevation="16dp"
+            android:visibility="gone"/>
+            
+    <com.android.keyguard.BirdOldAlbumView 
+        android:id="@+id/oldphone_album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="16dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true">
+    </com.android.keyguard.BirdOldAlbumView>
+    
+
+    <FrameLayout 
+        android:id="@+id/love_msg_id"
+        android:layout_width="300dp"
+        android:layout_height="212dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:elevation="16dp"
+        android:background="@drawable/oldphone_panel_remind_nor">
+        
+        <TextView
+            android:id="@+id/count_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="@string/oldphone_count_msg"
+            android:textColor="@android:color/white"
+            android:textSize="24dp" />
+
+        <com.android.keyguard.XCRoundImageView
+            android:id="@+id/contact_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="64dp"
+            android:maxHeight="64dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/cantact_name_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="180dp"
+            android:lines="1"
+            android:ellipsize="end" 
+            android:textStyle="bold"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="24dp" />
+    </FrameLayout>
+ 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/zzzzz_default_unread_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dip"        
+        android:layout_below="@+id/lock_widget"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/unread_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:src="@drawable/oldphone_notifications_missed_call" />
+
+        <ImageView
+            android:id="@+id/unread_mms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:src="@drawable/oldphone_notifications_unread_mms" />
+
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/zzzzz_flashtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dip"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/zzzzz_default_unlock_tips_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/oldphone_unlock_arrow"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/zzzzz_default_unlock_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dip"
+            android:text="@string/zzzzz_unlock_tips"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_vertical"/>
+
+     </LinearLayout>
+
+</RelativeLayout>

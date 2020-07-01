@@ -1,0 +1,13 @@
+#
+#Fingerprint
+#
+
+
+config SUNWAVECORP_FINGERPRINT
+	tristate "sunwavecorp Fingerprint"
+	default n
+	---help---
+	Fingerprint mtk driver enable/disable in the kernel.
+	Say Y here if you want to use mediatek fingerprint driver,
+	fingerprint driver will support fingerprint function in REE,
+	it supports sunwavecorp's 

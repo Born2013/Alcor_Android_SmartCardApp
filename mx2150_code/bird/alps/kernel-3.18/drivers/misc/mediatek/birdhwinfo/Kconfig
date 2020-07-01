@@ -1,0 +1,5 @@
+config BIRD_HARDWARE_INFOMATION
+  bool "BIRD_HARDWARE_INFOMATION Driver"
+  default n
+  help
+    BIRD_HARDWARE_INFOMATION

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[BIRD][BIRD_SMALL_VIEW_WINDOW_STYLE][皮套风格1][zhangaman][20170524]begin-->
+<com.android.keyguard.KeyguardLeatherCoverViewStyle1 xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidprv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/zzzzz_leather_bg_style1_0">
+
+    <com.android.keyguard.KeyguardLeatherScrollView
+        android:id="@+id/bird_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</com.android.keyguard.KeyguardLeatherCoverViewStyle1>
+<!--[BIRD][BIRD_SMALL_VIEW_WINDOW_STYLE][皮套风格1][zhangaman][20170524]end-->

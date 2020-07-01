@@ -1,0 +1,4 @@
+config BIRD_TEMPERATURE_AS6200
+	bool "BIRD_TEMPERATURE_AS6200"
+	help
+	  as6200 is uesd to get enviroment temperature.

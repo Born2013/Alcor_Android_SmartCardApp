@@ -1,0 +1,9 @@
+模组厂	易欣达	
+IC型号	ILI9806E-2C	
+玻璃	HSD	
+分辨率	480*854	
+丝印	Y87305  V01	
+ID脚	ID1=GND； ID2=1.8V；	
+command或vedio	Video	
+
+

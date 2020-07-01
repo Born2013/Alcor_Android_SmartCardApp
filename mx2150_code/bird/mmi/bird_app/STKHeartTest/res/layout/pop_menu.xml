@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[BIRD][BIRD_QINGYU_CONTACTS][chengshujiang] 20160718 begin-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bird_pop_menu_bg">
+
+    <ListView
+        android:id="@+id/item_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@drawable/bird_popmenu_list_selector_bg"/>
+</LinearLayout>
+<!--[BIRD][BIRD_QINGYU_CONTACTS][chengshujiang] 20160718 end-->

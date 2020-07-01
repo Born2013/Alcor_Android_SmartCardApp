@@ -1,0 +1,4 @@
+
+config MTK_TXC_BIRD_C
+	bool "TXC BIRD_C for MediaTek package"
+	default n

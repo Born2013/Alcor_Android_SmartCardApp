@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[BIRD][BIRD_SD_CARD_TEST][SD卡测试][zhangaman][20160726]begin-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tcard_test_infor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/note_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tcard_test_infor"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="15px"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/allsize"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/note_title"
+        android:text="@string/sdallsize"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/freesize"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/allsize"
+        android:text="@string/sdfreesize"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/note_title2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tcard_test_infor"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="15px"
+        android:textSize="20sp" 
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/allsize2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/note_title"
+        android:text="@string/sdallsize"
+        android:textSize="20sp" 
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/freesize2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/allsize"
+        android:text="@string/sdfreesize"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/add_bottom_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/correct"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:text="@string/correct"
+            android:textSize="19sp" />
+
+        <Button
+            android:id="@+id/error"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:text="@string/error"
+            android:textSize="19sp" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:text="@string/reset"
+            android:textSize="19sp" />
+     
+    </LinearLayout>
+
+</LinearLayout>
+<!--[BIRD][BIRD_SD_CARD_TEST][SD卡测试][zhangaman][20160726]end-->

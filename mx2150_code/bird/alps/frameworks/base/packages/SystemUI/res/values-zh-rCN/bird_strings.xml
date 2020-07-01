@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2014, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--[BIRD][BIRD_POWER_MANAGER_V2][省电管理V2.0][qianliliang][20160527] BEGIN-->
+    <string name="bird_low_battery">电量低</string>
+    <string name="bird_low_battery_remaining">仅剩 <xliff:g id="NUMBER">%s</xliff:g>%% 电量。</string>
+    <string name="bird_low_battery_remaining_with_timer_count">已设置 <xliff:g id="NUMBER">%s</xliff:g>%% 电量自动进入超级省电, 当前仅剩<xliff:g id="NUMBER">%s</xliff:g>%%。 \n(<xliff:g id="NUMBER">%s</xliff:g>s 后自动进入)</string>
+    <string name="bird_cancel">取消</string>
+    <string name="bird_enter_super_saver">超级省电</string>
+    <!--[BIRD][BIRD_POWER_MANAGER_V2][省电管理V2.0][qianliliang][20160527] END-->
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] BEGIN-->
+    <string name="bird_screenshot_name">超级截屏</string>
+    <string name="bird_screenshot_full">全屏</string>
+    <string name="bird_screenshot_regional">区域截屏</string>
+    <string name="bird_screenshot_long">长截屏</string>
+    <string name="bird_screenshot_help">帮助</string>
+    <string name="bird_guide_full_str">全屏截屏引导</string>
+    <string name="bird_guide_regional_str">区域截屏引导</string>
+    <string name="bird_guide_long_str">长截屏引导</string>
+
+    <string name="bird_guide_full_tip0">1.下拉状态栏选择\"超级截屏\"快捷开关.</string>
+    <string name="bird_guide_full_tip1">2.选择\"全屏\".</string>
+    <string name="bird_guide_full_tip2">3.自动截屏且保存到图库.</string>
+    <string name="bird_guide_full_tip3">4.快捷键: 同时按下\"Power键\"和\"下音量键\".</string>
+
+    <string name="bird_guide_regional_tip0">1.下拉状态栏选择\"超级截屏\"快捷开关.</string>
+    <string name="bird_guide_regional_tip1">2.选择\"区域截屏\".</string>
+    <string name="bird_guide_regional_tip2">3.编辑选择框来裁剪图片.</string>
+    <string name="bird_guide_regional_tip3">4.保存到图库.</string>
+
+    <string name="bird_guide_long_tip0">1.下拉状态栏选择\"超级截屏\"快捷开关.</string>
+    <string name="bird_guide_long_tip1">2.选择\"长截屏\".</string>
+    <string name="bird_guide_long_tip2">3.可以编辑开始和结束位置.</string>
+    <string name="bird_guide_long_tip3">4.选择相应的菜单继续.</string>
+    <string name="bird_guide_long_tip4">5.选择\"保存\".</string>
+    <string name="bird_guide_long_tip5">6.保存图片到图库.</string>
+
+    <string name="bird_donot_support_long_screenshot">不支持长截屏.</string>
+    <string name="bird_no_picture_saved">没有可保存的图片.</string>
+    <string name="bird_user_option_cancel">取消</string>
+    <string name="bird_user_option_next">下一屏</string>
+    <string name="bird_user_option_choose">选择</string>
+    <string name="bird_user_option_save">保存</string>
+    <string name="screenshot_failed_text">空间不足或不允许截屏.</string>
+    <string name="bird_screenshot_merge_or_scroll_fail">"当前界面无法拼接或不支持滚动，不能长截屏"</string>
+    <string name="bird_screenshot_maxmum_count">"最多截图10张"</string>
+    <string name="bird_screenshot_done">"截图完成"</string>
+    <!--[BIRD][BIRD_SUPER_SCREENSHOT_SUPPORT][超级截屏][qianliliang][20160903] END-->
+    <!--[BIRD][BIRD_FINGER_PRINT_HINT][录入指纹后，锁屏界面提示"按下主屏幕以解锁"][zhangaman][20170310]begin-->
+    <string name="bird_fingerprint_hint">"按下主屏幕按钮以解锁"</string> 
+    <!--[BIRD][BIRD_FINGER_PRINT_HINT][录入指纹后，锁屏界面提示"按下主屏幕以解锁"][zhangaman][20170310]end-->
+    
+    <!--[BIRD][BIRD_QS_POWER_SAVE_SUPPORT][下拉菜单界面添加“超级省电”快捷图标][yangheng][201603017]BEGIN-->
+    <string name="bird_powermanager_name">超级省电</string>
+    <!--[BIRD][BIRD_QS_POWER_SAVE_SUPPORT][下拉菜单界面添加“超级省电”快捷图标][yangheng][201603017]END-->
+    
+    <!--[BIRD][BIRD_SHOTDOWN_CHARGE_SUGGESTION][由于电池容量较大，建议在关机状态下充电，保证充电过程稳定][客户需求][yangbo][20170726]BEGIN -->
+    <string name="bird_shotdown_charge_suggestion_title">"充电提示"</string>
+    <string name="bird_shotdown_charge_suggestion">"由于电池容量较大，建议在关机状态下充电，以保证充电过程稳定"</string>
+    <!--[BIRD][BIRD_SHOTDOWN_CHARGE_SUGGESTION][由于电池容量较大，建议在关机状态下充电，保证充电过程稳定][客户需求][yangbo][20170726]BEGIN -->
+    
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170629]BEGIN -->
+    <string name="switch_to_security_container_title">提示</string>
+    <string name="switch_to_security_container_message">这是来自安全空间的通知消息，切换到安全空间进行查看？</string>
+    <!--[BIRD][BIRD_ENCRYPT_SPACE][加密空间][yangbo][20170629]END -->
+
+    <!--[BIRD][BIRD_TOAST_CHARGE_READ_SIM][充电时无法读写SIM卡提示][pangmeizhou][20180509]begin -->
+	<string name="bird_toast_charge_sim">注意：充电时无法读写SIM卡</string>
+	<!--[BIRD][BIRD_TOAST_CHARGE_READ_SIM][充电时无法读写SIM卡提示][pangmeizhou][20180509]end -->
+</resources>
+
